@@ -204,3 +204,7 @@ address > a {
     margin-top: 1.2em;
     color: rgb(85, 85, 85);
 }
+
+#content {
+    margin: 1.3em;
+}
