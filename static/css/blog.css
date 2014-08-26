@@ -160,6 +160,7 @@ code {
 }
 
 article {
+    width: 90%;
     max-width: 1000px;
     display: inline-block;
     margin: 0.8em;
