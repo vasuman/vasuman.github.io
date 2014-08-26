@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+         Something Witty 
+    </title>
+    
+
+    <link rel="stylesheet" href="/static/css/blog.css">
+    
+<link rel="stylesheet" href="/static/css/pygments.css">
+
+
+</head>
+<body>
+    <div id="header" > 
+        <a href="/"><h1> Something Witty </h1></a> 
+        <h2> An appropriate quote that is very long. </h2>
+    </div>
+    <div id="sidebar">
+        <nav>
+            <ul>
+                
+                <li>
+                    <a href="/index.html">Posts</a>
+                </li>
+                
+                <li>
+                    <a href="/about.html">About Me</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+        
+    <article>
+        <div class="post-description">
+            <h3>Asynchronous</h3>
+            <time datetime="2013-06-27">27 Jun 2013</time>
+        </div>
+        <p>Asynchronity is a difficult concept to grasp. <strong>NOT</strong> to  be confused with multi-threading as many people commonly mistake; a program can be single threaded yet asynchronous. Javascript runtime which is asynchronous is primarily single-threaded, excluding the <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Performance/Using_web_workers">Web Worker</a> API which is fairly recent. </p>
+<blockquote>
+<p>The <em>A</em> in <strong>AJAX</strong> stands for asynchronous</p>
+</blockquote>
+<p>Synchronous code may be easier to follow but, synchronous flow is not suitable for all use cases especially in a situation where there is a lot of <em>I/O</em> going on.</p>
+<p>For example; while waiting for input from the user of another process, a synchronous program will simply <strong>block</strong> the flow of execution and wait for the next statement. I don't need to explain why this sucks. An asynchronous program on the other hand will delegate the operation and continue execution of the rest of the program. When the input operation is performed, the flow goes back to the registered handler.</p>
+<p>It is almost impossible to <em>sleep</em> or <em>block runtime</em> in Javascript or any other asynchrounus runtime for that matter.</p>
+<p>The simplest way to demonstrate this is with the example.</p>
+<p>In Python,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">print</span> <span class="s">&quot;Zzzzzz....&quot;</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Ahh! Two minutes, Ma.&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Meanwhile, Javascipt doesn't have a <em>sleep</em> command. All we have is the <em>setTimeout</em> function. This doesn't block execution, so the correct way to do it would be to register a <strong>callback</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Wake Up!!&#39;</span><span class="p">)</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Two minutes up&#39;</span><span class="p">)</span>
+<span class="p">},</span> <span class="mi">120000</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Now&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>We get,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre>Wake Up!!
+Now
+Two minutes up
+</pre></div>
+</td></tr></table>
+
+<h2>Callbacks</h2>
+<p>Well, a callback is generally a function that is executed once the required operation is performed.</p>
+<p>Callbacks if not understood properly can potentially break code. Here are some of the issues I faced with callbacks.</p>
+<h3>Namespace issues</h3>
+<p>For one the callback is executed in the context of the <em>called</em> function not the native of the <em>calling</em> function. Look at the following piece of code.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">dObject</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">echoX</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;x is &#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dObject</span><span class="p">();</span>
+
+<span class="nx">d</span><span class="p">.</span><span class="nx">echoX</span><span class="p">()</span>   <span class="c1">// x is 9</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">echoX</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// x is undefined</span>
+</pre></div>
+</td></tr></table>
+
+<p>The reason the value of <code>x</code> becomes <code>undefined</code> is because the context of execution of <code>d.echoX</code> becomes the global context and not that of it's native object.</p>
+<h4>Solution</h4>
+<p><strong>Closures</strong> to the resuce! Well, since the namespaces are different, we simply alias the current context and then call the callback within the context. All this is done in a <em>closure</em> to maintain a reference to the aliased context.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">echoX</span><span class="p">();</span>    
+<span class="p">}(</span><span class="nx">d</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+
+<p>The anonymous function -- <em>closure</em>; just aliased the context <code>d</code> to <code>self</code> and simply executed the <code>echoX</code> in the supplied context.</p>
+<h4>Quirk</h4>
+<p>Because of the somewhat peculiar <em>lookup chain</em> of Javascript variables if <code>x</code> weren't a member of the Object and instead was a private variable of the constructor, we'd get the expected result.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">pObj</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pV</span> <span class="o">=</span> <span class="s1">&#39;Ha&#39;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">echo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pV</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">pObj</span><span class="p">();</span>
+
+<span class="nx">p</span><span class="p">.</span><span class="nx">echoX</span><span class="p">()</span>   <span class="c1">// Ha</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">echoX</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// Ha</span>
+</pre></div>
+</td></tr></table>
+
+<h3>Arguments</h3>
+<p>It's not easy to register a callback with some arguments; also known as a <strong>partial function</strong>; a feature commonly supported by functional programming languages</p>
+<p>Most functional languages like Haskell also support <strong>currying</strong>; i.e. return a function with some arguments already given. To support this in Javascript there's a hack.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">curry</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">givenArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span>
+        <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">newArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">givenArgs</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">newArgs</span><span class="p">));</span>  
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>Now, any function can be <em>curried</em>,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>    
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">add5</span> <span class="o">=</span> <span class="nx">add</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add5</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span> <span class="c1">// 15</span>
+</pre></div>
+</td></tr></table>
+
+<p>It is useful in cases like registering an <code>XMLHttpRequest</code> callback where you need to operate on the response</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">saveTo</span><span class="p">(</span><span class="nx">js_obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">js_obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">store</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="s1">&#39;some-resource&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">saveTo</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="nx">store</span><span class="p">,</span> <span class="s1">&#39;resource&#39;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</pre></div>
+</td></tr></table>
+    </article>
+
+    <footer>
+        <address>
+            <a href="mailto:vasumanar@gmail.com">Vasuman Ravichandran</a>
+        </address>
+        <div id="accounts">
+            <ul>
+                <li><a href="https://github.com/vasuman">GitHub</a></li>
+                <li><a href="https://twitter.com/vasumanr">Twitter</a></li>
+            </ul>
+        </div>
+        <div id="creds">
+            Generated using, <a href="https://github.com/vasuman/glob">glob</a>
+        </div>
+    </footer>
+</body>
+</html>
