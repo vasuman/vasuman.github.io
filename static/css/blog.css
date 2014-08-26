@@ -166,7 +166,7 @@ article {
 }
 
 article > p {
-    font-size: 15px;
+    font-size: 120%;
     text-align: left;
     margin: 1.2em;
 }
