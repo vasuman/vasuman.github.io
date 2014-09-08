@@ -213,3 +213,11 @@ address > a {
 #content {
     margin: 1.3em;
 }
+
+a {
+    color: orange;
+}
+
+a:visited {
+    color: orangered;
+}
