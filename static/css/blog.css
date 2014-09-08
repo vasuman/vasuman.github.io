@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header {
-    background-color: gainsboro;
+    background-color: darkred;
     border-bottom: 1px solid;
 }
 
@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header > a > h1 {
     font-size: 36px;
-    color: darkmagenta;
+    color: yellow;
     margin: 0.2em;
     margin-right: 0.7em;
     display: inline-block;
@@ -32,7 +32,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-description {
-    background-color: rgb(200, 236, 200);
+    background-color: magenta;
+    color: black;
     border: 1px green dotted;
 }
 
@@ -110,7 +111,8 @@ nav > ul > li > a {
 }
 
 body {
-    background-color: rgb(250, 250, 250);
+    background-color: darkmagenta;
+    color: lightyellow;
     font-family: "Roboto", sans-serif;
     text-align: center;
     width: 100%;
