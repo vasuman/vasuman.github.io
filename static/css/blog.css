@@ -110,6 +110,9 @@ nav > ul > li > a {
     font-family: "Play", monospace;
 }
 
+nav > ul > li > a:visited {
+    color: black;
+}
 body {
     background-color: darkmagenta;
     color: lightyellow;
@@ -181,6 +184,7 @@ article > h1, article > h2, article > h3, article > h4, article > h5, article > 
 }
 
 footer {
+    background-color: darkred;
     border-top: 1px solid;
     font-family: "Play", monospace;
 }
