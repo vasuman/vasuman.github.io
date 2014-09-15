@@ -230,3 +230,7 @@ a {
 a:visited {
     color: orangered;
 }
+
+html {
+    background-color: darkred;
+}
