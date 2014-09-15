@@ -69,28 +69,41 @@ handler.</p>
 any other asynchrounus runtime for that matter.</p>
 <p>The simplest way to demonstrate this is with the example.</p>
 <p>In Python,</p>
-<pre class="codehilite"><code class="language-python linenums">import time
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kn">import</span> <span class="nn">time</span>
 
-print &quot;Zzzzzz....&quot;
-time.sleep(1000)
-print &quot;Ahh! Two minutes, Ma.&quot;</code></pre>
-
+<span class="k">print</span> <span class="s">&quot;Zzzzzz....&quot;</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Ahh! Two minutes, Ma.&quot;</span>
+</pre></div>
+</td></tr></table>
 
 <p>Meanwhile, Javascipt doesn't have a <em>sleep</em> command. All we have is
 the <em>setTimeout</em> function. This doesn't block execution, so the
 correct way to do it would be to register a <strong>callback</strong></p>
-<pre class="codehilite"><code class="language-js linenums">console.log('Wake Up!!')
-setTimeout(function() {
-    console.log('Two minutes up')
-}, 120000)
-console.log('Now')</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Wake Up!!&#39;</span><span class="p">)</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Two minutes up&#39;</span><span class="p">)</span>
+<span class="p">},</span> <span class="mi">120000</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Now&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
 
 <p>We get,</p>
-<pre class="codehilite"><code class="language-text linenums">Wake Up!!
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre>Wake Up!!
 Now
-Two minutes up</code></pre>
-
+Two minutes up
+</pre></div>
+</td></tr></table>
 
 <h2>Callbacks</h2>
 <p>Well, a callback is generally a function that is executed once the
@@ -101,18 +114,29 @@ are some of the issues I faced with callbacks.</p>
 <p>For one the callback is executed in the context of the <em>called</em>
 function not the native of the <em>calling</em> function. Look at the
 following piece of code.</p>
-<pre class="codehilite"><code class="language-js linenums">function dObject() {
-    this.x = 9;
-    this.echoX = function() {
-          console.log('x is ', this.x);
-    }
-}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">dObject</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">echoX</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;x is &#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-var d = new dObject();
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dObject</span><span class="p">();</span>
 
-d.echoX()   // x is 9
-setTimeout(d.echoX, 0) // x is undefined</code></pre>
-
+<span class="nx">d</span><span class="p">.</span><span class="nx">echoX</span><span class="p">()</span>   <span class="c1">// x is 9</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">echoX</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// x is undefined</span>
+</pre></div>
+</td></tr></table>
 
 <p>The reason the value of <code>x</code> becomes <code>undefined</code> is because the context
 of execution of <code>d.echoX</code> becomes the global context and not that of
@@ -122,10 +146,13 @@ it's native object.</p>
   we simply alias the current context and then call the callback
   within the context. All this is done in a <em>closure</em> to maintain a
   reference to the aliased context.</p>
-<pre class="codehilite"><code class="language-js linenums">setTimeout(function(self) {
-    return self.echoX();    
-}(d), 0);</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">echoX</span><span class="p">();</span>    
+<span class="p">}(</span><span class="nx">d</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
 
 <p>The anonymous function -- <em>closure</em>; just aliased the context <code>d</code> to
 <code>self</code> and simply executed the <code>echoX</code> in the supplied context.</p>
@@ -133,16 +160,25 @@ it's native object.</p>
 <p>Because of the somewhat peculiar <em>lookup chain</em> of Javascript
 variables if <code>x</code> weren't a member of the Object and instead was a
 private variable of the constructor, we'd get the expected result.</p>
-<pre class="codehilite"><code class="language-js linenums">function pObj() {
-    var pV = 'Ha';
-    this.echo = function() { console.log(pV); }
-}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">pObj</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pV</span> <span class="o">=</span> <span class="s1">&#39;Ha&#39;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">echo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pV</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
 
-var p = new pObj();
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">pObj</span><span class="p">();</span>
 
-p.echoX()   // Ha
-setTimeout(p.echoX, 0) // Ha</code></pre>
-
+<span class="nx">p</span><span class="p">.</span><span class="nx">echoX</span><span class="p">()</span>   <span class="c1">// Ha</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">echoX</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// Ha</span>
+</pre></div>
+</td></tr></table>
 
 <h3>Arguments</h3>
 <p>It's not easy to register a callback with some arguments; also known
@@ -151,35 +187,58 @@ programming languages</p>
 <p>Most functional languages like Haskell also support <strong>currying</strong>;
 i.e. return a function with some arguments already given. To support
 this in Javascript there's a hack.</p>
-<pre class="codehilite"><code class="language-js linenums">Function.prototype.curry = function() {
-    var givenArgs = Array.prototype.slice.call(arguments),
-        self = this;
-    return function() {
-        var newArgs = Array.prototype.slice.call(arguments);
-        return self.apply(this, givenArgs.concat(newArgs));  
-    }
-}</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">curry</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">givenArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span>
+        <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">newArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">givenArgs</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">newArgs</span><span class="p">));</span>  
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
 
 <p>Now, any function can be <em>curried</em>,</p>
-<pre class="codehilite"><code class="language-js linenums">function add(a, b) {
-    return a + b;    
-}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>    
+<span class="p">}</span>
 
-var add5 = add.curry(5);
-console.log(add5(10)); // 15</code></pre>
-
+<span class="kd">var</span> <span class="nx">add5</span> <span class="o">=</span> <span class="nx">add</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add5</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span> <span class="c1">// 15</span>
+</pre></div>
+</td></tr></table>
 
 <p>It is useful in cases like registering an <code>XMLHttpRequest</code> callback
 where you need to operate on the response</p>
-<pre class="codehilite"><code class="language-js linenums">function saveTo(js_obj, key) {
-    js_obj[key] = this.responseText;
-}
-var store = {},
-    xhr = new XMLHttpRequest();
-xhr.open('GET','some-resource', true);
-xhr.onload = saveTo.curry(store, 'resource');
-xhr.send();</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">saveTo</span><span class="p">(</span><span class="nx">js_obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">js_obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">store</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="s1">&#39;some-resource&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">saveTo</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="nx">store</span><span class="p">,</span> <span class="s1">&#39;resource&#39;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</pre></div>
+</td></tr></table>
     </article>
 
     </div>
