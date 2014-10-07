@@ -87,10 +87,10 @@ command and fed to another command. Like,</p>
 <p>Named pipes allow us to setup circular references in interesting
 applications.</p>
 <h2>Echo Server</h2>
-<p>Let's start of with something simple, an <strong>echo server</strong>. The principle
-is to simply <em>echo</em> the input of the user. The input is the
-output. The <a href="#">netcat</a> utility will help us setup a simple listening
-socket.</p>
+<p>Let's start of with something simple, an <strong>echo server</strong>. The
+principle is to simply <em>echo</em> the input of the user. The input is the
+output. The <a href="http://sectools.org/tool/netcat/">netcat</a> utility will
+help us setup a simple listening socket.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | nc -l 59000 &gt; /tmp/mypipe
 </pre></div>
 </td></tr></table>
@@ -115,7 +115,7 @@ interpreter.</p>
 <h2>Chat Server</h2>
 <p>A chat server can be thought of as an echo server with multiple
 hosts. Sadly though, the netcat utility only allows only a single
-connection. Luckily, there's <a href="#ncat">this</a> tool that allows us to
+connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> tool that allows us to
 accept multiple incoming connections.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | ncat -l -k 59000 &gt; /tmp/mypipe
 </pre></div>
