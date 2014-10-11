@@ -58,8 +58,7 @@
             <time datetime="2014-10-06">06 Oct 2014</time>
         </div>
         <p>Quite a while back I came across some interesting applications of
-<strong>named pipes</strong> that I thought I should share with everybody. Blame
-the lack of attribution of sources on my memory.</p>
+<strong>named pipes</strong> that I thought I should share with everybody.</p>
 <p>First, some background.</p>
 <h2>Pipes</h2>
 <p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
@@ -92,7 +91,7 @@ Data can be pumped in by one command and fed to another command. Like,</p>
 other shell. Press <kbd>Ctrl-D</kbd> to exit.</p>
 <p>Named pipes are primarily used as IPC mechanisms along with UNIX
 sockets.</p>
-<p>Now let's get down to some interesting stuff. Since, these pipes are
+<p>Now let's get down to some interesting stuff. These pipes are
 of interest to me because they allow us to set up a very special kind
 of circular reference. That is, <em>they allow a command's own output to
 be part of it's input!</em>.</p>
@@ -135,7 +134,7 @@ that executes <code>stdin</code> and pipe it's <code>stdout</code> back to the n
 
 <p>Just connect to that port and you should have a working remote shell.</p>
 <h2>Chat Server</h2>
-<p>A chat server is another application that falls into the same
+<p>A chat server is another application that falls into the same problem
 domain. It recieves some input and simply relays that input to all
 connected users. It can be thought of as an echo server with multiple
 concurrent nodes.</p>
@@ -158,8 +157,10 @@ each other.</p>
         </address>
         <div id="accounts">
             <ul>
+                 
                 <li><a href="https://github.com/vasuman">GitHub</a></li>
-                <li><a href="https://twitter.com/vasumanr">Twitter</a></li>
+                
+                
             </ul>
         </div>
         <div id="creds">
