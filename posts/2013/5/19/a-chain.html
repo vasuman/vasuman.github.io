@@ -99,25 +99,37 @@ method that each <code>[Function]</code> is provided with in JavaScript.</p>
 in the function code to the object supplied by the
 programmer. <strong>i.e.</strong> Change the current context of the function to
 inside the object</p>
-<pre class="codehilite"><code class="language-js linenums">var myObj={ x: 4 };
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">var</span> <span class="nx">myObj</span><span class="o">=</span><span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">4</span> <span class="p">};</span>
 
-function changeProps(){
-    this.y=6;
-    this.z=2;
-}</code></pre>
-
+<span class="kd">function</span> <span class="nx">changeProps</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">z</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
 
 <p>Traditionally, creating a new object is like,</p>
-<pre class="codehilite"><code class="language-js linenums">var newObj = new changeProps();
-console.log(newObj);
-// {y:6, z:2}</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">changeProps</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newObj</span><span class="p">);</span>
+<span class="c1">// {y:6, z:2}</span>
+</pre></div>
+</td></tr></table>
 
 <p>But, to <em>augment</em> the older object</p>
-<pre class="codehilite"><code class="language-js linenums">changeProps.call(myObj);
-console.log(myObj);
-// {x: 4, y: 6, z: 2}</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">changeProps</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">myObj</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObj</span><span class="p">);</span>
+<span class="c1">// {x: 4, y: 6, z: 2}</span>
+</pre></div>
+</td></tr></table>
 
 <p>The <code>apply</code> function also operates similarly, the only difference
 being the way in which parameters are passed.
@@ -127,42 +139,69 @@ being the way in which parameters are passed.
 <p>While defining a new constructor, we can use this principle to make
 sure that the created object also contains all the <em>base</em> properties
 as well as the <em>augmented</em> properties.</p>
-<pre class="codehilite"><code class="language-js linenums">function basicObject(objDesc) {
-    this.x = objDesc.x;
-    this.y = objDesc.y;
-    this.doStuff = function() {
-        console.log(&quot;Still alive&quot;);
-    };
-}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">function</span> <span class="nx">basicObject</span><span class="p">(</span><span class="nx">objDesc</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">objDesc</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">objDesc</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">doStuff</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Still alive&quot;</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">}</span>
 
-function augmentedObject(objDesc) {
-    basicObject.call(this, objDesc)
-    this.newProp = objDesc.z;
-    this.augFunc = function() {
-        console.log('Even better');
-    };
-}
+<span class="kd">function</span> <span class="nx">augmentedObject</span><span class="p">(</span><span class="nx">objDesc</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">basicObject</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">objDesc</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">newProp</span> <span class="o">=</span> <span class="nx">objDesc</span><span class="p">.</span><span class="nx">z</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">augFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Even better&#39;</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">}</span>
 
-var tmp = new augmentedObject({x:1, y:2, z:3});
-// tmp = { x:1, y:2, doStuff:[Function], newProp:3, augFunc:[Function] }</code></pre>
-
+<span class="kd">var</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">augmentedObject</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">3</span><span class="p">});</span>
+<span class="c1">// tmp = { x:1, y:2, doStuff:[Function], newProp:3, augFunc:[Function] }</span>
+</pre></div>
+</td></tr></table>
 
 <h3>Function chains</h3>
 <p>Now, an interesting thing happens. Suppose, we change a <code>prototype</code>
 method of the basic object</p>
-<pre class="codehilite"><code class="language-js linenums">basicObject.prototype.exclusiveMethod = function ()  {
-    console.log(&quot;I'm superior&quot;);
-};</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">basicObject</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">exclusiveMethod</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span>  <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;I&#39;m superior&quot;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
 
 <p>This method is not accessable via the augmented object</p>
-<pre class="codehilite"><code class="language-js linenums">//tmp is a new instance of augmentedObject
-var tmp = new augmentedObject({x:1, y:2, z:3});
-tmp.exclusiveMethod()   //ERROR!!! is thrown
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c1">//tmp is a new instance of augmentedObject</span>
+<span class="kd">var</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">augmentedObject</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">3</span><span class="p">});</span>
+<span class="nx">tmp</span><span class="p">.</span><span class="nx">exclusiveMethod</span><span class="p">()</span>   <span class="c1">//ERROR!!! is thrown</span>
 
-var tmp1 = new basicObject({x:5, y:8});
-tmp1.exclusiveMethod()  //Will work</code></pre>
-
+<span class="kd">var</span> <span class="nx">tmp1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">basicObject</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">8</span><span class="p">});</span>
+<span class="nx">tmp1</span><span class="p">.</span><span class="nx">exclusiveMethod</span><span class="p">()</span>  <span class="c1">//Will work</span>
+</pre></div>
+</td></tr></table>
 
 <p>This is because we only initialized the object by applying the basic
 <code>constructor</code> alone to the augmented object. We also have to assign
@@ -171,8 +210,9 @@ the prototype of the basic object to the <em>augmented</em> object.</p>
 object. We now assign the <code>__proto__</code> property of the <code>prototype</code> of
 the <em>augmented</em> constructor to the <code>prototype</code> of the <em>base</em>
 constructor. This <strong>links</strong> the prototype chains</p>
-<pre class="codehilite"><code class="language-js linenums">augmentedObject.prototype.__proto__ = basicObject.prototype</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">augmentedObject</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">basicObject</span><span class="p">.</span><span class="nx">prototype</span>
+</pre></div>
+</td></tr></table>
 
 <p>Otherwise, simply construct an ideal object. It really doesn't matter
 since we only care about the <code>prototype</code> of the object which isn't
@@ -192,12 +232,17 @@ the constructor's <code>prototype</code> member, as is considered good practice.
 <p>This is how we define a <code>chain</code> method. This method takes a method name
 and looks up all prototypes of the given object till the method is not
 present and applies each one on the current object - <code>this</code>;</p>
-<pre class="codehilite"><code class="language-js linenums">basicObject.prototype.chain = function(methodname, args) {
-    for(var i=this.__proto; i[methodname]; i=i.__proto__) {
-        i[methodname].apply(this, args);
-    };
-};</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">basicObject</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">chain</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">methodname</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">__proto</span><span class="p">;</span> <span class="nx">i</span><span class="p">[</span><span class="nx">methodname</span><span class="p">];</span> <span class="nx">i</span><span class="o">=</span><span class="nx">i</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">i</span><span class="p">[</span><span class="nx">methodname</span><span class="p">].</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
 
 <p>We loop through all prototypes of the main object and then, execute
 each update method in the context of the current object. Which should
@@ -205,24 +250,35 @@ execute successfully since it has also been initialized with the
 properties of that <code>prototype</code> s constructor.</p>
 <p>Suppose we define an update method on both the <em>basic</em> and <em>augmented</em>
 objects.</p>
-<pre class="codehilite"><code class="language-js linenums">basicObject.prototype.update = function() {
-    this.x++;
-}
-augmentedObject.prototype.update = function() {
-    this.z++;
-}</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">basicObject</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">update</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">augmentedObject</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">update</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">z</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
 
 <p><strong>Reset</strong> the prototype of <em>augmented</em> object.</p>
-<pre class="codehilite"><code class="language-js linenums">augmentedObject.prototype.__proto__ = basicObject.prototype;</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nx">augmentedObject</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">basicObject</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
 
 <p>Now,</p>
-<pre class="codehilite"><code class="language-js linenums">var tmp2 = new augmenetedObject({x:1, y:2, z:3});
-console.log(tmp2.x+&quot;, &quot;+tmp2.y+&quot;, &quot;+tmp.z);         // 1, 2, 3
-tmp2.chain('update');
-console.log(tmp2.x+&quot;, &quot;+tmp2.y+&quot;, &quot;+tmp.z);         // 2, 2, 4</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kd">var</span> <span class="nx">tmp2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">augmenetedObject</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="mi">3</span><span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tmp2</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="nx">tmp2</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="nx">tmp</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>         <span class="c1">// 1, 2, 3</span>
+<span class="nx">tmp2</span><span class="p">.</span><span class="nx">chain</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tmp2</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="nx">tmp2</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="nx">tmp</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>         <span class="c1">// 2, 2, 4</span>
+</pre></div>
+</td></tr></table>
 
 <p>As you can see, the <code>update</code> functions of both the <code>baseObject</code> and
 the <code>augmentedObject</code> are called. The <code>x</code> and <code>z</code> values are updated.</p>
@@ -246,12 +302,17 @@ name, as keys of that object.</p>
 <p>Those familiar with the python <code>**kwargs</code> will realize the
 resemblance. The <code>**kwargs</code> formal parameter denotes a dictionary that
 matches all <em>named actual parameters</em> supplied to the function.</p>
-<pre class="codehilite"><code class="language-py linenums">def echo_args(**kwargs):
-    print kwargs
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="k">def</span> <span class="nf">echo_args</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">kwargs</span>
 
-echo_args(a=1, b=2, c=3, d=4)
-# {'a':1, 'b':2, 'c':3, 'd':4}</code></pre>
-
+<span class="n">echo_args</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="c"># {&#39;a&#39;:1, &#39;b&#39;:2, &#39;c&#39;:3, &#39;d&#39;:4}</span>
+</pre></div>
+</td></tr></table>
 
 <p>In this practice, we take an object as an argument to the constructor
 for another object. This helps greatly in making the game more

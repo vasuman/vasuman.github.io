@@ -56,25 +56,29 @@
 <h2>Pipes</h2>
 <p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
 process to the <code>stdin</code> of another, you simply</p>
-<pre class="codehilite"><code class="language-sh linenums">$ cat myfile | grep sometext</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat myfile <span class="p">|</span> grep sometext
+</pre></div>
+</td></tr></table>
 
 <h2>Named pipes</h2>
 <p>Since <code>|</code> pipes are anonymous, they cannot be referenced externally.
 Named pipes on the other hand have an accesible path in the
 filesystem.</p>
-<pre class="codehilite"><code class="language-sh linenums">$ mkfifo /tmp/mypipe</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>mkfifo /tmp/mypipe
+</pre></div>
+</td></tr></table>
 
 <p>These pipes allow us to setup flows across different shell commands.
 Data can be pumped in by one command and fed to another command. Like,</p>
-<pre class="codehilite"><code class="language-sh linenums">$ cat /tmp/mypipe</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe
+</pre></div>
+</td></tr></table>
 
 <p>This command blocks till the named pipe spews and <code>EOF</code> marker.</p>
 <p>And in another shell,</p>
-<pre class="codehilite"><code class="language-sh linenums">$ cat &gt; /tmp/mypipe</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
 
 <p>Now, whatever you type in the this shell should be visible in the
 other shell. Press <kbd>Ctrl-D</kbd> to exit.</p>
@@ -93,15 +97,17 @@ output.</p>
 <p>The <a href="http://sectools.org/tool/netcat/">netcat</a> utility helps us setup
 a simple listening socket that can be communicated with using <code>stdin</code>
 and <code>stdout</code>.</p>
-<pre class="codehilite"><code class="language-sh linenums">$ cat /tmp/mypipe | nc -l 59000 &gt; /tmp/mypipe</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
 
 <p>Simply <code>cat</code>ing the contents of a pipe to the input of the <code>nc</code>
 command with the <code>-l</code> option that sets up a port to listen on and
 write any incoming data to the same pipe so that it's echoed
 back. Then,</p>
-<pre class="codehilite"><code class="language-sh linenums">$ nc &lt;network-address&gt; 59000</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>nc &lt;network-address&gt; 59000
+</pre></div>
+</td></tr></table>
 
 <p>There you have it, an <em>echo server in one line of bash</em></p>
 <h2>Remote Shell</h2>
@@ -115,8 +121,9 @@ hack!</p>
 <p>Like the earlier snippet we set up a circular input path. The only
 difference being we pipe the user input through the bash interpreter
 that executes <code>stdin</code> and pipe it's <code>stdout</code> back to the network socket.</p>
-<pre class="codehilite"><code class="language-sh linenums">$ cat /tmp/mypipe | bash | nc -l 59000 &gt; /tmp/mypipe</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> bash <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
 
 <p>Just connect to that port and you should have a working remote shell.</p>
 <h2>Chat Server</h2>
@@ -128,8 +135,9 @@ concurrent nodes.</p>
 connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> rewrite of
 the netcat tool that allows us to accept multiple incoming connections
 simultaneously.</p>
-<pre class="codehilite"><code class="language-sh linenums">$ cat /tmp/mypipe | ncat -l -k 59000 &gt; /tmp/mypipe</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> ncat -l -k <span class="m">59000</span> &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
 
 <p>Now multiple hosts can connect to that port and exchange messages with
 each other.</p>
