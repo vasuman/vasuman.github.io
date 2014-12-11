@@ -46,47 +46,70 @@
     </nav>
     <div id="content">
     
-<div id="posts">
-  <h3> Posts </h3>
-  <table class="post-group">
-    <tbody>
-      
-      <tr class="group-heading">
-        <th colspan="2"> October 2014 </th>
-      </tr>
-      
-      <tr class="post-item">
-        <td class="post-day"> 
-          6th 
-        </td>
-        <td>
-          <a href="posts/2014/10/6/named-pipes.html">
-            Fun With Pipes
-          </a>
-        </td>
-      </tr>
-      
-      
-      <tr class="group-heading">
-        <th colspan="2"> December 2014 </th>
-      </tr>
-      
-      <tr class="post-item">
-        <td class="post-day"> 
-          11th 
-        </td>
-        <td>
-          <a href="posts/2014/12/11/lsystem.html">
-            L-systems
-          </a>
-        </td>
-      </tr>
-      
-      
-    </tbody>
-  </table>
+        <div id="main">
+            <style>
+    .sbs-reg {
+        display: inline-block;
+    }
+    .ctrl-sect {
+        border: 2px black outset;
+        margin: 0.5em;
+        padding: 0.15em;
+    }
+    .ctrl-sect > h3 {
+        margin: 0.1em;
+        padding: 0.1em;
+        color: black;
+        border-bottom: 2px black outset;
+    }
+    #main-canvas {
+        background-color: white;
+        border: 1px black solid;
+    }
+    .error {
+        color: red;
+    }
+</style>
+<div class="sbs-reg">
+    <div class="ctrl-sect">
+        <h3> Grammar </h3>
+        <textarea id="grammar-txt" rows="8" cols="50"></textarea>
+    </div>
+    <div class="ctrl-sect">
+        <h3> Draw rules </h3>
+        <textarea id="draw-txt" rows="8" cols="50"></textarea>
+    </div>
+    <div class="ctrl-sect">
+        <h3> Axiom </h3>
+        <input id="axiom-txt" size="50"/>
+    </div>
+    <div class="ctrl-sect">
+        <h3> Controls </h3>
+        <button id="parse-button">Parse</button>
+        <button id="iterate-button">Iterate</button>
+        <select id="preset-select">
+        </select>
+        <button id="load-preset-btn">Load preset</button>
+    </div>
+    <div id="log-cntr" class="ctrl-sect">
+        <h3> Status </h3>
+        <div id="log-area"> "Parse" then "Iterate". Select and load a preset if you want. </div>
+    </div>
+</div>
+<canvas id="main-canvas" class="sbs-reg"></canvas>
+
+<div>
+    <a href="https://raw.githubusercontent.com/vasuman/lsystem/master/README.md">
+        Problems?
+    </a>
 </div>
 
+<script src="/static/custom/logo.js"></script>
+<script src="/static/custom/lsys.js"></script>
+<script src="/static/custom/ls-demo.js"></script>
+
+        </div>
+    
     </div>
     <footer>
         <address>

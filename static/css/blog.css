@@ -133,11 +133,11 @@ body {
 }
 
 blockquote {
-    background-color: #eee;
+    background-color: #222;
     padding-left: 0.5em;
     border-left: 0.5em #555 solid;
     font-style: italic;
-    color: #666;
+    color: #aaa;
 }
 
 code {
@@ -179,6 +179,22 @@ article {
     max-width: 1000px;
     display: inline-block;
     margin: 0.8em;
+}
+
+figcaption {
+    text-align: center;
+    color: #aaa;
+    font-weight: bold;
+}
+
+figure {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
 }
 
 article > p {
