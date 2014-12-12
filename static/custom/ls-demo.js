@@ -106,6 +106,11 @@ function addPresets() {
         'F = FD 10\nA = RT 60\nB = LT 120\nR = RT 90',
         'R F B F B F')
     );
+    addOption('Cantor Dust',
+        set('A : A X B Y A\nB : B B B',
+        'A = FD 10\nX = COLOR white\nY = COLOR black\nB = FD 10\nR = RT 90',
+        'R A')
+    );
 }
 
 function loadPreset() {
