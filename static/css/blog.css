@@ -10,10 +10,10 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
     margin: 0.5em;
     padding: 0.5em;
-    border: 2px inset red;
+    border: 2px inset blue;
 }
 #header {
-    background-color: darkred;
+    background-color: blueviolet;
     border-bottom: 1px solid;
 }
 
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-description {
-    background-color: magenta;
+    background-color: lightblue;
     color: black;
     border: 1px green dotted;
 }
@@ -123,8 +123,8 @@ nav > ul > li > a:visited {
 }
 
 body {
-    background-color: darkmagenta;
-    color: lightyellow;
+    /* background-color: darkmagenta; */
+    /* color: lightyellow; */
     font-family: "Roboto", sans-serif;
     text-align: center;
     width: 100%;
@@ -142,6 +142,7 @@ blockquote {
 
 code {
     background-color: #444;
+    color: white;
     font-family: monospace;
     border-radius: 5px;
     padding: 0.2em;
@@ -183,18 +184,20 @@ article {
 
 figcaption {
     text-align: center;
-    color: #aaa;
+    color: #666;
     font-weight: bold;
 }
 
 figure {
     text-align: center;
+    padding: 1em;
 }
 
-img {
+figure > img {
     max-width: 100%;
     height: auto;
     display: inline-block;
+    border: 1px solid;
 }
 
 article > p {
@@ -203,13 +206,13 @@ article > p {
 }
 
 article > h1, article > h2, article > h3, article > h4, article > h5, article > h6 {
-    color: gold;
+    color: green;
 }
 
 footer {
     border-top: 1px solid;
     font-family: "Play", monospace;
-    background-color: darkred;
+    /* background-color: darkred; */
 }
 
 #accounts > ul {
@@ -232,8 +235,8 @@ address > a {
 }
 
 #creds {
-    font-size: 50%;
-    margin-top: 1.2em;
+    font-size: 70%;
+    margin-top: 0.5em;
     color: rgb(85, 85, 85);
 }
 
@@ -243,13 +246,9 @@ address > a {
 }
 
 a {
-    color: orange;
+    /* color: orange; */
 }
 
 a:visited {
-    color: orangered;
-}
-
-html {
-    background-color: darkred;
+    /* color: orangered; */
 }

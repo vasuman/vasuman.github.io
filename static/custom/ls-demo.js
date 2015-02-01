@@ -1,5 +1,7 @@
 var can, ctx, lsys, count = 0;
 
+var WIDTH = 800,
+    HEIGHT = 600;
 
 function sI(id) {
     return document.getElementById(id);
@@ -12,8 +14,8 @@ function turtleExec(cb) {
     });
 }
 function draw() {
-    ctx.clearRect(0, 0, 800, 600);
-    var bounds = new Bounds(800, 600);
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
+    var bounds = new Bounds(WIDTH, HEIGHT);
     log('Calculating bounds');
     turtleExec(bounds.getCb());
     bounds.finalize();
@@ -39,6 +41,7 @@ function parse() {
 }
 
 function log(txt, err) {
+    console.log(txt, err);
     var lA = sI('log-area');
     if (err === true) {
         lA.className = 'error';
@@ -49,9 +52,13 @@ function log(txt, err) {
 }
 
 function init() {
+    if (window.innerWidth < 850) {
+        WIDTH = ~~(0.9 * window.innerWidth);
+        HEIGHT = 3 / 4 * WIDTH;
+    }
     can = sI('main-canvas');
-    can.width = 800;
-    can.height = 600;
+    can.width = WIDTH;
+    can.height = HEIGHT;
     ctx = can.getContext('2d');
     sI('parse-button').onclick = parse;
     sI('iterate-button').disabled = true;
