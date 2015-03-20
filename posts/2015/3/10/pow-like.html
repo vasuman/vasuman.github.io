@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+        
+Proof-of-like -  aleph_null 
+
+    </title>
+    
+
+    <link rel="stylesheet" href="/static/blog.css">
+    
+<link rel="stylesheet" href="/static/pygments.css">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {}});
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-40829655-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+
+</head>
+<body>
+    <div id="header" > 
+        <a href="/"><h1> aleph_null </h1></a> 
+        <h2> Nothing to see here </h2>
+    </div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+            
+            <li>
+                <a href="/stuff/">Stuff</a>
+            </li>
+            
+        </ul>
+    </nav>
+    <div id="content">
+    
+    <article>
+        <div class="post-description">
+            <h3>Proof-of-like</h3>
+            <time datetime="2015-03-10">10 Mar 2015</time>
+        </div>
+        <p>Not surprisingly, I spend most of my free time browsing the
+inter-webs. I come across a lot of things that I <em>like</em>. But as a
+random stranger it is hard to convey that sentiment in a convenient
+yet meaningful way.</p>
+<p>To be fair, most sites integrate the Facebook Like™ button or
+something in that vein. But my major qualm with these systems is that
+they require you to <strong>log in</strong>, tying your entire online identity to
+the act of liking. You basically broadcast your interests to the
+entire world and allow these companies to build a profile of your
+interests.</p>
+<p>This got me thinking as to whether there is a way for somebody to like
+something <strong>anonymously</strong> on the Internet. The biggest problem that came
+to mind was <em>spam</em>. Of all the anti-spam methods out there the one I
+found most innovative was <a href="#">Hashcash</a>. Which brings me to
+<a href="#">proof-of-work systems</a></p>
+<h2>Proof-of-work</h2>
+<p>Proof-of-work systems have been around for a while now. The basic
+principle is that, there is a class of problems for which it is hard
+to find a solution. Though, once a solution is found, verifying that
+it is valid is relatively easy. There is a fundamental <strong>asymmetry</strong> in
+the computational power required between finding and verifying a
+solution to such problems. This characteristic is exploited to build
+systems in which one party can trivially ensure the another party has
+-- within limits; expended some amount of computational resource (CPU
+or memory).</p>
+<p>Consider the problem of finding a suitable nonce value (\(n\)) such
+that when appended to some challenge string (\(C\)) and hashed the
+resulting hash value meets some constraint -- like being lesser than a
+given target value (\(T_V\)).</p>
+<p>$$ H( C||n ) &lt; T_V $$</p>
+<p>Since hashing is a one-way function, it is practically impossible --
+infeasible is a better word; to deduce the value of \(n\) from
+\(C\), therefore the only way to find a value for \(n\) is to
+<a href="#">brute-force</a> the search space, performing a large number of
+computations -- depending on the difficulty of satisfying the
+constraint. Once a suitable value of \(n\) is found, a verifier
+needs to perform the hash function <em>exactly once</em> to check that the
+resulting hash matches the presented constraint.</p>
+<p>Hashcash -- one of the first widely implemented proof-of-work systems;
+was used to combat email spam and prevent denial-of-service
+attacks. Nowadays though, thanks to <a href="#">Bitcoin</a>, proof-of-work
+systems have a much larger audience.</p>
+<h2>HashLike</h2>
+<p>HashLike is a system that uses proof-of-work to allow people to
+anonymously like things on the internet.</p>
+<h3>How it works</h3>
+<p>Simply put, there are 5 basic steps,</p>
+<ol>
+<li>
+<p>Client requests</p>
+</li>
+<li>
+<p>Server sends a challenge</p>
+</li>
+<li>
+<p>Client begins brute-force search</p>
+</li>
+<li>
+<p>Client finds nonce</p>
+</li>
+<li>
+<p>Client sends nonce to server</p>
+</li>
+</ol>
+<h3>Additional benefits</h3>
+<h4>Parametric liking</h4>
+<p>Suppose you've got two pictures of kittens in front of me,</p>
+<p><img alt="Kitteh 1" src="#" /></p>
+<p><img alt="Kitteh 2" src="#" /></p>
+<p>With HashLike I can actually like one picture more than the other.</p>
+<h4>Actual resource</h4>
+<p>HashLikes represent some reaThis is more of a symbolic benefit.</p>
+<h3>Drawbacks</h3>
+<p>Test edit. !!</p>
+    </article>
+
+    </div>
+    <footer>
+        <address>
+            <a id="email-link" href="http://www.google.com/recaptcha/mailhide/d?k=01njzLR0aH4z04V6Ub8eE02A==&c=wQG6gFC9MCTJ0_ZX9EXgPQ76e1BDEj8fxMzMmhnMhL8=">Vasuman Ravichandran</a>
+        </address>
+        <div id="accounts">
+            <ul>
+                 
+                <li><a href="https://github.com/vasuman">GitHub</a></li>
+                
+                
+            </ul>
+        </div>
+        <div id="creds">
+            Generated using, <a href="https://github.com/vasuman/glob">glob</a>
+        </div>
+    </footer>
+</body>
+</html>
