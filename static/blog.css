@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Play|Roboto:300);
+@import url(http://fonts.googleapis.com/css?family=Play|Open+Sans:300);
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Play", sans-serif;
@@ -125,7 +125,7 @@ nav > ul > li > a:visited {
 body {
     /* background-color: darkmagenta; */
     /* color: lightyellow; */
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     text-align: center;
     width: 100%;
     margin: 0;
