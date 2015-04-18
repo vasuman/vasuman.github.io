@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>aleph_null</title>
-  <subtitle>Nothing to see here</subtitle>
+  <subtitle>Apparently coherent</subtitle>
   <link href="http://www.varav.in/" rel="alternate"/>
   <link href="http://www.varav.in/atom.xml" rel="self"/>
   <id>http://www.varav.in/</id>
-  <updated>2015-04-18T15:51:01.871000Z</updated>
+  <updated>2015-04-18T15:55:39.880000Z</updated>
   <author>
     <name>Vasuman Ravichandran</name>
     <email>vasumanar@gmail.com</email>
@@ -16,8 +16,7 @@
     <title>Proof-of-like</title>
     <link href="http://www.varav.in/posts/2015/4/18/pow-like.html" rel="alternate"/>
     <updated>2015-04-18T00:00:00Z</updated>
-    <content type="html">
-      &lt;p&gt;Not surprisingly, I spend most of my free time browsing the
+    <!-- <content type="html"> &lt;p&gt;Not surprisingly, I spend most of my free time browsing the
 inter-webs. I come across a lot of things that I &lt;em&gt;like&lt;/em&gt;. But as a
 random stranger it is hard to convey that sentiment in a convenient
 yet meaningful way.&lt;/p&gt;
@@ -145,8 +144,7 @@ task and eventually it times out.&lt;/p&gt;
 &lt;h2&gt;Links&lt;/h2&gt;
 &lt;p&gt;I&#39;ve started working on a server very &lt;em&gt;creatively&lt;/em&gt; called &lt;strong&gt;HashLike&lt;/strong&gt;
 -- written in Golang. Check out &lt;a href=&#34;#not-setup-yet&#34;&gt;this page&lt;/a&gt; and the
-&lt;a href=&#34;https://github.com/vasuman/HashLike&#34;&gt;repo&lt;/a&gt; for more.&lt;/p&gt;
-    </content>
+&lt;a href=&#34;https://github.com/vasuman/HashLike&#34;&gt;repo&lt;/a&gt; for more.&lt;/p&gt; </content> -->
     <!-- TODO: <summary> -->
   </entry>
   
@@ -155,8 +153,7 @@ task and eventually it times out.&lt;/p&gt;
     <title>L-systems</title>
     <link href="http://www.varav.in/posts/2014/12/11/lsystem.html" rel="alternate"/>
     <updated>2014-12-11T00:00:00Z</updated>
-    <content type="html">
-      &lt;h2&gt;Charnia&lt;/h2&gt;
+    <!-- <content type="html"> &lt;h2&gt;Charnia&lt;/h2&gt;
 &lt;p&gt;I was watching the &lt;a href=&#34;http://firstlifeseries.com/&#34;&gt;First Life&lt;/a&gt; documentary which
 chronicles the origins and evolution of life. In the documentary, they make a
 mention of &lt;a href=&#34;http://en.wikipedia.org/wiki/Charnia&#34;&gt;Charnia&lt;/a&gt; a frond-like
@@ -305,8 +302,7 @@ presets. The &lt;a href=&#34;https://github.com/vasuman/lsystem&#34;&gt;sauce&lt
 &lt;/figure&gt;
 &lt;figure&gt;&lt;img src=&#34;/static/images/lsystem/stars.jpg&#34; /&gt;&lt;figcaption&gt;Stars&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;p&gt;Try making your own.&lt;/p&gt;
-    </content>
+&lt;p&gt;Try making your own.&lt;/p&gt; </content> -->
     <!-- TODO: <summary> -->
   </entry>
   
@@ -315,8 +311,7 @@ presets. The &lt;a href=&#34;https://github.com/vasuman/lsystem&#34;&gt;sauce&lt
     <title>Fun with pipes</title>
     <link href="http://www.varav.in/posts/2014/10/6/named-pipes.html" rel="alternate"/>
     <updated>2014-10-06T00:00:00Z</updated>
-    <content type="html">
-      &lt;p&gt;Quite a while back I came across some interesting applications of
+    <!-- <content type="html"> &lt;p&gt;Quite a while back I came across some interesting applications of
 &lt;strong&gt;named pipes&lt;/strong&gt; that I thought I should share with everybody.&lt;/p&gt;
 &lt;p&gt;First, some background.&lt;/p&gt;
 &lt;h2&gt;Pipes&lt;/h2&gt;
@@ -406,8 +401,7 @@ simultaneously.&lt;/p&gt;
 
 
 &lt;p&gt;Now multiple hosts can connect to that port and exchange messages with
-each other.&lt;/p&gt;
-    </content>
+each other.&lt;/p&gt; </content> -->
     <!-- TODO: <summary> -->
   </entry>
   
