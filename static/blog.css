@@ -110,6 +110,7 @@ nav > ul > li {
     padding-right: 0.5em;
     border: 1px solid black;
     border-right: none;
+    vertical-align: top;
 }
 
 nav > ul > li:last-child {
@@ -120,6 +121,7 @@ nav > ul > li > a {
     text-decoration: none;
     color: black;
     font-family: "Century Gothic", "Tahoma", sans-serif;
+    vertical-align: top;
 }
 
 nav > ul > li > a:visited {
