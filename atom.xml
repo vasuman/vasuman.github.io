@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title> aleph_null </title>
+  <subtitle> Mostly on autopilot </subtitle>
   <link href="http://www.varav.in/" rel="self"/>
   <link href="http://www.varav.in/atom.xml" rel="alternate"/>
   <id> http://www.varav.in/ </id>
-  <updated> 2015-04-18T08:54:17.788000Z  </updated>
+  <updated> 2015-04-18T09:01:32.401000Z  </updated>
   <author>
     <name>  </name>
     <email> vasumanar@gmail.com </email>
