@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Play|Merriweather:300);
+@import url(http://fonts.googleapis.com/css?family=Oswald|Merriweather:300);
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Play", sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 .demo-description {
@@ -119,7 +119,7 @@ nav > ul > li:last-child {
 nav > ul > li > a {
     text-decoration: none;
     color: black;
-    font-family: "Play", monospace;
+    font-family: "Century Gothic", "Tahoma", sans-serif;
 }
 
 nav > ul > li > a:visited {
@@ -129,7 +129,7 @@ nav > ul > li > a:visited {
 body {
     /* background-color: darkmagenta; */
     /* color: lightyellow; */
-    font-family: "Merriweather", sans-serif;
+    font-family: "Merriweather", serif;
     text-align: center;
     width: 100%;
     margin: 0;
@@ -234,8 +234,7 @@ article > ol {
 
 footer {
     border-top: 1px solid;
-    font-family: "Play", monospace;
-    /* background-color: darkred; */
+    font-family: "Century Gothic", "Tahoma", sans-serif;
 }
 
 #accounts > ul {
