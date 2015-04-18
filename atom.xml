@@ -5,9 +5,9 @@
   <link href="http://www.varav.in/" rel="self"/>
   <link href="http://www.varav.in/atom.xml" rel="alternate"/>
   <id> http://www.varav.in/ </id>
-  <updated> 2015-04-18T09:01:32.401000Z  </updated>
+  <updated> 2015-04-18T09:19:14.753000Z  </updated>
   <author>
-    <name>  </name>
+    <name> Vasuman Ravichandran </name>
     <email> vasumanar@gmail.com </email>
   </author>
   
@@ -83,58 +83,47 @@ pattern.</p>
 <p>Consider, a relatively simple grammar.</p>
 <p>The set of symbols is, <code>{A, B, C, R}</code></p>
 <p>Production rules are,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">A</span> <span class="o">:</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span>
+<div class="codehilite"><pre><span class="n">A</span> <span class="o">:</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span>
 </pre></div>
-</td></tr></table>
+
 
 <p>Now, I must mention here that for any symbol (<code>X</code>) lacking any rewrite rule, we
 assume an identity expansion, i.e.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">X</span> <span class="o">:</span> <span class="n">X</span>
+<div class="codehilite"><pre><span class="n">X</span> <span class="o">:</span> <span class="n">X</span>
 </pre></div>
-</td></tr></table>
+
 
 <p>The axiom is <code>R A</code>. The <code>R</code> symbol is just used to get the orientation correct.</p>
 <p>Consider these draw rules for the symbols,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre>A = FD 10
+<div class="codehilite"><pre>A = FD 10
 B = RT 60
 C = LT 120
 R = RT 90
 </pre></div>
-</td></tr></table>
+
 
 <p>Initially, the string representing the state of the system is,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>R A
+<div class="codehilite"><pre>R A
 </pre></div>
-</td></tr></table>
+
 
 <p>Substituting the symbols' logo equivalents we get the sequence,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre>RT 90
+<div class="codehilite"><pre>RT 90
 FD 10
 </pre></div>
-</td></tr></table>
+
 
 <p>The graphical representation of the system looks like,</p>
 <figure><img src="/static/lsys-init.jpg" /><figcaption>Initial state</figcaption>
 </figure>
 <p>On iterating once, we apply the production to expand all the symbols we can. Our
 string becomes,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>R A B A C A B A
+<div class="codehilite"><pre>R A B A C A B A
 </pre></div>
-</td></tr></table>
+
 
 <p>Logo sequence equivalent,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre>RT 90
+<div class="codehilite"><pre>RT 90
 FD 10
 RT 60
 FD 10
@@ -143,16 +132,16 @@ FD 10
 RT 60
 FD 10
 </pre></div>
-</td></tr></table>
+
 
 <p>Evaluating these commands in an interpreter, we get the graphical
 representation,</p>
 <figure><img src="/static/lsys-1.jpg" /><figcaption>First iteration</figcaption>
 </figure>
 <p>Iterating again, we continue to expand and our string becomes,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
+<div class="codehilite"><pre>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
 </pre></div>
-</td></tr></table>
+
 
 <p>OK, that's big. As you may have probably guessed, the string size grows
 exponentially.</p>
@@ -194,29 +183,29 @@ presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available
 <h1>Pipes</h1>
 <p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
 process to the <code>stdin</code> of another, you simply</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat myfile <span class="p">|</span> grep sometext
+<div class="codehilite"><pre><span class="nv">$ </span>cat myfile <span class="p">|</span> grep sometext
 </pre></div>
-</td></tr></table>
+
 
 <h1>Named pipes</h1>
 <p>Since <code>|</code> pipes are anonymous, they cannot be referenced externally.
 Named pipes on the other hand have an accesible path in the
 filesystem.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>mkfifo /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>mkfifo /tmp/mypipe
 </pre></div>
-</td></tr></table>
+
 
 <p>These pipes allow us to setup flows across different shell commands.
 Data can be pumped in by one command and fed to another command. Like,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe
 </pre></div>
-</td></tr></table>
+
 
 <p>This command blocks till the named pipe spews and <code>EOF</code> marker.</p>
 <p>And in another shell,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat &gt; /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat &gt; /tmp/mypipe
 </pre></div>
-</td></tr></table>
+
 
 <p>Now, whatever you type in the this shell should be visible in the
 other shell. Press <kbd>Ctrl-D</kbd> to exit.</p>
@@ -235,17 +224,17 @@ output.</p>
 <p>The <a href="http://sectools.org/tool/netcat/">netcat</a> utility helps us setup
 a simple listening socket that can be communicated with using <code>stdin</code>
 and <code>stdout</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
 </pre></div>
-</td></tr></table>
+
 
 <p>Simply <code>cat</code>ing the contents of a pipe to the input of the <code>nc</code>
 command with the <code>-l</code> option that sets up a port to listen on and
 write any incoming data to the same pipe so that it's echoed
 back. Then,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>nc &lt;network-address&gt; 59000
+<div class="codehilite"><pre><span class="nv">$ </span>nc &lt;network-address&gt; 59000
 </pre></div>
-</td></tr></table>
+
 
 <p>There you have it, an <em>echo server in one line of bash</em></p>
 <h1>Remote Shell</h1>
@@ -259,9 +248,9 @@ hack!</p>
 <p>Like the earlier snippet we set up a circular input path. The only
 difference being we pipe the user input through the bash interpreter
 that executes <code>stdin</code> and pipe it's <code>stdout</code> back to the network socket.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> bash <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> bash <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
 </pre></div>
-</td></tr></table>
+
 
 <p>Just connect to that port and you should have a working remote shell.</p>
 <h1>Chat Server</h1>
@@ -273,9 +262,9 @@ concurrent nodes.</p>
 connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> rewrite of
 the netcat tool that allows us to accept multiple incoming connections
 simultaneously.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> ncat -l -k <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> ncat -l -k <span class="m">59000</span> &gt; /tmp/mypipe
 </pre></div>
-</td></tr></table>
+
 
 <p>Now multiple hosts can connect to that port and exchange messages with
 each other.</p>
