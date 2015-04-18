@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title> aleph_null </title>
-  <subtitle> Nothing to see here </subtitle>
-  <link href="http://www.varav.in/" rel="self"/>
-  <link href="http://www.varav.in/atom.xml" rel="alternate"/>
-  <id> http://www.varav.in/ </id>
-  <updated> 2015-04-18T10:40:57.685000Z  </updated>
+  <title>aleph_null</title>
+  <subtitle>Too many levels</subtitle>
+  <link href="http://www.varav.in/" rel="alternate"/>
+  <link href="http://www.varav.in/atom.xml" rel="self"/>
+  <id>http://www.varav.in/</id>
+  <updated>2015-04-18T10:44:19.794000Z</updated>
   <author>
-    <name> Vasuman Ravichandran </name>
-    <email> vasumanar@gmail.com </email>
+    <name>Vasuman Ravichandran</name>
+    <email>vasumanar@gmail.com</email>
   </author>
   
   <entry>
-    <id> http://www.varav.in/posts/2014/12/11/lsystem.html </id>
-    <title> L-systems </title>
+    <id>http://www.varav.in/posts/2014/12/11/lsystem.html</id>
+    <title>L-systems</title>
     <link href="http://www.varav.in/posts/2014/12/11/lsystem.html" rel="alternate"/>
-    <updated> 2014-12-11T00:00:00Z </updated>
+    <updated>2014-12-11T00:00:00Z</updated>
     <content type="html">
       <h1>Charnia</h1>
 <p>I was watching the <a href="http://firstlifeseries.com/">First Life</a> documentary which
@@ -172,10 +172,10 @@ presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available
   </entry>
   
   <entry>
-    <id> http://www.varav.in/posts/2014/10/6/named-pipes.html </id>
-    <title> Fun with pipes </title>
+    <id>http://www.varav.in/posts/2014/10/6/named-pipes.html</id>
+    <title>Fun with pipes</title>
     <link href="http://www.varav.in/posts/2014/10/6/named-pipes.html" rel="alternate"/>
-    <updated> 2014-10-06T00:00:00Z </updated>
+    <updated>2014-10-06T00:00:00Z</updated>
     <content type="html">
       <p>Quite a while back I came across some interesting applications of
 <strong>named pipes</strong> that I thought I should share with everybody.</p>
