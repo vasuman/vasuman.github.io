@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title> aleph_null </title>
-  <subtitle> Mostly on autopilot </subtitle>
+  <subtitle> Nothing to see here </subtitle>
   <link href="http://www.varav.in/" rel="self"/>
   <link href="http://www.varav.in/atom.xml" rel="alternate"/>
   <id> http://www.varav.in/ </id>
-  <updated> 2015-04-18T09:19:14.753000Z  </updated>
+  <updated> 2015-04-18T10:40:57.685000Z  </updated>
   <author>
     <name> Vasuman Ravichandran </name>
     <email> vasumanar@gmail.com </email>
@@ -26,7 +26,7 @@ Sadly, it went extinct and has no extant descendants. Since it is one of the
 oldest known multicellular organisms it provides great insights into the origins
 of such beings.</p>
 <p>This is what they supposedly looked like,</p>
-<figure><img src="/static/charnia.jpg" /><figcaption>Charnia</figcaption>
+<figure><img src="/static/images/lsystem/charnia.jpg" /><figcaption>Charnia</figcaption>
 </figure>
 <p>Now, you may be wondering why I'm talking about something that hasn't been
 around for over 500 million years. Well, I was struck by the beauty and
@@ -114,7 +114,7 @@ FD 10
 
 
 <p>The graphical representation of the system looks like,</p>
-<figure><img src="/static/lsys-init.jpg" /><figcaption>Initial state</figcaption>
+<figure><img src="/static/images/lsystem/lsys-init.jpg" /><figcaption>Initial state</figcaption>
 </figure>
 <p>On iterating once, we apply the production to expand all the symbols we can. Our
 string becomes,</p>
@@ -136,7 +136,7 @@ FD 10
 
 <p>Evaluating these commands in an interpreter, we get the graphical
 representation,</p>
-<figure><img src="/static/lsys-1.jpg" /><figcaption>First iteration</figcaption>
+<figure><img src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption>
 </figure>
 <p>Iterating again, we continue to expand and our string becomes,</p>
 <div class="codehilite"><pre>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
@@ -146,25 +146,25 @@ representation,</p>
 <p>OK, that's big. As you may have probably guessed, the string size grows
 exponentially.</p>
 <p>It looks like,</p>
-<figure><img src="/static/lsys-2.jpg" /><figcaption>Second iteration</figcaption>
+<figure><img src="/static/images/lsystem/lsys-2.jpg" /><figcaption>Second iteration</figcaption>
 </figure>
 <p>If you look at what this system is actually doing in simple terms, it's simply
 replacing every straight line in the figure with a small triangular bump. This
 substitution is recursively applied to any lines in the resulting figure to give
 rise to self-similarity.</p>
 <p>Another iteration and we get something looking like this,</p>
-<figure><img src="/static/lsys-3.jpg" /><figcaption>Third iteration</figcaption>
+<figure><img src="/static/images/lsystem/lsys-3.jpg" /><figcaption>Third iteration</figcaption>
 </figure>
 <p>Pretty cool, right!</p>
 <p>Check out the <a href="/demos/lsystem.html">demo</a> that I wrote up. It has got a few cool
 presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available.</p>
 <h1>Patterns</h1>
 <p>Here's a few cool patterns that I've generated.</p>
-<figure><img src="/static/fern-knife.png" /><figcaption>Fern Knife</figcaption>
+<figure><img src="/static/images/lsystem/fern-knife.png" /><figcaption>Fern Knife</figcaption>
 </figure>
-<figure><img src="/static/crosses.png" /><figcaption>Crosses</figcaption>
+<figure><img src="/static/images/lsystem/crosses.png" /><figcaption>Crosses</figcaption>
 </figure>
-<figure><img src="/static/stars.jpg" /><figcaption>Stars</figcaption>
+<figure><img src="/static/images/lsystem/stars.jpg" /><figcaption>Stars</figcaption>
 </figure>
 <p>Try making your own.</p>
     </content>
