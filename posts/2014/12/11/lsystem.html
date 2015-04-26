@@ -30,7 +30,7 @@ L-systems -  aleph_null
   <body>
     <div id="header" > 
       <a href="/"><h1> aleph_null </h1></a> 
-      <h2> Mostly on autopilot </h2>
+      <h2> Nothing to see here </h2>
     </div>
     <nav>
       <ul>
@@ -40,7 +40,7 @@ L-systems -  aleph_null
         </li>
         
         <li>
-          <a href="/stuff/">Stuff</a>
+          <a href="/stuff/index.html">Stuff</a>
         </li>
         
         <li>
@@ -51,7 +51,7 @@ L-systems -  aleph_null
     </nav>
     <div id="content">
       
-    <article>
+    <article class="std-format">
         <div class="post-header">
           <h1>L-systems</h1>
             <time datetime="2014-12-11">11 Dec 2014</time>
@@ -134,21 +134,21 @@ assume an identity expansion, i.e.</p>
 
 <p>The axiom is <code>R A</code>. The <code>R</code> symbol is just used to get the orientation correct.</p>
 <p>Consider these draw rules for the symbols,</p>
-<div class="codehilite"><pre>A = FD 10
-B = RT 60
-C = LT 120
-R = RT 90
+<div class="codehilite"><pre><span class="n">A</span> <span class="p">=</span> <span class="n">FD</span> 10
+<span class="n">B</span> <span class="p">=</span> <span class="n">RT</span> 60
+<span class="n">C</span> <span class="p">=</span> <span class="n">LT</span> 120
+<span class="n">R</span> <span class="p">=</span> <span class="n">RT</span> 90
 </pre></div>
 
 
 <p>Initially, the string representing the state of the system is,</p>
-<div class="codehilite"><pre>R A
+<div class="codehilite"><pre><span class="n">R</span> <span class="n">A</span>
 </pre></div>
 
 
 <p>Substituting the symbols' logo equivalents we get the sequence,</p>
-<div class="codehilite"><pre>RT 90
-FD 10
+<div class="codehilite"><pre><span class="n">RT</span> 90
+<span class="n">FD</span> 10
 </pre></div>
 
 
@@ -157,19 +157,19 @@ FD 10
 </figure>
 <p>On iterating once, we apply the production to expand all the symbols we can. Our
 string becomes,</p>
-<div class="codehilite"><pre>R A B A C A B A
+<div class="codehilite"><pre><span class="n">R</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span>
 </pre></div>
 
 
 <p>Logo sequence equivalent,</p>
-<div class="codehilite"><pre>RT 90
-FD 10
-RT 60
-FD 10
-LT 120
-FD 10
-RT 60
-FD 10
+<div class="codehilite"><pre><span class="n">RT</span> 90
+<span class="n">FD</span> 10
+<span class="n">RT</span> 60
+<span class="n">FD</span> 10
+<span class="n">LT</span> 120
+<span class="n">FD</span> 10
+<span class="n">RT</span> 60
+<span class="n">FD</span> 10
 </pre></div>
 
 
@@ -178,7 +178,7 @@ representation,</p>
 <figure><img src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption>
 </figure>
 <p>Iterating again, we continue to expand and our string becomes,</p>
-<div class="codehilite"><pre>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
+<div class="codehilite"><pre><span class="n">R</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span>
 </pre></div>
 
 
@@ -211,7 +211,7 @@ presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available
     </div>
     <footer>
       <address>
-        <a id="email-link" href="mailto:vasumanar@gmail.com">Vasuman Ravichandran</a>
+        <a id="email-link" href="mailto:vasumanar@gmail.com">Vasuman R</a>
       </address>
       <div id="accounts">
         <ul>

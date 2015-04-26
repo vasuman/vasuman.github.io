@@ -24,7 +24,7 @@
   <body>
     <div id="header" > 
       <a href="/"><h1> aleph_null </h1></a> 
-      <h2> Mostly on autopilot </h2>
+      <h2> Apparently coherent </h2>
     </div>
     <nav>
       <ul>
@@ -46,29 +46,41 @@
     <div id="content">
       
       <div id="main">
-        <h2>Demos</h2>
-<p>Pretty, in-browser stuff.</p>
-<div class="stuff-desc">
-<p><a href="demos/lsystem.html">Lindenmayer Systems</a></p>
-<p>A Javascript demo of a L-system engine. Simply enter the L-system
-grammar production rules, starting string and give the draw commands
-for each of the symbols in the grammar in a simple Logo-like language
-to generate beautiful patterns. Or, simply check out some of the
-presets.</p>
-</div>
-<h2>Art</h2>
-<p>Things I create.</p>
-<div class="stuff-desc">
-<p><a href="art/crewl.html">Crewl</a></p>
-<p>Drawings of creatures. "Crewl" stands for creature world.</p>
-</div>
-<h2>Software</h2>
-<p>Stuff that runs.</p>
-<div class="stuff-desc">
-<p><a href="software/fish.html">FiSH</a></p>
-<p>A basic peer-to-peer file sharing system for local networks that uses
-IP multicast for peer discovery. Written in Python. Uses Twisted and
-QT.</p>
+        <h1>FiSH</h1>
+<div class="std-format">
+<h2>Name</h2>
+<p>FiSH stands for "Fi"le "SH"aring.</p>
+<h2>What?</h2>
+<p>FiSH is a program that helps users share files simply and quickly over
+local networks.</p>
+<h2>Why?</h2>
+<p>I realized that a lot of people were using pendrives <strong>a lot</strong> to
+transfer files between machines that were really close. I wanted a
+program with which I could simply host an ad-hoc network, have people
+connect to it and simply <em>start sharing files</em>. FiSH was my attempt at
+doing that.</p>
+<h2>How?</h2>
+<p>The workflow of the program is quite simple.</p>
+<ul>
+<li>The program first indexes local shared folders.</li>
+<li>It then uses IP multicast for peer discovery and broadcasts its
+presence.</li>
+<li>The user gets a list of avaliable peers.</li>
+<li>He then picks a peer to connect to and retrieves that peer's file
+list.</li>
+<li>He can then pick any of that peer's shared files to download.</li>
+</ul>
+<h2>Screenshots</h2>
+<figure><img src="/static/images/fish/first.png" /><figcaption>First Run</figcaption>
+</figure>
+<figure><img src="/static/images/fish/main.png" /><figcaption>Main</figcaption>
+</figure>
+<h2>Note</h2>
+<p>I wrote this program a while back while I was just learning Python and
+it was a pretty enlightening experience but I don't work on it
+anymore.</p>
+<hr />
+<p><a href="https://github.com/vasuman/FiSH">Source</a> on GitHub.</p>
 </div>
       </div>
       

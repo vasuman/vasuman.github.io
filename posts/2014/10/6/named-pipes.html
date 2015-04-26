@@ -40,7 +40,7 @@ Fun with pipes -  aleph_null
         </li>
         
         <li>
-          <a href="/stuff/">Stuff</a>
+          <a href="/stuff/index.html">Stuff</a>
         </li>
         
         <li>
@@ -51,7 +51,7 @@ Fun with pipes -  aleph_null
     </nav>
     <div id="content">
       
-    <article>
+    <article class="std-format">
         <div class="post-header">
           <h1>Fun with pipes</h1>
             <time datetime="2014-10-06">06 Oct 2014</time>
@@ -62,7 +62,7 @@ Fun with pipes -  aleph_null
 <h2>Pipes</h2>
 <p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
 process to the <code>stdin</code> of another, you simply</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat myfile <span class="p">|</span> grep sometext
+<div class="codehilite"><pre><span class="nv">$ </span>cat myfile | grep sometext
 </pre></div>
 
 
@@ -103,7 +103,7 @@ output.</p>
 <p>The <a href="http://sectools.org/tool/netcat/">netcat</a> utility helps us setup
 a simple listening socket that can be communicated with using <code>stdin</code>
 and <code>stdout</code>.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | nc -l 59000 &gt; /tmp/mypipe
 </pre></div>
 
 
@@ -127,7 +127,7 @@ hack!</p>
 <p>Like the earlier snippet we set up a circular input path. The only
 difference being we pipe the user input through the bash interpreter
 that executes <code>stdin</code> and pipe it's <code>stdout</code> back to the network socket.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> bash <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | bash | nc -l 59000 &gt; /tmp/mypipe
 </pre></div>
 
 
@@ -141,7 +141,7 @@ concurrent nodes.</p>
 connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> rewrite of
 the netcat tool that allows us to accept multiple incoming connections
 simultaneously.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> ncat -l -k <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe | ncat -l -k 59000 &gt; /tmp/mypipe
 </pre></div>
 
 
@@ -152,7 +152,7 @@ each other.</p>
     </div>
     <footer>
       <address>
-        <a id="email-link" href="mailto:vasumanar@gmail.com">Vasuman Ravichandran</a>
+        <a id="email-link" href="mailto:vasumanar@gmail.com">Vasuman R</a>
       </address>
       <div id="accounts">
         <ul>
