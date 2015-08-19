@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>aleph_null</title>
-  <subtitle>Apparently coherent</subtitle>
+  <subtitle>Too many levels</subtitle>
   <link href="http://www.varav.in/" rel="alternate"/>
   <link href="http://www.varav.in/atom.xml" rel="self"/>
   <id>http://www.varav.in/</id>
-  <updated>2015-04-26T04:34:16.990429Z</updated>
+  <updated>2015-08-19T17:22:38.442748Z</updated>
   <author>
     <name>Vasuman R</name>
     <email>vasumanar@gmail.com</email>

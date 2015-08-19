@@ -134,21 +134,21 @@ assume an identity expansion, i.e.</p>
 
 <p>The axiom is <code>R A</code>. The <code>R</code> symbol is just used to get the orientation correct.</p>
 <p>Consider these draw rules for the symbols,</p>
-<div class="codehilite"><pre><span class="n">A</span> <span class="p">=</span> <span class="n">FD</span> 10
-<span class="n">B</span> <span class="p">=</span> <span class="n">RT</span> 60
-<span class="n">C</span> <span class="p">=</span> <span class="n">LT</span> 120
-<span class="n">R</span> <span class="p">=</span> <span class="n">RT</span> 90
+<div class="codehilite"><pre>A = FD 10
+B = RT 60
+C = LT 120
+R = RT 90
 </pre></div>
 
 
 <p>Initially, the string representing the state of the system is,</p>
-<div class="codehilite"><pre><span class="n">R</span> <span class="n">A</span>
+<div class="codehilite"><pre>R A
 </pre></div>
 
 
 <p>Substituting the symbols' logo equivalents we get the sequence,</p>
-<div class="codehilite"><pre><span class="n">RT</span> 90
-<span class="n">FD</span> 10
+<div class="codehilite"><pre>RT 90
+FD 10
 </pre></div>
 
 
@@ -157,19 +157,19 @@ assume an identity expansion, i.e.</p>
 </figure>
 <p>On iterating once, we apply the production to expand all the symbols we can. Our
 string becomes,</p>
-<div class="codehilite"><pre><span class="n">R</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span>
+<div class="codehilite"><pre>R A B A C A B A
 </pre></div>
 
 
 <p>Logo sequence equivalent,</p>
-<div class="codehilite"><pre><span class="n">RT</span> 90
-<span class="n">FD</span> 10
-<span class="n">RT</span> 60
-<span class="n">FD</span> 10
-<span class="n">LT</span> 120
-<span class="n">FD</span> 10
-<span class="n">RT</span> 60
-<span class="n">FD</span> 10
+<div class="codehilite"><pre>RT 90
+FD 10
+RT 60
+FD 10
+LT 120
+FD 10
+RT 60
+FD 10
 </pre></div>
 
 
@@ -178,7 +178,7 @@ representation,</p>
 <figure><img src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption>
 </figure>
 <p>Iterating again, we continue to expand and our string becomes,</p>
-<div class="codehilite"><pre><span class="n">R</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">B</span> <span class="n">A</span>
+<div class="codehilite"><pre>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
 </pre></div>
 
 
@@ -195,7 +195,7 @@ rise to self-similarity.</p>
 <figure><img src="/static/images/lsystem/lsys-3.jpg" /><figcaption>Third iteration</figcaption>
 </figure>
 <p>Pretty cool, right!</p>
-<p>Check out the <a href="/demos/lsystem.html">demo</a> that I wrote up. It has got a few cool
+<p>Check out the <a href="/stuff/demos/lsystem.html">demo</a> that I wrote up. It has got a few cool
 presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available.</p>
 <h2>Patterns</h2>
 <p>Here's a few cool patterns that I've generated.</p>
