@@ -287,3 +287,10 @@ address > a {
     height: 1em;
     vertical-align: -10%;
 }
+
+img#me {
+    border-radius: 50%;
+    width: 30vw;
+    box-shadow: 0 0 3px black;
+}
+
