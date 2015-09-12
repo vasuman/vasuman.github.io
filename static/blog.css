@@ -290,7 +290,7 @@ address > a {
 
 img#me {
     border-radius: 50%;
-    width: 30vw;
+    width: 10em;
     box-shadow: 0 0 3px black;
 }
 
