@@ -189,7 +189,7 @@ code {
     background-color: #000;
     color: #fff;
     margin: 0;
-    padding: 0.3em;
+    padding: 0.8em;
 }
 
 .std-format {
@@ -273,7 +273,7 @@ address > a {
 }
 
 #creds {
-    font-size: 70%;
+    font-size: 60%;
     margin-top: 0.5em;
     color: rgb(85, 85, 85);
 }
