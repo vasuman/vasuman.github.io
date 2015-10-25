@@ -5,20 +5,11 @@
   <link href="http://www.varav.in/" rel="alternate"/>
   <link href="http://www.varav.in/atom.xml" rel="self"/>
   <id>http://www.varav.in/</id>
-  <updated>2015-10-03T12:27:01.093625Z</updated>
+  <updated>2015-10-25T09:34:21.972520Z</updated>
   <author>
     <name>Vasuman R</name>
     <email>vasumanar@gmail.com</email>
   </author>
-  
-  <entry>
-    <id>http://www.varav.in/posts/2015/9/24/noise.html</id>
-    <title>Noise</title>
-    <link href="http://www.varav.in/posts/2015/9/24/noise.html" rel="alternate"/>
-    <updated>2015-09-24T00:00:00Z</updated>
-    <!-- <content type="html"> </content> -->
-    <!-- TODO: <summary> -->
-  </entry>
   
   <entry>
     <id>http://www.varav.in/posts/2015/4/18/pow-like.html</id>
