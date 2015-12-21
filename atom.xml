@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>aleph_null</title>
-  <subtitle>Too many levels</subtitle>
+  <subtitle>Apparently coherent</subtitle>
   <link href="http://www.varav.in/" rel="alternate"/>
   <link href="http://www.varav.in/atom.xml" rel="self"/>
   <id>http://www.varav.in/</id>
-  <updated>2015-11-17T12:10:16.830070Z</updated>
+  <updated>2015-12-21T17:36:23.810798Z</updated>
   <author>
     <name>Vasuman R</name>
     <email>vasumanar@gmail.com</email>
   </author>
+
+  <entry>
+    <id>http://www.varav.in/posts/2015/11/26/python-dsl.html</id>
+    <title>DSL in Python</title>
+    <link href="http://www.varav.in/posts/2015/11/26/python-dsl.html" rel="alternate"/>
+    <updated>2015-11-26T00:00:00Z</updated>
+  </entry>
 
   <entry>
     <id>http://www.varav.in/posts/2015/4/18/pow-like.html</id>
