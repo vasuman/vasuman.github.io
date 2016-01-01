@@ -30,7 +30,7 @@ DSL in Python -  aleph_null
   <body>
     <div id="header">
         <a href="/"><h1> aleph_null </h1></a>
-        <h2> Nothing to see here </h2>
+        <h2> Apparently coherent </h2>
     </div>
     <nav>
       <ul>
@@ -126,7 +126,7 @@ helped in printing sensible error messages.</p>
 <p>The <code>ast</code> module is a handy tool for handling ASTs.</p>
 <p>While it is ideal to build an AST from ground up, my strategy for generating
 was a bit hack-ish. I used string interpolation to generate Python source code
-that I then parsed using the inbuilt module.</p>
+that was then <code>ast.parse</code>d.</p>
 <p>For example, to generate code that swaps the values in two variables <code>a</code> and
 <code>b</code>.</p>
 <div class="codehilite"><pre><span class="n">src</span><span class="o">=</span><span class="s">&#39;&#39;&#39;</span>
