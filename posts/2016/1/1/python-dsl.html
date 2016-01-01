@@ -30,7 +30,7 @@ DSL in Python -  aleph_null
   <body>
     <div id="header">
         <a href="/"><h1> aleph_null </h1></a>
-        <h2> Apparently coherent </h2>
+        <h2> Too many levels </h2>
     </div>
     <nav>
       <ul>
@@ -54,7 +54,7 @@ DSL in Python -  aleph_null
     <article class="std-format">
         <div class="post-header">
           <h1>DSL in Python</h1>
-            <time datetime="2015-11-26">26 Nov 2015</time>
+            <time datetime="2016-01-01">01 Jan 2016</time>
         </div>
         <p>This post was in my drafts folder for quite a while and I suddenly felt the urge
 to publish it. A while back <a href="https://github.com/vasuman/snek-lang">wrote a DSL</a> built on Python for some
@@ -74,11 +74,11 @@ substituted for the block delimiters in other languages -- usually braces (<code
 <code>}</code>).</p>
 <h3>Example</h3>
 <p>Let's say we want to introduce a special language construct to swap the values
-held in two variables. Something like, <code>x &lt;=&gt; y</code></p>
+held in two variables with a <code>x &lt;=&gt; y</code> infix operator.</p>
 <p>Here is an example. Consider the following segment of
 code,</p>
-<div class="codehilite"><pre>fn swap(a, b):
-    a &lt;=&gt; b
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">&lt;=&gt;</span> <span class="n">b</span>
 </pre></div>
 
 
@@ -91,7 +91,7 @@ code,</p>
 
 
 <p>We get,</p>
-<div class="codehilite"><pre>2,0-2,2:    NAME    &#39;fn&#39;
+<div class="codehilite"><pre>2,0-2,2:    NAME    &#39;def&#39;
 2,3-2,7:    NAME    &#39;swap&#39;
 2,7-2,8:    OP  &#39;(&#39;
 2,8-2,9:    NAME    &#39;a&#39;
@@ -147,7 +147,7 @@ it to generate a <code>code</code> object that can be evaluated.</p>
 
 
 <h3>Namespaces</h3>
-<p>The By manipulating the appropriate namespace dictionaries, you can change the
+<p>By manipulating the appropriate namespace dictionaries, you can change the
 <code>globals</code> and the <code>locals</code> of the executed code. This is useful for injection
 of required values and extraction of execution results.</p>
 <h3>Example</h3>
