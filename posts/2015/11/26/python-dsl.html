@@ -58,27 +58,27 @@ DSL in Python -  aleph_null
         </div>
         <p>This post was in my drafts folder for quite a while and I suddenly felt the urge
 to publish it. A while back <a href="https://github.com/vasuman/snek-lang">wrote a DSL</a> built on Python for some
-<em>college related</em> work. The goals for this exercise included syntax similarity
-and a runtime that is based in Python. So here are a few notes on the experience.</p>
+college-related work. The goals for this exercise included syntax similarity
+and a runtime that is based in Python. So, here are a few notes on the experience.</p>
 <h2>Tokenizer</h2>
-<p>Arguably, one of the most contentious - haha - points about Python is it's
-<a href="#">whitespace sensitivity</a>. A sensible editor configuration usually
-shields you from the quirks of this. But the point is that, indentation styles
-are not standard, some prefer tabs others spaces.</p>
-<p>Python's <code>tokenizer</code> module is pretty handy to help handle the
-indentation problem. It does this by converting your source file to
-stream of tokens with two special tokens -- namely <code>INDENT</code> and
-<code>DEDENT</code> marking the starts and ends of blocks respectively. In my
-experience, these markers can be easily substituted for the block
-delimiters -- usually braces (<code>{</code>, <code>}</code>).</p>
+<p>Arguably, one of the most prominent yet contentious points about the Python
+syntax is it's <a href="#">whitespace sensitivity</a>. What do you use? 1 tab, 2
+spaces, 4 spaces, 2^16 spaces!! A sensible editor configuration usually shields
+you from the quirks of this, but the point is that, indentation styles are not
+standard, some prefer tabs others spaces.</p>
+<p>Python's <code>tokenizer</code> module is pretty handy to help handle the indentation
+problem. It does this by converting your source file to stream of tokens with
+two special tokens -- namely <code>INDENT</code> and <code>DEDENT</code> marking the starts and ends
+of indented blocks respectively. In my experience, these markers can be easily
+substituted for the block delimiters in other languages -- usually braces (<code>{</code>,
+<code>}</code>).</p>
 <h3>Example</h3>
-<p>Here is an example. Consider the following segment of code,</p>
-<div class="codehilite"><pre><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="c"># an example comment</span>
+<p>Let's say we want to introduce a special language construct to swap the values
+held in two variables. Something like, <code>x &lt;=&gt; y</code></p>
+<p>Here is an example. Consider the following segment of
+code,</p>
+<div class="codehilite"><pre>fn swap(a, b):
+    a &lt;=&gt; b
 </pre></div>
 
 
@@ -91,55 +91,24 @@ delimiters -- usually braces (<code>{</code>, <code>}</code>).</p>
 
 
 <p>We get,</p>
-<div class="codehilite"><pre>1,0-1,1:        NL      &#39;\n&#39;
-2,0-2,3:        NAME    &#39;def&#39;
-2,4-2,7:        NAME    &#39;fib&#39;
-2,7-2,8:        OP      &#39;(&#39;
-2,8-2,9:        NAME    &#39;n&#39;
-2,9-2,10:       OP      &#39;)&#39;
-2,10-2,11:      OP      &#39;:&#39;
-2,11-2,12:      NEWLINE &#39;\n&#39;
-3,0-3,1:        INDENT  &#39;\t&#39;
-3,1-3,3:        NAME    &#39;if&#39;
-3,4-3,5:        NAME    &#39;n&#39;
-3,6-3,8:        OP      &#39;==&#39;
-3,9-3,10:       NUMBER  &#39;0&#39;
-3,10-3,11:      OP      &#39;:&#39;
-3,11-3,12:      NEWLINE &#39;\n&#39;
-4,0-4,2:        INDENT  &#39;\t\t&#39;
-4,2-4,8:        NAME    &#39;return&#39;
-4,9-4,10:       NUMBER  &#39;0&#39;
-4,10-4,11:      NEWLINE &#39;\n&#39;
-5,1-5,1:        DEDENT  &#39;&#39;
-5,1-5,3:        NAME    &#39;if&#39;
-5,4-5,5:        NAME    &#39;n&#39;
-5,6-5,8:        OP      &#39;==&#39;
-5,9-5,10:       NUMBER  &#39;1&#39;
-5,10-5,11:      OP      &#39;:&#39;
-5,11-5,12:      NEWLINE &#39;\n&#39;
-6,0-6,2:        INDENT  &#39;\t\t&#39;
-6,2-6,8:        NAME    &#39;return&#39;
-6,9-6,10:       NUMBER  &#39;1&#39;
-6,10-6,11:      NEWLINE &#39;\n&#39;
-7,1-7,1:        DEDENT  &#39;&#39;
-7,1-7,7:        NAME    &#39;return&#39;
-7,8-7,11:       NAME    &#39;fib&#39;
-7,11-7,12:      OP      &#39;(&#39;
-7,12-7,13:      NAME    &#39;n&#39;
-7,14-7,15:      OP      &#39;-&#39;
-7,16-7,17:      NUMBER  &#39;1&#39;
-7,17-7,18:      OP      &#39;)&#39;
-7,19-7,20:      OP      &#39;+&#39;
-7,21-7,24:      NAME    &#39;fib&#39;
-7,24-7,25:      OP      &#39;(&#39;
-7,25-7,26:      NAME    &#39;n&#39;
-7,27-7,28:      OP      &#39;-&#39;
-7,29-7,30:      NUMBER  &#39;2&#39;
-7,30-7,31:      OP      &#39;)&#39;
-7,32-7,52:      COMMENT &#39;# an example comment&#39;
-7,52-7,53:      NEWLINE &#39;\n&#39;
-8,0-8,0:        DEDENT  &#39;&#39;
-8,0-8,0:        ENDMARKER       &#39;&#39;
+<div class="codehilite"><pre>2,0-2,2:    NAME    &#39;fn&#39;
+2,3-2,7:    NAME    &#39;swap&#39;
+2,7-2,8:    OP  &#39;(&#39;
+2,8-2,9:    NAME    &#39;a&#39;
+2,9-2,10:   OP  &#39;,&#39;
+2,11-2,12:  NAME    &#39;b&#39;
+2,12-2,13:  OP  &#39;)&#39;
+2,13-2,14:  OP  &#39;:&#39;
+2,14-2,15:  NEWLINE &#39;\n&#39;
+3,0-3,1:    INDENT  &#39;\t&#39;
+3,1-3,2:    NAME    &#39;a&#39;
+3,3-3,4:    OP  &#39;&lt;&#39;
+3,4-3,5:    OP  &#39;=&#39;
+3,5-3,6:    OP  &#39;&gt;&#39;
+3,7-3,8:    NAME    &#39;b&#39;
+3,8-3,9:    NEWLINE &#39;\n&#39;
+4,0-4,0:    DEDENT  &#39;&#39;
+4,0-4,0:    ENDMARKER   &#39;&#39;
 </pre></div>
 
 
@@ -154,7 +123,7 @@ is that it,</p>
 <p>The parser would simply generate equivalent Python Abstract Syntax Tree for
 constructs in my language. Though, <a href="#">PEG</a>s are powerful, I found writing a
 custom recursive descent parser was way more convenient, understandable and
-printed sensible error messages.</p>
+helped in printing sensible error messages.</p>
 <p>The <code>ast</code> module is a handy tool for handling ASTs.</p>
 <p>While it is ideal to build an AST from ground up, my strategy for generating
 was a bit hack-ish. I used string interpolation to generate Python source code
@@ -170,16 +139,34 @@ that I then parsed using the inbuilt module.</p>
 </pre></div>
 
 
-<h2><span class="mono">exec</span> is your friend</h2>
-<p>Now that you have your Python AST what do you do with it? Well, you simply
-<code>exec</code> it.</p>
+<h2><span class="mono">eval</span> is your friend</h2>
+<p>Now that you have your Python AST what do you do with it? Well, you <code>compile</code>
+it to generate a <code>code</code> object that can be evaluated.</p>
+<div class="codehilite"><pre><span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s">&#39;&lt;generated-src&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;exec&#39;</span><span class="p">)</span>
+</pre></div>
+
+
 <h3>Namespaces</h3>
-<p>By manipulating the appropriate namespace dictionaries, you can change the
+<p>The By manipulating the appropriate namespace dictionaries, you can change the
 <code>globals</code> and the <code>locals</code> of the executed code. This is useful for injection
 of required values and extraction of execution results.</p>
-<h3>Closures</h3>
-<p>Sharing of objects between <code>exec</code>ed code and other - possibly runtime support
-libraries; is done by using closures.</p>
+<h3>Example</h3>
+<p>Setup the dictionaries,</p>
+<div class="codehilite"><pre><span class="n">env_globals</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">env_locals</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+
+
+<p>Inject parameters,</p>
+<div class="codehilite"><pre><span class="n">env_locals</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">env_locals</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+
+
+<p>And execute.</p>
+<div class="codehilite"><pre><span class="nb">eval</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">env_globals</span><span class="p">,</span> <span class="n">env_locals</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">env_locals</span>
+</pre></div>
     </article>
 
     </div>
