@@ -272,12 +272,6 @@ address > a {
     color: black;
 }
 
-#creds {
-    font-size: 60%;
-    margin-top: 0.5em;
-    color: rgb(85, 85, 85);
-}
-
 
 #main {
     margin: 1.3em;
@@ -292,5 +286,15 @@ img#me {
     border-radius: 50%;
     width: 10em;
     box-shadow: 0 0 3px black;
+}
+
+#btc {
+    font-size: small;
+    color: rgb(100, 100, 100);
+}
+
+#creds {
+    font-size: smaller;
+    color: rgb(85, 85, 85);
 }
 

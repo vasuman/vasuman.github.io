@@ -30,7 +30,7 @@ Fun with pipes -  aleph_null
   <body>
     <div id="header">
         <a href="/"><h1> aleph_null </h1></a>
-        <h2> Nothing to see here </h2>
+        <h2> Apparently coherent </h2>
     </div>
     <nav>
       <ul>
@@ -62,7 +62,7 @@ Fun with pipes -  aleph_null
 <h2>Pipes</h2>
 <p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
 process to the <code>stdin</code> of another, you simply</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat myfile <span class="p">|</span> grep sometext
+<div class="codehilite"><pre>$ cat myfile <span class="p">|</span> grep sometext
 </pre></div>
 
 
@@ -70,19 +70,19 @@ process to the <code>stdin</code> of another, you simply</p>
 <p>Since <code>|</code> pipes are anonymous, they cannot be referenced externally.
 Named pipes on the other hand have an accesible path in the
 filesystem.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>mkfifo /tmp/mypipe
+<div class="codehilite"><pre>$ mkfifo /tmp/mypipe
 </pre></div>
 
 
 <p>These pipes allow us to setup flows across different shell commands.
 Data can be pumped in by one command and fed to another command. Like,</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe
+<div class="codehilite"><pre>$ cat /tmp/mypipe
 </pre></div>
 
 
 <p>This command blocks till the named pipe spews and <code>EOF</code> marker.</p>
 <p>And in another shell,</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat &gt; /tmp/mypipe
+<div class="codehilite"><pre>$ cat &gt; /tmp/mypipe
 </pre></div>
 
 
@@ -103,7 +103,7 @@ output.</p>
 <p>The <a href="http://sectools.org/tool/netcat/">netcat</a> utility helps us setup
 a simple listening socket that can be communicated with using <code>stdin</code>
 and <code>stdout</code>.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre>$ cat /tmp/mypipe <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
 </pre></div>
 
 
@@ -111,7 +111,7 @@ and <code>stdout</code>.</p>
 command with the <code>-l</code> option that sets up a port to listen on and
 write any incoming data to the same pipe so that it's echoed
 back. Then,</p>
-<div class="codehilite"><pre><span class="nv">$ </span>nc &lt;network-address&gt; 59000
+<div class="codehilite"><pre>$ nc &lt;network-address&gt; 59000
 </pre></div>
 
 
@@ -127,7 +127,7 @@ hack!</p>
 <p>Like the earlier snippet we set up a circular input path. The only
 difference being we pipe the user input through the bash interpreter
 that executes <code>stdin</code> and pipe it's <code>stdout</code> back to the network socket.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> bash <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre>$ cat /tmp/mypipe <span class="p">|</span> bash <span class="p">|</span> nc -l <span class="m">59000</span> &gt; /tmp/mypipe
 </pre></div>
 
 
@@ -141,7 +141,7 @@ concurrent nodes.</p>
 connection. Luckily, there's <a href="http://nmap.org/ncat/">this</a> rewrite of
 the netcat tool that allows us to accept multiple incoming connections
 simultaneously.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>cat /tmp/mypipe <span class="p">|</span> ncat -l -k <span class="m">59000</span> &gt; /tmp/mypipe
+<div class="codehilite"><pre>$ cat /tmp/mypipe <span class="p">|</span> ncat -l -k <span class="m">59000</span> &gt; /tmp/mypipe
 </pre></div>
 
 
@@ -162,6 +162,9 @@ each other.</p>
           
         </ul>
       </div>
+      
+      <div id="btc">1P3cRJQhzuzkDrAsGSnRHc3sCLauzmK1HA </div>
+      
       <div id="creds">
         Generated using, <a href="https://github.com/vasuman/glob">glob</a>
       </div>

@@ -30,7 +30,7 @@ DSL in Python -  aleph_null
   <body>
     <div id="header">
         <a href="/"><h1> aleph_null </h1></a>
-        <h2> Mostly on autopilot </h2>
+        <h2> Apparently coherent </h2>
     </div>
     <nav>
       <ul>
@@ -129,19 +129,19 @@ was a bit hack-ish. I used string interpolation to generate Python source code
 that was then <code>ast.parse</code>d.</p>
 <p>For example, to generate code that swaps the values in two variables <code>a</code> and
 <code>b</code>.</p>
-<div class="codehilite"><pre><span class="n">src</span><span class="o">=</span><span class="s">&#39;&#39;&#39;</span>
-<span class="s">{0}, {1} = {1}, {0}</span>
-<span class="s">&#39;&#39;&#39;</span>
+<div class="codehilite"><pre><span class="n">src</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">{0}, {1} = {1}, {0}</span>
+<span class="s1">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">ast</span>
-<span class="n">module</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">))</span>
+<span class="n">module</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
 </pre></div>
 
 
 <h2><span class="mono">eval</span> is your friend</h2>
 <p>Now that you have your Python AST what do you do with it? Well, you <code>compile</code>
 it to generate a <code>code</code> object that can be evaluated.</p>
-<div class="codehilite"><pre><span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s">&#39;&lt;generated-src&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;exec&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s1">&#39;&lt;generated-src&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -157,8 +157,8 @@ of required values and extraction of execution results.</p>
 
 
 <p>Inject parameters,</p>
-<div class="codehilite"><pre><span class="n">env_locals</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">env_locals</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="codehilite"><pre><span class="n">env_locals</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">env_locals</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 
 
@@ -181,6 +181,9 @@ of required values and extraction of execution results.</p>
           
         </ul>
       </div>
+      
+      <div id="btc">1P3cRJQhzuzkDrAsGSnRHc3sCLauzmK1HA </div>
+      
       <div id="creds">
         Generated using, <a href="https://github.com/vasuman/glob">glob</a>
       </div>
