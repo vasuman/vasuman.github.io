@@ -1,7 +1,7 @@
 var can, ctx, lsys, count = 0;
 
-var WIDTH = 800,
-    HEIGHT = 600;
+var WIDTH = 600,
+    HEIGHT = 400;
 
 function sI(id) {
     return document.getElementById(id);
@@ -31,6 +31,9 @@ function parse() {
         rulesTxt = sI('grammar-txt').value.split('\n').filter(stringNotEmpty),
         drawsTxt = sI('draw-txt').value.split('\n').filter(stringNotEmpty);
     try {
+        if (!axiomTxt) {
+            throw new Error('Empty axiom');
+        }
         lsys = parseLsys(axiomTxt, rulesTxt, drawsTxt);
         count = 0;
         sI('iterate-button').disabled = false;

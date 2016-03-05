@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DSL in Python · varav</title>
+        <link rel="stylesheet" href="/static/site.css" />
+    </head>
+    <body>
+        <nav class="site-nav">
+            <a href="/"><img class="nav-logo" src="/static/images/logo.png" /></a>
+            <ul class="nav-links">
+                <li><a class="nav-item" href="/posts.html">Posts</a></li>
+                <li><a class="nav-item" href="/showcase.html">Showcase</a></li>
+                <li><a class="nav-item" href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <article class="post">
+                <div class="post-header">
+                    <h1> DSL in Python </h1>
+                    <time datetime="2016-01-01">1st Jan 2016 </time>
+                </div>
+                <div class="post-content">
+                    <p>This post was in my drafts folder for quite a while and I suddenly felt the urge
+to publish it. A while back <a href="https://github.com/vasuman/snek-lang">wrote a DSL</a> built on Python for some
+college-related work. The goals for this exercise included syntax similarity
+and a runtime that is based in Python. So, here are a few notes on the experience.</p>
+<h2 id="tokenizer">Tokenizer</h2>
+<p>Arguably, one of the most prominent yet contentious points about the Python
+syntax is it’s whitespace sensitivity. What do you use? 1 tab, 2
+spaces, 4 spaces, 2^16 spaces!! A sensible editor configuration usually shields
+you from the quirks of this, but the point is that, indentation styles are not
+standard, some prefer tabs others spaces.</p>
+<p>Python’s <code>tokenizer</code> module is pretty handy to help handle the indentation
+problem. It does this by converting your source file to stream of tokens with
+two special tokens – namely <code>INDENT</code> and <code>DEDENT</code> marking the starts and ends
+of indented blocks respectively. In my experience, these markers are equivalent
+to the block delimiters in other languages – usually braces (<code>{</code>, <code>}</code>).</p>
+<h3 id="example">Example</h3>
+<p>Let’s say we want to introduce a special language construct to swap the values
+held in two variables with a <code>x &lt;=&gt; y</code> infix operator.</p>
+<p>Here is an example. Consider the following segment of
+code,</p>
+<pre><code class="lang-py">def swap(a, b):
+    a &lt;=&gt; b
+</code></pre>
+<p>On tokenizing this piece of code – <em>as a string</em> stored in <code>s</code>,</p>
+<pre><code class="lang-py">import tokenize
+import io
+b = io.BytesIO(s)
+tokenize.tokenize(b.readline)
+</code></pre>
+<p>We get,</p>
+<pre><code>2,0-2,2:    NAME    &#39;def&#39;
+2,3-2,7:    NAME    &#39;swap&#39;
+2,7-2,8:    OP  &#39;(&#39;
+2,8-2,9:    NAME    &#39;a&#39;
+2,9-2,10:   OP  &#39;,&#39;
+2,11-2,12:  NAME    &#39;b&#39;
+2,12-2,13:  OP  &#39;)&#39;
+2,13-2,14:  OP  &#39;:&#39;
+2,14-2,15:  NEWLINE &#39;\n&#39;
+3,0-3,1:    INDENT  &#39;\t&#39;
+3,1-3,2:    NAME    &#39;a&#39;
+3,3-3,4:    OP  &#39;&lt;&#39;
+3,4-3,5:    OP  &#39;=&#39;
+3,5-3,6:    OP  &#39;&gt;&#39;
+3,7-3,8:    NAME    &#39;b&#39;
+3,8-3,9:    NEWLINE &#39;\n&#39;
+4,0-4,0:    DEDENT  &#39;&#39;
+4,0-4,0:    ENDMARKER   &#39;&#39;
+</code></pre><p>As you can see, the module takes care of the whitespace problem,
+delimiting blocks clearly. An additional benefit of using this module
+is that it,</p>
+<ul>
+<li>Extracts <strong>string literals</strong></li>
+<li>Handles code <strong>comments</strong></li>
+</ul>
+<h2 id="parsing">Parsing</h2>
+<p>The parser would simply generate equivalent Python Abstract Syntax Tree for
+constructs in my language. Though, <a href="#">PEG</a>s are powerful, I found writing a
+custom recursive descent parser was way more convenient, understandable and
+helped in printing sensible error messages.</p>
+<p>The <code>ast</code> module is a handy tool for handling ASTs.</p>
+<p>While it is ideal to build an AST from ground up, my strategy for generating
+was a bit hack-ish. I used string interpolation to generate Python source code
+that was then <code>ast.parse</code>d.</p>
+<p>For example, to generate code that swaps the values in two variables <code>a</code> and
+<code>b</code>.</p>
+<pre><code class="lang-py">src=&#39;&#39;&#39;
+{0}, {1} = {1}, {0}
+&#39;&#39;&#39;
+
+import ast
+module = ast.parse(src.format(&#39;a&#39;, &#39;b&#39;))
+</code></pre>
+<h2 id="-span-class-mono-eval-span-is-your-friend"><span class="mono">eval</span> is your friend</h2>
+<p>Now that you have your Python AST what do you do with it? Well, you <code>compile</code>
+it to generate a <code>code</code> object that can be evaluated.</p>
+<pre><code class="lang-py">code = compile(module, &#39;&lt;generated-src&gt;&#39;, &#39;exec&#39;)
+</code></pre>
+<h3 id="namespaces">Namespaces</h3>
+<p>By manipulating the appropriate namespace dictionaries, you can change the
+<code>globals</code> and the <code>locals</code> of the executed code. This is useful for injection
+of required values and extraction of execution results.</p>
+<h3 id="example">Example</h3>
+<p>Setup the dictionaries,</p>
+<pre><code class="lang-py">env_globals = {}
+env_locals = {}
+</code></pre>
+<p>Inject parameters,</p>
+<pre><code class="lang-py">env_locals[&#39;a&#39;] = 10
+env_locals[&#39;b&#39;] = 1
+</code></pre>
+<p>And execute.</p>
+<pre><code class="lang-py">eval(code, env_globals, env_locals)
+print env_locals
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+        <footer class="site-footer">
+            <a class="contact-link" href="mailto:vasumanar@gmail.com">Contact</a>
+            <div class="credits"> Forged by <a href="http://metalsmith.io">Metalsmith</a> </div>
+        </footer>
+    </body>
+</html>

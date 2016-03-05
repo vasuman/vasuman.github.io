@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FiSh · varav</title>
+        <link rel="stylesheet" href="/static/site.css" />
+    </head>
+    <body>
+        <nav class="site-nav">
+            <a href="/"><img class="nav-logo" src="/static/images/logo.png" /></a>
+            <ul class="nav-links">
+                <li><a class="nav-item" href="/posts.html">Posts</a></li>
+                <li><a class="nav-item" href="/showcase.html">Showcase</a></li>
+                <li><a class="nav-item" href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <p><strong>FiSh</strong> is a program that helps users share files simply and quickly over local
+networks that uses IP multicast for peer discovery. Written in Python. Uses
+Twisted and QT.</p>
+<h3 id="why-">Why?</h3>
+<p>I realized that a lot of people were using pendrives <strong>a lot</strong> to
+transfer files between machines that were really close. I wanted a
+program with which I could simply host an ad-hoc network, have people
+connect to it and simply <em>start sharing files</em>. FiSh was my attempt at
+doing that.</p>
+<h3 id="how-">How?</h3>
+<p>The workflow of the program is quite simple.</p>
+<ul>
+<li>The program first indexes local shared folders.</li>
+<li>It then uses IP multicast for peer discovery and broadcasts its
+presence.</li>
+<li>The user gets a list of avaliable peers.</li>
+<li>They then picks a peer to connect to and retrieves that peer’s file
+list.</li>
+<li>They can then pick any of that peer’s shared files to download.</li>
+</ul>
+<h3 id="screenshots">Screenshots</h3>
+<p><figure><img src="/static/images/fish/first.png" /><figcaption>First Run</figcaption></figure></p>
+<p><figure><img src="/static/images/fish/main.png" /><figcaption>Main</figcaption></figure></p>
+<h3 id="name">Name</h3>
+<p>FiSh stands for “Fi”le “Sh”aring.</p>
+<h3 id="note">Note</h3>
+<p>I wrote this program a while back while I was just learning Python and
+it was a pretty enlightening experience but I don’t work on it
+anymore.</p>
+<hr>
+<p><a href="https://github.com/vasuman/fish">Source</a> on GitHub.</p>
+
+        </div>
+        <footer class="site-footer">
+            <a class="contact-link" href="mailto:vasumanar@gmail.com">Contact</a>
+            <div class="credits"> Forged by <a href="http://metalsmith.io">Metalsmith</a> </div>
+        </footer>
+    </body>
+</html>

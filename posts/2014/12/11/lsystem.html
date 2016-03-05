@@ -1,63 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title> 
-L-systems -  aleph_null 
- </title>
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom Feed"/>
-    
-
-    <link rel="stylesheet" href="/static/blog.css"/>
-    
-<link rel="stylesheet" href="/static/pygments.css">
-
-
-
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-40829655-2', 'auto');
-      ga('send', 'pageview');
-    </script>
-    
-    
-  </head>
-  <body>
-    <div id="header">
-        <a href="/"><h1> aleph_null </h1></a>
-        <h2> Nothing to see here </h2>
-    </div>
-    <nav>
-      <ul>
-        
-        <li>
-          <a href="/posts/index.html">Posts</a>
-        </li>
-        
-        <li>
-          <a href="/stuff/index.html">Stuff</a>
-        </li>
-        
-        <li>
-          <a href="http://www.varav.in/atom.xml">
-            <img class="feed-icon" src="/static/feed.png" alt="Feed"/>
-          </a>
-      </ul>
-    </nav>
-    <div id="content">
-      
-    <article class="std-format">
-        <div class="post-header">
-          <h1>L-systems</h1>
-            <time datetime="2014-12-11">11 Dec 2014</time>
-        </div>
-        <h2>Charnia</h2>
+    <head>
+        <meta charset="UTF-8">
+        <title>L-systems · varav</title>
+        <link rel="stylesheet" href="/static/site.css" />
+    </head>
+    <body>
+        <nav class="site-nav">
+            <a href="/"><img class="nav-logo" src="/static/images/logo.png" /></a>
+            <ul class="nav-links">
+                <li><a class="nav-item" href="/posts.html">Posts</a></li>
+                <li><a class="nav-item" href="/showcase.html">Showcase</a></li>
+                <li><a class="nav-item" href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <article class="post">
+                <div class="post-header">
+                    <h1> L-systems </h1>
+                    <time datetime="2014-12-11">11th Dec 2014 </time>
+                </div>
+                <div class="post-content">
+                    <h2 id="charnia">Charnia</h2>
 <p>I was watching the <a href="http://firstlifeseries.com/">First Life</a> documentary which
 chronicles the origins and evolution of life. In the documentary, they make a
 mention of <a href="http://en.wikipedia.org/wiki/Charnia">Charnia</a> a frond-like
@@ -66,24 +30,23 @@ Sadly, it went extinct and has no extant descendants. Since it is one of the
 oldest known multicellular organisms it provides great insights into the origins
 of such beings.</p>
 <p>This is what they supposedly looked like,</p>
-<figure><img src="/static/images/lsystem/charnia.jpg" /><figcaption>Charnia</figcaption>
-</figure>
-<p>Now, you may be wondering why I'm talking about something that hasn't been
+<p><figure><img src="/static/images/lsystem/charnia.jpg" /><figcaption>Charnia</figcaption></figure></p>
+<p>Now, you may be wondering why I’m talking about something that hasn’t been
 around for over 500 million years. Well, I was struck by the beauty and
-simplicity of the organization of it's cells. These organisms adopted fractal
+simplicity of the organization of it’s cells. These organisms adopted fractal
 branching to generate their body structure.</p>
 <p>Since this organism had to absorb its sustenance from the ocean, it needed a
 very high surface area and compact packing. Fractal arrangements were perfect
-for this. It's truly amazing how resourceful these organisms were to use
+for this. It’s truly amazing how resourceful these organisms were to use
 relatively simple instructions can give rise to amazingly beautiful patterns.
-They necessarily couldn't be too elaborate in their designs.</p>
-<h2>Lindenmayer systems</h2>
+They necessarily couldn’t be too elaborate in their designs.</p>
+<h2 id="lindenmayer-systems">Lindenmayer systems</h2>
 <p>Digging deeper into this topic is where I found
 <a href="https://en.wikipedia.org/wiki/L-system">Lindenmayer Systems</a> or L-systems for
 short. Developed by Astrid Lindenmayer, a Hungarian biologist in 1968, they
 provide a clear and simple way to model fractal growth.</p>
 <p>An L-system is basically a type of formal grammar, in other words, it defines a
-language -- basically a set of acceptable strings. It has three basic
+language – basically a set of acceptable strings. It has three basic
 components,</p>
 <ol>
 <li>Set of alphabets used to compose the strings</li>
@@ -100,14 +63,14 @@ grammar, an L-system is context-free if there is only a single symbol in the
 left hand side of the production.</p>
 <p>L-system models are greatly suited to generate self-similar or <em>fractal</em>
 patterns because the rewrite rules can be recursively expanded.</p>
-<h2>Logo</h2>
+<h2 id="logo">Logo</h2>
 <p>I remember back in school when we were first introduced to computers and
 programming, we were taught the
 <a href="http://el.media.mit.edu/logo-foundation/logo/programming.html">Logo Programming Language</a>.
 I thought this was just one of those things you were taught in school and never
-had to use later. Well, turns out I was wrong, the little turtle wasn't dead
+had to use later. Well, turns out I was wrong, the little turtle wasn’t dead
 yet. Most L-systems use a Logo-like paradigm to implement graphics.</p>
-<p>In a relatively simple model, the turtle's state encapsulates of four
+<p>In a relatively simple model, the turtle’s state encapsulates of four
 parameters,</p>
 <ol>
 <li><code>x</code> co-ordinate.</li>
@@ -119,51 +82,32 @@ parameters,</p>
 Each symbol is associated with a Logo command and every string is interpreted as
 a sequence of commands that is executed by the interpreter to generate the final
 pattern.</p>
-<h2>Mechanism</h2>
+<h2 id="mechanism">Mechanism</h2>
 <p>Consider, a relatively simple grammar.</p>
 <p>The set of symbols is, <code>{A, B, C, R}</code></p>
 <p>Production rules are,</p>
-<div class="codehilite"><pre><span class="n">A</span> <span class="o">:</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span> <span class="n">C</span> <span class="n">A</span> <span class="n">B</span> <span class="n">A</span>
-</pre></div>
-
-
-<p>Now, I must mention here that for any symbol (<code>X</code>) lacking any rewrite rule, we
+<pre><code>A : A B A C A B A
+</code></pre><p>Now, I must mention here that for any symbol (<code>X</code>) lacking any rewrite rule, we
 assume an identity expansion, i.e.</p>
-<div class="codehilite"><pre><span class="n">X</span> <span class="o">:</span> <span class="n">X</span>
-</pre></div>
-
-
-<p>The axiom is <code>R A</code>. The <code>R</code> symbol is just used to get the orientation correct.</p>
+<pre><code>X : X
+</code></pre><p>The axiom is <code>R A</code>. The <code>R</code> symbol is just used to get the orientation correct.</p>
 <p>Consider these draw rules for the symbols,</p>
-<div class="codehilite"><pre>A = FD 10
+<pre><code>A = FD 10
 B = RT 60
 C = LT 120
 R = RT 90
-</pre></div>
-
-
-<p>Initially, the string representing the state of the system is,</p>
-<div class="codehilite"><pre>R A
-</pre></div>
-
-
-<p>Substituting the symbols' logo equivalents we get the sequence,</p>
-<div class="codehilite"><pre>RT 90
+</code></pre><p>Initially, the string representing the state of the system is,</p>
+<pre><code>R A
+</code></pre><p>Substituting the symbols’ logo equivalents we get the sequence,</p>
+<pre><code>RT 90
 FD 10
-</pre></div>
-
-
-<p>The graphical representation of the system looks like,</p>
-<figure><img src="/static/images/lsystem/lsys-init.jpg" /><figcaption>Initial state</figcaption>
-</figure>
+</code></pre><p>The graphical representation of the system looks like,</p>
+<p><figure><img src="/static/images/lsystem/lsys-init.jpg" /><figcaption>Initial state</figcaption></figure></p>
 <p>On iterating once, we apply the production to expand all the symbols we can. Our
 string becomes,</p>
-<div class="codehilite"><pre>R A B A C A B A
-</pre></div>
-
-
-<p>Logo sequence equivalent,</p>
-<div class="codehilite"><pre>RT 90
+<pre><code>R A B A C A B A
+</code></pre><p>Logo sequence equivalent,</p>
+<pre><code>RT 90
 FD 10
 RT 60
 FD 10
@@ -171,63 +115,37 @@ LT 120
 FD 10
 RT 60
 FD 10
-</pre></div>
-
-
-<p>Evaluating these commands in an interpreter, we get the graphical
+</code></pre><p>Evaluating these commands in an interpreter, we get the graphical
 representation,</p>
-<figure><img src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption>
-</figure>
+<p><figure><img src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption></figure></p>
 <p>Iterating again, we continue to expand and our string becomes,</p>
-<div class="codehilite"><pre>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
-</pre></div>
-
-
-<p>OK, that's big. As you may have probably guessed, the string size grows
+<pre><code>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
+</code></pre><p>OK, that’s big. As you may have probably guessed, the string size grows
 exponentially.</p>
 <p>It looks like,</p>
-<figure><img src="/static/images/lsystem/lsys-2.jpg" /><figcaption>Second iteration</figcaption>
-</figure>
-<p>If you look at what this system is actually doing in simple terms, it's simply
+<p><figure><img src="/static/images/lsystem/lsys-2.jpg" /><figcaption>Second iteration</figcaption></figure></p>
+<p>If you look at what this system is actually doing in simple terms, it’s simply
 replacing every straight line in the figure with a small triangular bump. This
 substitution is recursively applied to any lines in the resulting figure to give
 rise to self-similarity.</p>
 <p>Another iteration and we get something looking like this,</p>
-<figure><img src="/static/images/lsystem/lsys-3.jpg" /><figcaption>Third iteration</figcaption>
-</figure>
+<p><figure><img src="/static/images/lsystem/lsys-3.jpg" /><figcaption>Third iteration</figcaption></figure></p>
 <p>Pretty cool, right!</p>
 <p>Check out the <a href="/stuff/demos/lsystem.html">demo</a> that I wrote up. It has got a few cool
 presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available.</p>
-<h2>Patterns</h2>
-<p>Here's a few cool patterns that I've generated.</p>
-<figure><img src="/static/images/lsystem/fern-knife.png" /><figcaption>Fern Knife</figcaption>
-</figure>
-<figure><img src="/static/images/lsystem/crosses.png" /><figcaption>Crosses</figcaption>
-</figure>
-<figure><img src="/static/images/lsystem/stars.jpg" /><figcaption>Stars</figcaption>
-</figure>
+<h2 id="patterns">Patterns</h2>
+<p>Here’s a few cool patterns that I’ve generated.</p>
+<p><figure><img src="/static/images/lsystem/fern-knife.png" /><figcaption>Fern Knife</figcaption></figure></p>
+<p><figure><img src="/static/images/lsystem/crosses.png" /><figcaption>Crosses</figcaption></figure></p>
+<p><figure><img src="/static/images/lsystem/stars.jpg" /><figcaption>Stars</figcaption></figure></p>
 <p>Try making your own.</p>
-    </article>
 
-    </div>
-    <footer>
-      <address>
-        <a href="mailto:vasumanar@gmail.com">Vasuman R</a>
-      </address>
-      <div id="accounts">
-        <ul>
-          
-          <li><a href="https://github.com/vasuman">GitHub</a></li>
-          
-          
-        </ul>
-      </div>
-      
-      <div id="btc">1P3cRJQhzuzkDrAsGSnRHc3sCLauzmK1HA </div>
-      
-      <div id="creds">
-        Generated using, <a href="https://github.com/vasuman/glob">glob</a>
-      </div>
-    </footer>
-  </body>
+                </div>
+            </article>
+        </div>
+        <footer class="site-footer">
+            <a class="contact-link" href="mailto:vasumanar@gmail.com">Contact</a>
+            <div class="credits"> Forged by <a href="http://metalsmith.io">Metalsmith</a> </div>
+        </footer>
+    </body>
 </html>
