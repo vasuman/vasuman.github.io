@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Fira+Sans|Nixie+One);
+@import url(https://fonts.googleapis.com/css?family=Alegreya|Nixie+One);
 
 html {
     height: 100%;
@@ -8,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Alegreya', sans-serif;
     background-color: white;
 }
 
