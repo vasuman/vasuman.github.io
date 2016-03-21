@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <title>L-systems · varav</title>
         <link rel="stylesheet" href="/static/site.css" />
+        <meta name="keywords" content="programming,tech,blog,gamedev" />
+        <meta name="description" content="Vasuman Ravichandran&#x27;s personal blog" />
+        <meta name="author" content="Vasuman Ravichandran" />
     </head>
     <body>
         <nav class="site-nav">
@@ -30,7 +33,7 @@ Sadly, it went extinct and has no extant descendants. Since it is one of the
 oldest known multicellular organisms it provides great insights into the origins
 of such beings.</p>
 <p>This is what they supposedly looked like,</p>
-<p><figure><img src="/static/images/lsystem/charnia.jpg" /><figcaption>Charnia</figcaption></figure></p>
+<p><figure><img alt="Charnia" src="/static/images/lsystem/charnia.jpg" /><figcaption>Charnia</figcaption></figure></p>
 <p>Now, you may be wondering why I’m talking about something that hasn’t been
 around for over 500 million years. Well, I was struck by the beauty and
 simplicity of the organization of it’s cells. These organisms adopted fractal
@@ -102,7 +105,7 @@ R = RT 90
 <pre><code>RT 90
 FD 10
 </code></pre><p>The graphical representation of the system looks like,</p>
-<p><figure><img src="/static/images/lsystem/lsys-init.jpg" /><figcaption>Initial state</figcaption></figure></p>
+<p><figure><img alt="Initial state" src="/static/images/lsystem/lsys-init.jpg" /><figcaption>Initial state</figcaption></figure></p>
 <p>On iterating once, we apply the production to expand all the symbols we can. Our
 string becomes,</p>
 <pre><code>R A B A C A B A
@@ -117,27 +120,28 @@ RT 60
 FD 10
 </code></pre><p>Evaluating these commands in an interpreter, we get the graphical
 representation,</p>
-<p><figure><img src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption></figure></p>
+<p><figure><img alt="First iteration" src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption></figure></p>
 <p>Iterating again, we continue to expand and our string becomes,</p>
 <pre><code>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
 </code></pre><p>OK, that’s big. As you may have probably guessed, the string size grows
 exponentially.</p>
 <p>It looks like,</p>
-<p><figure><img src="/static/images/lsystem/lsys-2.jpg" /><figcaption>Second iteration</figcaption></figure></p>
+<p><figure><img alt="Second iteration" src="/static/images/lsystem/lsys-2.jpg" /><figcaption>Second iteration</figcaption></figure></p>
 <p>If you look at what this system is actually doing in simple terms, it’s simply
 replacing every straight line in the figure with a small triangular bump. This
 substitution is recursively applied to any lines in the resulting figure to give
 rise to self-similarity.</p>
 <p>Another iteration and we get something looking like this,</p>
-<p><figure><img src="/static/images/lsystem/lsys-3.jpg" /><figcaption>Third iteration</figcaption></figure></p>
+<p><figure><img alt="Third iteration" src="/static/images/lsystem/lsys-3.jpg" /><figcaption>Third iteration</figcaption></figure></p>
 <p>Pretty cool, right!</p>
-<p>Check out the <a href="/stuff/demos/lsystem.html">demo</a> that I wrote up. It has got a few cool
-presets. The <a href="https://github.com/vasuman/lsystem">sauce</a> is available.</p>
+<p>Check out the <a href="/demos/lsystem.html">demo</a> that I wrote up. It has got a few cool
+presets. The <a href="https://github.com/vasuman/lsystem">source code</a> also is
+available.</p>
 <h2 id="patterns">Patterns</h2>
 <p>Here’s a few cool patterns that I’ve generated.</p>
-<p><figure><img src="/static/images/lsystem/fern-knife.png" /><figcaption>Fern Knife</figcaption></figure></p>
-<p><figure><img src="/static/images/lsystem/crosses.png" /><figcaption>Crosses</figcaption></figure></p>
-<p><figure><img src="/static/images/lsystem/stars.jpg" /><figcaption>Stars</figcaption></figure></p>
+<p><figure><img alt="Fern Knife" src="/static/images/lsystem/fern-knife.png" /><figcaption>Fern Knife</figcaption></figure></p>
+<p><figure><img alt="Crosses" src="/static/images/lsystem/crosses.png" /><figcaption>Crosses</figcaption></figure></p>
+<p><figure><img alt="Stars" src="/static/images/lsystem/stars.jpg" /><figcaption>Stars</figcaption></figure></p>
 <p>Try making your own.</p>
 
                 </div>
