@@ -36,6 +36,10 @@ nav.site-nav {
     box-shadow: 0 0 10px black;
 }
 
+h1.site-title {
+    display: none;
+}
+
 img.nav-logo {
     margin: 0;
     margin-left: 3vw;
