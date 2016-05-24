@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dungeon Generation · Vasuman</title>
+        <link rel="stylesheet" href="/static/site.css" />
+        <meta name="title" content="Dungeon Generation · Vasuman" />
+        <meta name="viewport" content="width=600" />
+        <meta name="keywords" content="programming,tech,blog,gamedev" />
+        <meta name="description" content="An interactive article on procedural dungeon generation. Personal website and blog of Vasuman Ravichandran" />
+        <meta name="author" content="Vasuman Ravichandran" />
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-40829655-2', 'auto');
+        ga('send', 'pageview');
+        </script>
+        <script src="/static/js/dungeon.js"></script>
+    </head>
+    <body>
+        <nav class="site-nav">
+            <a href="/"><img class="nav-logo" src="/static/images/logo.png" /></a>
+            <h1 class="site-title"> Personal website and blog of Vasuman Ravichandran </h1>
+            <ul class="nav-links">
+                <li><a class="nav-item" href="/posts.html">Posts</a></li>
+                <li><a class="nav-item" href="/showcase.html">Showcase</a></li>
+                <li><a class="nav-item" href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <article class="post">
+                <div class="post-header">
+                    <h1> Dungeon Generation </h1>
+                    <time datetime="2016-05-25">25th May 2016 </time>
+                </div>
+                <div class="post-content">
+                    <div class="notice">
+<strong>This is an interactive article, play with the settings. Click on the canvas to
+reanimate</strong>.
+</div>
+
+<p>Procedural generation has always interested me. From the
+<a href="http://n0tch.tumblr.com/post/4231184692/terrain-generation-part-1">landscapes</a>
+of Minecraft to the hundreds of
+<a href="http://www.roguetemple.com/roguelike-definition/">rougelikes</a>, procedural
+generation makes any game a more unpredictable and brings near infinite replay
+value to the game. The basic principle is to use a source of randomness - or
+pseudo-randomness; to create environments according to some set of rules.</p>
+<h2 id="outline">Outline</h2>
+<p>So, what makes a dungeon? Very simply, rooms connected by corridors.</p>
+<p><a href="https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/">One</a>
+approach to generate the basic skeleton is to create a number of randomly sized
+rectangles at some point and then iteratively separate them.</p>
+<p><a href="http://www.roguebasin.com/index.php?title=Basic_BSP_Dungeon_generation">Another</a>
+way is to use Binary Space Partitioning. We recursively split the available
+space - either vertically or horizontally; until we reach an ideal size or
+exceed some depth. This relatively simple method that yields pretty decent
+results. And we don’t have to worry about separating the overlapping rooms since
+partitions are mutually exclusive. Since splitting evenly will simply give us a
+uniform set of partitions, we vary the split point by some distance about the middle.</p>
+<h2 id="partitions">Partitions</h2>
+<p>Each partition can be thought of as a node in a tree that that encloses all it’s
+children or a leaf in the tree that is simply a rectangle.</p>
+<p>When we split we need to pick the <em>direction</em> and <em>ratio</em>. The <em>ratio</em> can be
+controlled by using the <code>varf</code> parameter that is range around midpoint that you want
+to split in.</p>
+<pre><code class="lang-js">let f = random.nextFloat(0.5 - varf, 0.5 + varf);
+this.children = this.rect.split(f, axis).map(half =&gt; {
+    return new Partition(half, { sqf, varf }, depth - 1);
+});
+</code></pre>
+<p>The <em>direction</em> is another way to control the shape of the resultant partitions.
+Notice that the ratio of <code>width</code> to <code>height</code> of a square is closer to 1 than a
+rectangle. To use this to our advantage, we can apply a bias to our <code>choice()</code>
+that is the ratio of the width to the height.</p>
+<pre><code class="lang-js">let bias = this.rect.w / this.rect.h;
+</code></pre>
+<p>We make a choice to split either vertically or horizontally based on the <code>bias</code>
+and an <em>exponent</em>.</p>
+<pre><code class="lang-js">function choice(bias = 1, exp = 1) {
+    return Math.random() * Math.pow(bias, exp) &lt; 0.5;
+}
+</code></pre>
+<p>Modulate the squariness (<code>sqf</code>) to prefer vertical splits when <code>bias &gt; 1</code> which
+gives rise to <em>squarer</em> children.</p>
+<pre><code class="lang-js">let axis = choice(bias, sqf) ? &#39;y&#39; : &#39;x&#39;;
+</code></pre>
+<p>Where <code>sqf</code> is a factor that defines the <em>squariness</em> of the partitions.</p>
+<div class="controls center-flex">
+    <span class="control center-flex">
+        <label for="split-var-slider"> Split Variance (<tt>varf</tt>) </label>
+        <input id="split-var-slider" type="range" min="0" max="0.5" step="0.05" />
+    </span>
+    <span class="control center-flex">
+        <label for="squariness-slider"> Squariness (<tt>sqf</tt>) </label>
+        <input type="range" id="squariness-slider" min="0" max="2.5" step="0.25" />
+    </span>
+    <button class="gen-button"> Generate </button>
+</div>
+
+<div id="partitions-container" class="demo center-flex"></div>
+
+<h2 id="rooms">Rooms</h2>
+<p>From these partitions we can create our rooms. Let’s start with clipping
+partitions to a grid.</p>
+<pre><code class="lang-js">for (let part of root) {
+  part.rect.scale(1 / gridSize).round();
+}
+</code></pre>
+<p>Now, we iterate through the leaf nodes of the tree. We first discard any leaves
+that are too small to make a decent sized room. Then, for each leaf, we take it’s
+bounds and make a randomly sized and offset room with some prescribed minimum
+spacing (<code>roomSpace</code>) between adjacent rooms.</p>
+<pre><code>let w = random.nextInt(minDim, Math.min(r.w - roomSpace, maxDim));
+let h = random.nextInt(minDim, Math.min(r.h - roomSpace, maxDim));
+let x = r.x + random.nextInt(roomSpace, r.w - w);
+let y = r.y + random.nextInt(roomSpace, r.h - h);
+rooms.push(new Room(new Rect(x, y, w, h)));
+</code></pre><p>We can control the bounds on the dimensions of the rooms we make using the
+<code>minDim</code> and <code>maxDim</code> parameters.</p>
+<p>We could also modify the recursive split function to further split spaces that are
+larger than what we want and discard smaller spaces.</p>
+<div class="controls center-flex">
+    <span class="control center-flex">
+        <label for="min-dim-slider"> Minimum Dimension (<tt>minDim</tt>) </label>
+        <input id="min-dim-slider" type="range" min="4" max="6" step="1" />
+    </span>
+    <span class="control center-flex">
+        <label for="max-dim-slider"> Maximum Dimension (<tt>maxDim</tt>) </label>
+        <input id="max-dim-slider" type="range" min="8" max="12" step="2" />
+    </span>
+    <button class="gen-button"> Generate </button>
+</div>
+
+<div id="rooms-container" class="demo center-flex"></div>
+
+<h2 id="spans">Spans</h2>
+<p>Now that we have our rooms, we have to connect them. A simple minimum spanning
+tree will suffice for this.</p>
+<p>Initialize sets to keep track of <code>remaining</code> and <code>connected</code> rooms. Starting
+with the first room in <code>connected</code> and the rest in <code>remaining</code>.</p>
+<pre><code>let connected = new Set(rooms.slice(0, 1));
+let remaining = new Set(rooms.slice(1));
+</code></pre><p>Then, keep connecting the nearest <em>unconnected</em> room until there are none left.</p>
+<pre><code>while (remaining.size != 0) {
+    let [room, nearest] = findNearest(connected, remaining);
+    let pair = new Set([room, nearest]);
+    if (!corridors.has(pair)) {
+        this.corridors.set(pair, true);
+        remaining.delete(nearest);
+        connected.add(nearest);
+    }
+}
+</code></pre><div id="spans-container" class="demo center-flex"></div>
+
+<h2 id="corridors">Corridors</h2>
+<p>For each span, we also have to plot a corridor between the two rooms.</p>
+<p>If there is an overlap (on any axis) between the rooms, then we have two sides
+facing each other which we can connect in two different ways - either straight
+or staggered.  We can make a random choice between either of these with a bias
+(<code>straightBias</code>) parameter to control their relative distribution.</p>
+<p><figure><img alt="Straight Corridor" src="/static/images/dungeon/straight.png" /><figcaption>Straight Corridor</figcaption></figure></p>
+<p><figure><img alt="Staggered Corridor" src="/static/images/dungeon/staggered.png" /><figcaption>Staggered Corridor</figcaption></figure></p>
+<p>But, if there is no overlap, then we fallback to connecting the rooms with a
+right-angled corridor.</p>
+<p><figure><img alt="Right-Angled Corridor" src="/static/images/dungeon/right-angled.png" /><figcaption>Right-Angled Corridor</figcaption></figure></p>
+<div class="controls center-flex">
+    <span class="control center-flex">
+        <label for="stag-bias-slider"> Straight Bias (<tt>straightBias</tt>) </label>
+        <input id="stag-bias-slider" type="range" min="0" max="2" step="0.5" />
+    </span>
+    <button class="gen-button"> Generate </button>
+</div>
+
+<div id="corridors-container" class="demo center-flex"></div>
+
+<p>And that’s pretty much it, you now have the blueprint of a dungeon. Check out
+the <a href="https://github.com/vasuman/dungeon-gen">full source code</a>.</p>
+<style>
+.notice {
+    text-align: center;
+    font-size: large;
+    margin: 0.7em;
+    padding: 0.3em;
+    background-color: #eee;
+}
+
+.demo {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.controls {
+    justify-content: space-around;
+    margin: 1em;
+    padding: 0.5em;
+    border: 5px outset #eaeaea;
+    background-color: #f0f0f0;
+}
+
+.control {
+    flex-flow: column;
+}
+
+input[type=range] {
+    width: 10em;
+}
+
+.gen-button {
+    padding: 0.3em;
+}
+
+.wgl-canvas {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.wgl-container {
+    display: block !important;
+}
+
+.wgl-container::before {
+    content: "Click on the canvas to reanimate";
+}
+</style>
+
+                </div>
+            </article>
+        </div>
+        <footer class="site-footer">
+            <a class="contact-link" href="mailto:varav@varav.in">Contact</a>
+            <div class="credits"> Forged by <a href="http://metalsmith.io">Metalsmith</a> </div>
+        </footer>
+    </body>
+</html>
