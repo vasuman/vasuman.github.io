@@ -49,23 +49,26 @@ generation makes any game a more unpredictable and brings near infinite replay
 value to the game. The basic principle is to use a source of randomness - or
 pseudo-randomness; to create environments according to some set of rules.</p>
 <h2 id="outline">Outline</h2>
-<p>So, what makes a dungeon? Very simply, rooms connected by corridors.</p>
+<p>So, what makes a dungeon? Very simply, rooms connected by corridors. Let’s start
+with the rooms.</p>
 <p><a href="https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/">One</a>
 approach to generate the basic skeleton is to create a number of randomly sized
 rectangles at some point and then iteratively separate them.</p>
 <p><a href="http://www.roguebasin.com/index.php?title=Basic_BSP_Dungeon_generation">Another</a>
 way is to use Binary Space Partitioning. We recursively split the available
 space - either vertically or horizontally; until we reach an ideal size or
-exceed some depth. This relatively simple method that yields pretty decent
-results. And we don’t have to worry about separating the overlapping rooms since
-partitions are mutually exclusive. Since splitting evenly will simply give us a
-uniform set of partitions, we vary the split point by some distance about the middle.</p>
+exceed some depth. Now a room can be a randomly sized rectangle contained within
+any partition. This relatively simple method that yields pretty decent results.
+And we don’t have to worry about separating the overlapping rooms since
+partitions are mutually exclusive.</p>
 <h2 id="partitions">Partitions</h2>
 <p>Each partition can be thought of as a node in a tree that that encloses all it’s
-children or a leaf in the tree that is simply a rectangle.</p>
-<p>When we split we need to pick the <em>direction</em> and <em>ratio</em>. The <em>ratio</em> can be
-controlled by using the <code>varf</code> parameter that is range around midpoint that you want
-to split in.</p>
+children or a leaf in the tree that is simply a rectangle. A parent partition
+can be split to make child partitions.</p>
+<p>Since splitting evenly will simply give us a uniform set of partitions, we vary
+the split point by some distance about the middle. When we split parent, we need
+to pick the <em>direction</em> and <em>ratio</em>. The <em>ratio</em> can be controlled by using the
+<code>varf</code> parameter that is range around midpoint that you want to split in.</p>
 <pre><code class="lang-js">let f = random.nextFloat(0.5 - varf, 0.5 + varf);
 this.children = this.rect.split(f, axis).map(half =&gt; {
     return new Partition(half, { sqf, varf }, depth - 1);
@@ -78,7 +81,7 @@ that is the ratio of the width to the height.</p>
 <pre><code class="lang-js">let bias = this.rect.w / this.rect.h;
 </code></pre>
 <p>We make a choice to split either vertically or horizontally based on the <code>bias</code>
-and an <em>exponent</em>.</p>
+and an exponent (<code>exp</code>).</p>
 <pre><code class="lang-js">function choice(bias = 1, exp = 1) {
     return Math.random() * Math.pow(bias, exp) &lt; 0.5;
 }
