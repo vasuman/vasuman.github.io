@@ -62,7 +62,7 @@ any partition. This relatively simple method that yields pretty decent results.
 And we don’t have to worry about separating the overlapping rooms since
 partitions are mutually exclusive.</p>
 <h2 id="partitions">Partitions</h2>
-<p>Each partition can be thought of as a node in a tree that that encloses all it’s
+<p>Each partition can be thought of as a node in a tree that that encloses all its
 children or a leaf in the tree that is simply a rectangle. A parent partition
 can be split to make child partitions.</p>
 <p>Since splitting evenly will simply give us a uniform set of partitions, we vary
@@ -90,7 +90,6 @@ and an exponent (<code>exp</code>).</p>
 gives rise to <em>squarer</em> children.</p>
 <pre><code class="lang-js">let axis = choice(bias, sqf) ? &#39;y&#39; : &#39;x&#39;;
 </code></pre>
-<p>Where <code>sqf</code> is a factor that defines the <em>squariness</em> of the partitions.</p>
 <div class="controls center-flex">
     <span class="control center-flex">
         <label for="split-var-slider"> Split Variance (<tt>varf</tt>) </label>
@@ -113,9 +112,10 @@ partitions to a grid.</p>
 }
 </code></pre>
 <p>Now, we iterate through the leaf nodes of the tree. We first discard any leaves
-that are too small to make a decent sized room. Then, for each leaf, we take it’s
-bounds and make a randomly sized and offset room with some prescribed minimum
-spacing (<code>roomSpace</code>) between adjacent rooms.</p>
+that are too small to make a decent sized room. Then, for each leaf, we take its
+bounds and make a randomly sized (<code>w</code> and <code>h</code>) room with random offsets (<code>x</code> and
+<code>y</code>). It’s also a good idea to maintain some prescribed minimum spacing
+(<code>roomSpace</code>) between adjacent rooms.</p>
 <pre><code>let w = random.nextInt(minDim, Math.min(r.w - roomSpace, maxDim));
 let h = random.nextInt(minDim, Math.min(r.h - roomSpace, maxDim));
 let x = r.x + random.nextInt(roomSpace, r.w - w);
