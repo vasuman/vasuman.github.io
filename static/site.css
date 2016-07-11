@@ -33,7 +33,7 @@ nav.site-nav {
     flex-wrap: wrap;
     background-color: black;
     color: white;
-    box-shadow: 0 0 10px black;
+    border-bottom: 1px solid #555;
 }
 
 h1.site-title {
@@ -70,7 +70,6 @@ a.nav-item {
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    text-shadow: 0 0 10px;
     font-size: large;
     font-family: 'Nixie One', serif;
 }
@@ -104,10 +103,9 @@ footer.site-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid black;
     margin-top: 1em;
     padding-top: 0.5em;
-    box-shadow: 0 0 10px black;
+    border-top: 1px solid #555;
     background-color: black;
     color: white;
 }
