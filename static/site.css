@@ -178,9 +178,13 @@ div.showcase-item {
     flex-flow: column;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ccc;
     margin-bottom: 1.5em;
     font-size: larger;
+}
+
+div.showcase-item:last-child {
+    border-bottom: none;
 }
 
 div.showcase-item > h2 {
