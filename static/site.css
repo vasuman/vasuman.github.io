@@ -157,7 +157,7 @@ figcaption {
 
 div.post-content > pre {
     max-width: 100%;
-    overflow: scroll;
+    overflow: auto;
     color: lime;
     background-color: black;
     padding: 0.7em;
