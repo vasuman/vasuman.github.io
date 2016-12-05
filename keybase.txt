@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/varav
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://varav.in
+  * I am varav (https://keybase.io/varav) on keybase.
+  * I have a public key ASCFXirkBn_difN10Dghw8TgCoT1mdY8HZBaJvns5f4Wqwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120855e2ae4067fdd89f375d03821c3c4e00a84f599d63c1d905a26f9ece5fe16ab0a",
+            "host": "keybase.io",
+            "kid": "0120855e2ae4067fdd89f375d03821c3c4e00a84f599d63c1d905a26f9ece5fe16ab0a",
+            "uid": "9004098277203385cf3b430dad923d19",
+            "username": "varav"
+        },
+        "service": {
+            "hostname": "varav.in",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1480951516,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1480951473,
+        "hash": "7e1881ba0e95befe53946bde3bb5b1dc00f226a4b00065084317595eed40b179df332db49faf21a5cfc7e4c92ef907d5e40331456473405c69869743c3769bb4",
+        "seqno": 748267
+    },
+    "prev": "2e2cc01b03705ca94e5537912f60685675ad1e08d67eeb4c2f9ba5e4801c4aed",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEghV4q5AZ/3YnzddA4IcPE4AqE9ZnWPB2QWib57OX+FqsKp3BheWxvYWTFAu17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwODU1ZTJhZTQwNjdmZGQ4OWYzNzVkMDM4MjFjM2M0ZTAwYTg0ZjU5OWQ2M2MxZDkwNWEyNmY5ZWNlNWZlMTZhYjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwODU1ZTJhZTQwNjdmZGQ4OWYzNzVkMDM4MjFjM2M0ZTAwYTg0ZjU5OWQ2M2MxZDkwNWEyNmY5ZWNlNWZlMTZhYjBhIiwidWlkIjoiOTAwNDA5ODI3NzIwMzM4NWNmM2I0MzBkYWQ5MjNkMTkiLCJ1c2VybmFtZSI6InZhcmF2In0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJ2YXJhdi5pbiIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTgifSwiY3RpbWUiOjE0ODA5NTE1MTYsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ4MDk1MTQ3MywiaGFzaCI6IjdlMTg4MWJhMGU5NWJlZmU1Mzk0NmJkZTNiYjViMWRjMDBmMjI2YTRiMDAwNjUwODQzMTc1OTVlZWQ0MGIxNzlkZjMzMmRiNDlmYWYyMWE1Y2ZjN2U0YzkyZWY5MDdkNWU0MDMzMTQ1NjQ3MzQwNWM2OTg2OTc0M2MzNzY5YmI0Iiwic2Vxbm8iOjc0ODI2N30sInByZXYiOiIyZTJjYzAxYjAzNzA1Y2E5NGU1NTM3OTEyZjYwNjg1Njc1YWQxZTA4ZDY3ZWViNGMyZjliYTVlNDgwMWM0YWVkIiwic2Vxbm8iOjExLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQNxJCM34gpQGfe/mwbrYbpPKTghOLIWCaBVA5sDrwdOcU2i2SbjifHVPG0BFw50SNM1+t7wvJPuRX/Ioht9tngGoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDaPWkkz9w3sZ0jMBI+Yvy2nzYVARsObcq/40HMuimz4aN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/varav
+
+==================================================================
+
