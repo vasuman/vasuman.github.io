@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Nixie One', serif;
 }
 
+table {
+    border-collapse: collapse;
+}
+
 div.content {
     max-width: 700px;
     margin-left: auto;
@@ -122,6 +126,48 @@ div.credits {
     color: #ddd;
 }
 
+div.content figure {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.content figure > img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+
+div.content figcaption {
+    color: #777;
+}
+
+div.content pre {
+    max-width: 100%;
+    overflow: auto;
+    color: lime;
+    background-color: black;
+    padding: 0.7em;
+    border-radius: 3px;
+}
+
+div.content h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid black;
+}
+
+div.content table, th, td {
+    border: 1px solid;
+}
+
+div.content th {
+    padding: 0.2em 1em;
+    background-color: #eee;
+}
+
+div.content td {
+    padding: 0.1em 0.5em;
+}
+
 div.post-header {
     margin-top: 1em;
     padding: 0.5em;
@@ -137,35 +183,6 @@ div.post-header > h1 {
 
 div.post-header > time {
     align-self: flex-end;
-}
-
-figure {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-figure > img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid black;
-}
-
-figcaption {
-    color: #777;
-}
-
-div.post-content > pre {
-    max-width: 100%;
-    overflow: auto;
-    color: lime;
-    background-color: black;
-    padding: 0.7em;
-    border-radius: 3px;
-}
-
-div.content h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid black;
 }
 
 div.showcase {
