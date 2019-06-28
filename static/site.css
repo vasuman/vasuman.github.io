@@ -82,15 +82,20 @@ ul.post-list > li {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 ul.post-list > li > a {
     font-size: larger;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 2em;
 }
 
 span.post-time {
     color: #777;
+    white-space: nowrap;
 }
 
 footer.site-footer {
