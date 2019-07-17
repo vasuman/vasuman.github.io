@@ -100,21 +100,27 @@ pattern.</p>
 <p>Consider, a relatively simple grammar.</p>
 <p>The set of symbols is, <code>{A, B, C, R}</code></p>
 <p>Production rules are,</p>
-<pre><code>A : A B A C A B A</code></pre><p>Now, I must mention here that for any symbol (<code>X</code>) lacking any rewrite rule, we
+<pre><code>A : A B A C A B A
+</code></pre><p>Now, I must mention here that for any symbol (<code>X</code>) lacking any rewrite rule, we
 assume an identity expansion, i.e.</p>
-<pre><code>X : X</code></pre><p>The axiom is <code>R A</code>. The <code>R</code> symbol is just used to get the orientation correct.</p>
+<pre><code>X : X
+</code></pre><p>The axiom is <code>R A</code>. The <code>R</code> symbol is just used to get the orientation correct.</p>
 <p>Consider these draw rules for the symbols,</p>
 <pre><code>A = FD 10
 B = RT 60
 C = LT 120
-R = RT 90</code></pre><p>Initially, the string representing the state of the system is,</p>
-<pre><code>R A</code></pre><p>Substituting the symbols’ logo equivalents we get the sequence,</p>
+R = RT 90
+</code></pre><p>Initially, the string representing the state of the system is,</p>
+<pre><code>R A
+</code></pre><p>Substituting the symbols’ logo equivalents we get the sequence,</p>
 <pre><code>RT 90
-FD 10</code></pre><p>The graphical representation of the system looks like,</p>
+FD 10
+</code></pre><p>The graphical representation of the system looks like,</p>
 <p><figure><img alt="Initial state" src="/static/images/lsystem/lsys-init.jpg" /><figcaption>Initial state</figcaption></figure></p>
 <p>On iterating once, we apply the production to expand all the symbols we can. Our
 string becomes,</p>
-<pre><code>R A B A C A B A</code></pre><p>Logo sequence equivalent,</p>
+<pre><code>R A B A C A B A
+</code></pre><p>Logo sequence equivalent,</p>
 <pre><code>RT 90
 FD 10
 RT 60
@@ -122,11 +128,13 @@ FD 10
 LT 120
 FD 10
 RT 60
-FD 10</code></pre><p>Evaluating these commands in an interpreter, we get the graphical
+FD 10
+</code></pre><p>Evaluating these commands in an interpreter, we get the graphical
 representation,</p>
 <p><figure><img alt="First iteration" src="/static/images/lsystem/lsys-1.jpg" /><figcaption>First iteration</figcaption></figure></p>
 <p>Iterating again, we continue to expand and our string becomes,</p>
-<pre><code>R A B A C B A B A B A C B A C A B A C B A B A B A C B A</code></pre><p>OK, that’s big. As you may have probably guessed, the string size grows
+<pre><code>R A B A C B A B A B A C B A C A B A C B A B A B A C B A
+</code></pre><p>OK, that’s big. As you may have probably guessed, the string size grows
 exponentially.</p>
 <p>It looks like,</p>
 <p><figure><img alt="Second iteration" src="/static/images/lsystem/lsys-2.jpg" /><figcaption>Second iteration</figcaption></figure></p>

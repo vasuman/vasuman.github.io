@@ -37,8 +37,8 @@
                 </div>
                 <div class="post-content">
                     <div class="notice">
-**This is an interactive article, play with the settings. Click on the canvas to
-reanimate**.
+<strong>This is an interactive article, play with the settings. Click on the canvas to
+reanimate</strong>.
 </div>
 
 <p>Procedural generation has always interested me. From the
@@ -69,23 +69,27 @@ can be split to make child partitions.</p>
 the split point by some distance about the middle. When we split parent, we need
 to pick the <em>direction</em> and <em>ratio</em>. The <em>ratio</em> can be controlled by using the
 <code>varf</code> parameter that is range around midpoint that you want to split in.</p>
-<pre><code class="language-js">let f = random.nextFloat(0.5 - varf, 0.5 + varf);
+<pre><code class="lang-js">let f = random.nextFloat(0.5 - varf, 0.5 + varf);
 this.children = this.rect.split(f, axis).map(half =&gt; {
     return new Partition(half, { sqf, varf }, depth - 1);
-});</code></pre>
+});
+</code></pre>
 <p>The <em>direction</em> is another way to control the shape of the resultant partitions.
 Notice that the ratio of <code>width</code> to <code>height</code> of a square is closer to 1 than a
 rectangle. To use this to our advantage, we can apply a bias to our <code>choice()</code>
 that is the ratio of the width to the height.</p>
-<pre><code class="language-js">let bias = this.rect.w / this.rect.h;</code></pre>
+<pre><code class="lang-js">let bias = this.rect.w / this.rect.h;
+</code></pre>
 <p>We make a choice to split either vertically or horizontally based on the <code>bias</code>
 and an exponent (<code>exp</code>).</p>
-<pre><code class="language-js">function choice(bias = 1, exp = 1) {
+<pre><code class="lang-js">function choice(bias = 1, exp = 1) {
     return Math.random() * Math.pow(bias, exp) &lt; 0.5;
-}</code></pre>
+}
+</code></pre>
 <p>Modulate the squariness (<code>sqf</code>) to prefer vertical splits when <code>bias &gt; 1</code> which
 gives rise to <em>squarer</em> children.</p>
-<pre><code class="language-js">let axis = choice(bias, sqf) ? &#39;y&#39; : &#39;x&#39;;</code></pre>
+<pre><code class="lang-js">let axis = choice(bias, sqf) ? &#39;y&#39; : &#39;x&#39;;
+</code></pre>
 <div class="controls center-flex">
     <span class="control center-flex">
         <label for="split-var-slider"> Split Variance (<tt>varf</tt>) </label>
@@ -103,9 +107,10 @@ gives rise to <em>squarer</em> children.</p>
 <h2 id="rooms">Rooms</h2>
 <p>From these partitions we can create our rooms. Let’s start with clipping
 partitions to a grid.</p>
-<pre><code class="language-js">for (let part of root) {
+<pre><code class="lang-js">for (let part of root) {
   part.rect.scale(1 / gridSize).round();
-}</code></pre>
+}
+</code></pre>
 <p>Now, we iterate through the leaf nodes of the tree. We first discard any leaves
 that are too small to make a decent sized room. Then, for each leaf, we take its
 bounds and make a randomly sized (<code>w</code> and <code>h</code>) room with random offsets (<code>x</code> and
@@ -115,7 +120,8 @@ bounds and make a randomly sized (<code>w</code> and <code>h</code>) room with r
 let h = random.nextInt(minDim, Math.min(r.h - roomSpace, maxDim));
 let x = r.x + random.nextInt(roomSpace, r.w - w);
 let y = r.y + random.nextInt(roomSpace, r.h - h);
-rooms.push(new Room(new Rect(x, y, w, h)));</code></pre><p>We can control the bounds on the dimensions of the rooms we make using the
+rooms.push(new Room(new Rect(x, y, w, h)));
+</code></pre><p>We can control the bounds on the dimensions of the rooms we make using the
 <code>minDim</code> and <code>maxDim</code> parameters.</p>
 <p>We could also modify the recursive split function to further split spaces that are
 larger than what we want and discard smaller spaces.</p>
@@ -139,7 +145,8 @@ tree will suffice for this.</p>
 <p>Initialize sets to keep track of <code>remaining</code> and <code>connected</code> rooms. Starting
 with the first room in <code>connected</code> and the rest in <code>remaining</code>.</p>
 <pre><code>let connected = new Set(rooms.slice(0, 1));
-let remaining = new Set(rooms.slice(1));</code></pre><p>Then, keep connecting the nearest <em>unconnected</em> room until there are none left.</p>
+let remaining = new Set(rooms.slice(1));
+</code></pre><p>Then, keep connecting the nearest <em>unconnected</em> room until there are none left.</p>
 <pre><code>while (remaining.size != 0) {
     let [room, nearest] = findNearest(connected, remaining);
     let pair = new Set([room, nearest]);
@@ -148,7 +155,8 @@ let remaining = new Set(rooms.slice(1));</code></pre><p>Then, keep connecting th
         remaining.delete(nearest);
         connected.add(nearest);
     }
-}</code></pre><div id="spans-container" class="demo center-flex"></div>
+}
+</code></pre><div id="spans-container" class="demo center-flex"></div>
 
 <h2 id="corridors">Corridors</h2>
 <p>For each span, we also have to plot a corridor between the two rooms.</p>

