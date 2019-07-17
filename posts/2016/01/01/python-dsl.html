@@ -55,15 +55,13 @@ to the block delimiters in other languages – usually braces (<code>{</code>, <
 held in two variables with a <code>x &lt;=&gt; y</code> infix operator.</p>
 <p>Here is an example. Consider the following segment of
 code,</p>
-<pre><code class="lang-py">def swap(a, b):
-    a &lt;=&gt; b
-</code></pre>
+<pre><code class="language-py">def swap(a, b):
+    a &lt;=&gt; b</code></pre>
 <p>On tokenizing this piece of code – <em>as a string</em> stored in <code>s</code>,</p>
-<pre><code class="lang-py">import tokenize
+<pre><code class="language-py">import tokenize
 import io
 b = io.BytesIO(s)
-tokenize.tokenize(b.readline)
-</code></pre>
+tokenize.tokenize(b.readline)</code></pre>
 <p>We get,</p>
 <pre><code>2,0-2,2:    NAME    &#39;def&#39;
 2,3-2,7:    NAME    &#39;swap&#39;
@@ -82,8 +80,7 @@ tokenize.tokenize(b.readline)
 3,7-3,8:    NAME    &#39;b&#39;
 3,8-3,9:    NEWLINE &#39;\n&#39;
 4,0-4,0:    DEDENT  &#39;&#39;
-4,0-4,0:    ENDMARKER   &#39;&#39;
-</code></pre><p>As you can see, the module takes care of the whitespace problem,
+4,0-4,0:    ENDMARKER   &#39;&#39;</code></pre><p>As you can see, the module takes care of the whitespace problem,
 delimiting blocks clearly. An additional benefit of using this module
 is that it,</p>
 <ul>
@@ -101,35 +98,30 @@ was a bit hack-ish. I used string interpolation to generate Python source code
 that was then <code>ast.parse</code>d.</p>
 <p>For example, to generate code that swaps the values in two variables <code>a</code> and
 <code>b</code>.</p>
-<pre><code class="lang-py">src=&#39;&#39;&#39;
+<pre><code class="language-py">src=&#39;&#39;&#39;
 {0}, {1} = {1}, {0}
 &#39;&#39;&#39;
 
 import ast
-module = ast.parse(src.format(&#39;a&#39;, &#39;b&#39;))
-</code></pre>
-<h2 id="-span-class-mono-eval-span-is-your-friend"><span class="mono">eval</span> is your friend</h2>
+module = ast.parse(src.format(&#39;a&#39;, &#39;b&#39;))</code></pre>
+<h2 id="span-classmonoevalspan-is-your-friend"><span class="mono">eval</span> is your friend</h2>
 <p>Now that you have your Python AST what do you do with it? Well, you <code>compile</code>
 it to generate a <code>code</code> object that can be evaluated.</p>
-<pre><code class="lang-py">code = compile(module, &#39;&lt;generated-src&gt;&#39;, &#39;exec&#39;)
-</code></pre>
+<pre><code class="language-py">code = compile(module, &#39;&lt;generated-src&gt;&#39;, &#39;exec&#39;)</code></pre>
 <h3 id="namespaces">Namespaces</h3>
 <p>By manipulating the appropriate namespace dictionaries, you can change the
 <code>globals</code> and the <code>locals</code> of the executed code. This is useful for injection
 of required values and extraction of execution results.</p>
-<h3 id="example">Example</h3>
+<h3 id="example-1">Example</h3>
 <p>Setup the dictionaries,</p>
-<pre><code class="lang-py">env_globals = {}
-env_locals = {}
-</code></pre>
+<pre><code class="language-py">env_globals = {}
+env_locals = {}</code></pre>
 <p>Inject parameters,</p>
-<pre><code class="lang-py">env_locals[&#39;a&#39;] = 10
-env_locals[&#39;b&#39;] = 1
-</code></pre>
+<pre><code class="language-py">env_locals[&#39;a&#39;] = 10
+env_locals[&#39;b&#39;] = 1</code></pre>
 <p>And execute.</p>
-<pre><code class="lang-py">eval(code, env_globals, env_locals)
-print env_locals
-</code></pre>
+<pre><code class="language-py">eval(code, env_globals, env_locals)
+print env_locals</code></pre>
 
                 </div>
             </article>
