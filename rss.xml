@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 03 Sep 2019 03:28:34 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[The Consumption Cycle]]></title><description><![CDATA[<p>Unless you’ve been living under a rock, you’re probably aware of the recent
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 03 Sep 2019 03:33:04 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[The Consumption Cycle]]></title><description><![CDATA[<p>Unless you’ve been living under a rock, you’re probably aware of the recent
 decluttering frenzy, fueled by the popularity of Marie Kondo’s new
 Netflix <a href="https://www.netflix.com/title/80209379">show</a>. As a slightly compulsive
 neat freak, I wholeheartedly bought into the premise that you should only hold
@@ -80,7 +80,7 @@ time you’re replacing or getting rid of something, think about what is driving
 your behavior. Are you genuinely certain that the item no longer serves its
 intended purpose or are you trying to conform to somebody else’s curated vision
 of what an ideal lifestyle should look like?</p>
-]]></description><link>https://www.varav.in/posts/2019/08/06/consumption-cycle.html</link><guid isPermaLink="false">https://www.varav.in/posts/consumption-cycle.md</guid><pubDate>Tue, 06 Aug 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Metaphysical Idealism]]></title><description><![CDATA[<p>In his 1995 <a href="http://consc.net/papers/facing.html">paper</a>, Australian philosopher
+]]></description><link>posts/2019/08/06/consumption-cycle.html</link><guid isPermaLink="false">https://www.varav.in/posts/consumption-cycle.md</guid><pubDate>Tue, 06 Aug 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Metaphysical Idealism]]></title><description><![CDATA[<p>In his 1995 <a href="http://consc.net/papers/facing.html">paper</a>, Australian philosopher
 David Chalmers formulated what he called the “Hard Problem of Consciousness”.</p>
 <blockquote>
 <p>The really hard problem of consciousness is the problem of experience. When we
@@ -232,7 +232,7 @@ Or some random dude’s post on the internet for that matter.</p>
 recommend reading <a href="https://www.bernardokastrup.com/2015/03/brief-peeks-beyond-overview.html">Brief Peeks
 Beyond</a> by
 Bernardo Kastrup.</em></p>
-]]></description><link>https://www.varav.in/posts/2019/06/28/metaphysical-idealism.html</link><guid isPermaLink="false">https://www.varav.in/posts/metaphysical-idealism.md</guid><pubDate>Fri, 28 Jun 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Nyayasutra]]></title><description><![CDATA[<p>Given the increasingly polarizing times that we live in, far too often have I
+]]></description><link>posts/2019/06/28/metaphysical-idealism.html</link><guid isPermaLink="false">https://www.varav.in/posts/metaphysical-idealism.md</guid><pubDate>Fri, 28 Jun 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Nyayasutra]]></title><description><![CDATA[<p>Given the increasingly polarizing times that we live in, far too often have I
 seen debates that seem to lead nowhere. Words continue to be exchanged but ideas
 are lost in translation. The instinctual response is to assume that the opponent
 is either stupid, pushing an agenda or arguing in bad faith. While this may be
@@ -396,7 +396,7 @@ relevance of an ancient text to modern times.</p>
 interact with have not changed much. Keep a printout of this article in your
 back pocket for the next time you end up in an argument with someone and need
 some tips on how to proceed.</p>
-]]></description><link>https://www.varav.in/posts/2019/06/14/nyayasutra.html</link><guid isPermaLink="false">https://www.varav.in/posts/nyayasutra.md</guid><pubDate>Fri, 14 Jun 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Procedural Dungeon Generation]]></title><description><![CDATA[<div class="notice">
+]]></description><link>posts/2019/06/14/nyayasutra.html</link><guid isPermaLink="false">https://www.varav.in/posts/nyayasutra.md</guid><pubDate>Fri, 14 Jun 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Procedural Dungeon Generation]]></title><description><![CDATA[<div class="notice">
 **This is an interactive article, play with the settings. Click on the canvas to
 reanimate**.
 </div>
@@ -588,7 +588,7 @@ input[type=range] {
     content: "Click on the canvas to reanimate";
 }
 </style>
-]]></description><link>https://www.varav.in/posts/2016/05/25/dungeon.html</link><guid isPermaLink="false">https://www.varav.in/posts/dungeon.md</guid><pubDate>Wed, 25 May 2016 07:00:00 GMT</pubDate></item><item><title><![CDATA[DSL in Python]]></title><description><![CDATA[<p>This post was in my drafts folder for quite a while and I suddenly felt the urge
+]]></description><link>posts/2016/05/25/dungeon.html</link><guid isPermaLink="false">https://www.varav.in/posts/dungeon.md</guid><pubDate>Wed, 25 May 2016 07:00:00 GMT</pubDate></item><item><title><![CDATA[DSL in Python]]></title><description><![CDATA[<p>This post was in my drafts folder for quite a while and I suddenly felt the urge
 to publish it. A while back <a href="https://github.com/vasuman/snek-lang">wrote a DSL</a> built on Python for some
 college-related work. The goals for this exercise included syntax similarity
 and a runtime that is based in Python. So, here are a few notes on the experience.</p>
@@ -675,7 +675,7 @@ env_locals[&#39;b&#39;] = 1</code></pre>
 <p>And execute.</p>
 <pre><code class="language-py">eval(code, env_globals, env_locals)
 print env_locals</code></pre>
-]]></description><link>https://www.varav.in/posts/2016/01/01/python-dsl.html</link><guid isPermaLink="false">https://www.varav.in/posts/python-dsl.md</guid><pubDate>Fri, 01 Jan 2016 08:00:00 GMT</pubDate></item><item><title><![CDATA[Proof-of-like]]></title><description><![CDATA[<p>Not surprisingly, I spend most of my free time browsing the
+]]></description><link>posts/2016/01/01/python-dsl.html</link><guid isPermaLink="false">https://www.varav.in/posts/python-dsl.md</guid><pubDate>Fri, 01 Jan 2016 08:00:00 GMT</pubDate></item><item><title><![CDATA[Proof-of-like]]></title><description><![CDATA[<p>Not surprisingly, I spend most of my free time browsing the
 inter-webs. I come across a lot of things that I <em>like</em>. But as a
 random stranger it is hard to convey that sentiment in a convenient
 yet meaningful way.</p>
@@ -803,7 +803,7 @@ task and eventually it times out.</p>
 <h2 id="links">Links</h2>
 <p>I’ve started working on a server very <em>creatively</em> called <strong>HashLike</strong> –
 written in Golang. Check out the <a href="https://github.com/vasuman/HashLike">repo</a> for more.</p>
-]]></description><link>https://www.varav.in/posts/2015/04/18/pow-like.html</link><guid isPermaLink="false">https://www.varav.in/posts/pow-like.md</guid><pubDate>Sat, 18 Apr 2015 07:00:00 GMT</pubDate></item><item><title><![CDATA[L-systems]]></title><description><![CDATA[<h2 id="charnia">Charnia</h2>
+]]></description><link>posts/2015/04/18/pow-like.html</link><guid isPermaLink="false">https://www.varav.in/posts/pow-like.md</guid><pubDate>Sat, 18 Apr 2015 07:00:00 GMT</pubDate></item><item><title><![CDATA[L-systems]]></title><description><![CDATA[<h2 id="charnia">Charnia</h2>
 <p>I was watching the <a href="http://firstlifeseries.com/">First Life</a> documentary which
 chronicles the origins and evolution of life. In the documentary, they make a
 mention of <a href="http://en.wikipedia.org/wiki/Charnia">Charnia</a> a frond-like
@@ -914,7 +914,7 @@ available.</p>
 <p><figure><img alt="Crosses" src="/static/images/lsystem/crosses.png" /><figcaption>Crosses</figcaption></figure></p>
 <p><figure><img alt="Stars" src="/static/images/lsystem/stars.jpg" /><figcaption>Stars</figcaption></figure></p>
 <p>Try making your own.</p>
-]]></description><link>https://www.varav.in/posts/2014/12/11/lsystem.html</link><guid isPermaLink="false">https://www.varav.in/posts/lsystem.md</guid><pubDate>Thu, 11 Dec 2014 08:00:00 GMT</pubDate></item><item><title><![CDATA[Fun with Pipes]]></title><description><![CDATA[<p>Quite a while back I came across some interesting applications of
+]]></description><link>posts/2014/12/11/lsystem.html</link><guid isPermaLink="false">https://www.varav.in/posts/lsystem.md</guid><pubDate>Thu, 11 Dec 2014 08:00:00 GMT</pubDate></item><item><title><![CDATA[Fun with Pipes]]></title><description><![CDATA[<p>Quite a while back I came across some interesting applications of
 <strong>named pipes</strong> that I thought I should share with everybody.</p>
 <p>First, some background.</p>
 <h2 id="pipes">Pipes</h2>
@@ -981,4 +981,4 @@ simultaneously.</p>
 <pre><code class="language-sh">$ cat /tmp/mypipe | ncat -l -k 59000 &gt; /tmp/mypipe</code></pre>
 <p>Now multiple hosts can connect to that port and exchange messages with
 each other.</p>
-]]></description><link>https://www.varav.in/posts/2014/10/06/named-pipes.html</link><guid isPermaLink="false">https://www.varav.in/posts/named-pipes.md</guid><pubDate>Mon, 06 Oct 2014 07:00:00 GMT</pubDate></item></channel></rss>
+]]></description><link>posts/2014/10/06/named-pipes.html</link><guid isPermaLink="false">https://www.varav.in/posts/named-pipes.md</guid><pubDate>Mon, 06 Oct 2014 07:00:00 GMT</pubDate></item></channel></rss>
