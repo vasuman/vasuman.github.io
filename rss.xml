@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 10 Sep 2019 03:02:25 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Perspectives on Issue Tracking]]></title><description><![CDATA[<p>Bugs, issues, tickets: They go by many names but serve the same
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 10 Sep 2019 03:07:06 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Perspectives on Issue Tracking]]></title><description><![CDATA[<p>Bugs, issues, tickets: They go by many names but serve the same
 purpose—tracking a task that needs to get done. It’s the
 lifeblood of project management in the tech industry, where
 nothing gets done that isn’t tracked somehow. And, like most
@@ -85,7 +85,7 @@ task. The issues and estimates provide an overview that assists in
 resource allocation and tracking project progress. There’s nothing
 like a burndown chart to spice up a bland executive status report.</p>
 <p>However, exact estimation is a tricky exercise. Behavioral science has long
-known about the <a href="https://medium.com/the-mission/the-planning-fallacy-why-you-miss-your-deadlines-and-what-to-do-about-it-db5e162307b7">Planning
+known about the <a href="https://qz.com/work/1533324/daniel-kahnemans-planning-fallacy-explains-why-were-bad-at-time-management/">Planning
 Fallacy</a>,
 that we tend to greatly underestimate our task completion times.  Perhaps
 unsurprisingly, social scientists have
