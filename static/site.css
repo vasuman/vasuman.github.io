@@ -176,7 +176,7 @@ div.content blockquote {
     box-shadow: -5px 0px #444;
     padding-left: 1em;
     color: #444;
-    overflow: scroll;
+    overflow: auto;
 }
 
 div.post-header {
