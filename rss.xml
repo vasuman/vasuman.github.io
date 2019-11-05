@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Sat, 02 Nov 2019 04:19:08 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Yathabhutam]]></title><description><![CDATA[<p>I recently completed a 10-day
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 05 Nov 2019 03:20:01 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Yathabhutam]]></title><description><![CDATA[<p>I recently completed a 10-day
 Vipassana <a href="http://dhamma.org/">retreat</a>, which was a pretty
 enlightening experience. I’d highly recommend it to anyone seeking
 to reduce their suffering. I learned a lot, but my key takeaway
@@ -14,7 +14,7 @@ in <a href="https://suttacentral.net/sn22.126/en/sujato">several</a> <a href="ht
 the Pali Canon, and is referenced in the context of developing the
 right understanding (<em>sammādiṭṭhi</em>) of the nature of things by
 objectively observing reality as it manifests.</p>
-<h2 id="reality-is-now">Reality is Now</h2>
+<h3 id="reality-is-now">Reality is Now</h3>
 <p>True objectivity is only possible in the present moment. Our
 recollections of the past are littered
 with <a href="http://www.aboutintelligence.co.uk/memory-biases.html">biases</a>.
@@ -26,7 +26,7 @@ thought doesn’t relate to the phenomenal experience of the present
 moment, it doesn’t reflect the true nature of things. This is also
 a key aspect of the whole mindfulness movement — being aware of
 the present moment.</p>
-<h2 id="breathing-naturally">Breathing Naturally</h2>
+<h3 id="breathing-naturally">Breathing Naturally</h3>
 <p>Before attending the retreat, my self-taught meditation practice
 involved actively controlling the flow of breath. However, early
 on in the instruction, we were discouraged from trying to control
@@ -40,7 +40,7 @@ bare attention with no volitional impulse was a lot more
 challenging. It felt like I was trying to meditate on hard mode.</p>
 <p>However, as time went by, I slowly started seeing the actual
 purpose behind this.</p>
-<h2 id="remaining-equanimous">Remaining Equanimous</h2>
+<h3 id="remaining-equanimous">Remaining Equanimous</h3>
 <p>Part of the goal is also to help cultivate the virtue of
 equanimity (<em>upekkhā</em>). While it is possible to attain a certain
 level of tranquility by controlling the breath, the intentionality
@@ -56,7 +56,7 @@ myself for losing focus, or becoming averse to the object of my
 distraction, I would simply acknowledge the reality of the present
 moment — that the mind had wandered off — and calmly get back to
 focusing on the breath.</p>
-<h2 id="seeds-of-suffering">Seeds of Suffering</h2>
+<h3 id="seeds-of-suffering">Seeds of Suffering</h3>
 <p>The urge to control can also be interpreted as a form of desire
 (<em>taṇhā</em>), and Buddhist doctrine considers desire to be the source
 of all suffering (<em>dukkha samudaya</em>). Desire can be further broken
@@ -68,7 +68,7 @@ like pleasure is the very antithesis of suffering. But,
 objectively observing the nature of phenomenal experiences will
 show you that every pleasurable feeling contains the seeds of
 suffering within it.</p>
-<h2 id="sensations-are-impermanent">Sensations are Impermanent</h2>
+<h3 id="sensations-are-impermanent">Sensations are Impermanent</h3>
 <p>One of the undeniable characteristics of all experiences is their
 impermanence (<em>anicca</em>). This means that all pleasurable feelings
 will at some point fade away. Relishing in a pleasant feeling
@@ -84,7 +84,7 @@ According to this theory, the mind begins to adapt to a positive
 feeling leading an eventual regression to the baseline state.
 Which is simply another way of explaining the transient nature of
 all pleasurable sensations.</p>
-<h2 id="pain-also-passes">Pain Also Passes</h2>
+<h3 id="pain-also-passes">Pain Also Passes</h3>
 <p>On a more positive note, this impermanence also applies to
 unpleasant sensations like pain. Being unaccustomed to maintaining
 my posture for extended periods of time, I would regularly move my
@@ -101,7 +101,7 @@ craving for cessation took on a life of its own and exaggerated
 the pain. Keeping my attention impartially focussed on the
 sensation without willing it to stop helped me notice that the
 pain also eventually faded.</p>
-<h2 id="craving-enlightenment">Craving Enlightenment</h2>
+<h3 id="craving-enlightenment">Craving Enlightenment</h3>
 <p>Another major lesson for me was that my original motivation for
 attending the retreat was also a hindrance to making progress on
 the path. I came in hoping to experience some extreme state of
@@ -538,7 +538,7 @@ also the moral responsibility to mitigate my environmental impact, especially
 given
 the <a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/national-overview-facts-and-figures-materials">low</a> solid
 waste recycling rates.</p>
-<h2 id="sparking-joy">Sparking Joy</h2>
+<h3 id="sparking-joy">Sparking Joy</h3>
 <p>To start off, I had to figure out how I valued things when choosing to discard
 them. On careful analysis, I found that my instinctive value judgment of a thing
 is broadly based on a couple of factors.</p>
@@ -563,7 +563,7 @@ of their novelty in my eyes.</p>
 attachment to a thing through personalization. Laptop stickers are a great way
 to reduce your urge to upgrade your machine. The more you make something feel
 unique, the lesser you want to part with it.</p>
-<h2 id="maximal-minimalism">Maximal Minimalism</h2>
+<h3 id="maximal-minimalism">Maximal Minimalism</h3>
 <p>Since we’re on the topic of decluttering and consumption, I’d also like to
 highlight some other ironies of the modern minimalism movement. Extreme versions
 of minimalism can force you to possess an <em>unrealistically low</em> number of things
@@ -777,7 +777,7 @@ proposition and one side would make the case for (<strong>pakṣa</strong>) the 
 another side against (<strong>pratipakṣa</strong>), with the judges declaring when one side
 is finally defeated. Part of the text appears to be a distillation of these
 rules (<strong>nyāya</strong>) of debate in that somewhat formal context.</p>
-<h2 id="types-of-debates">Types of Debates</h2>
+<h3 id="types-of-debates">Types of Debates</h3>
 <p>Let’s start with a classification of the varieties of debates that we encounter.
 This classification is not based on the topic under discussion, but the attitude
 of the interlocutors. The verses (1.2.1–1.2.3) list out three kinds of debates.
@@ -808,7 +808,7 @@ confounding and contradictory tactics that are an occasion for direct
 disqualification (<strong>nigrahasthāna</strong>) — like shifting the proposition (5.2.3),
 making incoherent arguments (5.2.10) or <em>literally</em> running away from the debate
 (5.2.20).</p>
-<h2 id="anatomy-of-an-argument">Anatomy of an Argument</h2>
+<h3 id="anatomy-of-an-argument">Anatomy of an Argument</h3>
 <p>To make this more relevant to current times, I’ll consider the example of global
 warming — which I mostly consider to be true. This article isn’t meant to
 provide a balanced view of the evidence for and against climate change and I’m
@@ -839,7 +839,7 @@ truth in each of my claims (<em>is global temperature really rising?</em>) and I
 present additional supporting arguments (<strong>tarka</strong>) or refute their objections.
 This brings us to a very pressing question in current times, what qualifies as
 “the truth”?</p>
-<h2 id="theory-of-knowledge">Theory of Knowledge</h2>
+<h3 id="theory-of-knowledge">Theory of Knowledge</h3>
 <p>The Nyaya school emphasizes belief in objective truth and lays out the
 acceptable means of knowledge or proof (<strong>pramāṇa</strong>) to realize that truth. The
 below sutra deals with a basic epistemological classification.</p>
@@ -871,7 +871,7 @@ and the teachings of Buddha. The Charvakas, being hardcore skeptics, considered
 none of these reliable. Given the recent internet-fueled rise of “fake news” and
 “filter bubbles”, I’d say humans aren’t much closer to solving this problem
 today than we were a couple of millennia ago.</p>
-<h2 id="fallacious-reasoning">Fallacious Reasoning</h2>
+<h3 id="fallacious-reasoning">Fallacious Reasoning</h3>
 <p>It’s become increasingly fashionable of late to memorize long lists of logical
 fallacies and call people out on them when debating. Turns out that this isn’t
 an entirely new phenomenon. The below sutra contains a list of logical fallacies
@@ -898,7 +898,7 @@ not produce a lot of greenhouse gases.</em></li>
 that they could be used to refute the opponents reasoning. Having a common
 vocabulary and shared understanding between the participants as to what these
 terms meant would have certainly helped all parties.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h3 id="conclusion">Conclusion</h3>
 <p>This text was by no means unanimously accepted and different schools of thought
 had different rules. Several Buddhist philosophers wrote scathing commentaries
 (famously Nagarjuna’s <strong>vaidalyaprakaraṇa</strong>) on the nyāyasūtra, attacking
