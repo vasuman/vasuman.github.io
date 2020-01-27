@@ -86,7 +86,7 @@ ul.post-list > li {
 }
 
 ul.post-list > li > a {
-    font-size: larger;
+    font-size: large;
     text-overflow: ellipsis;
     margin-right: 2em;
 }
