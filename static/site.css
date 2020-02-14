@@ -9,7 +9,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
-    background-color: #f5f5f5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,7 +28,6 @@ nav.site-nav {
     flex-wrap: wrap;
     background-color: black;
     color: white;
-    border-bottom: 1px solid #555;
 }
 
 h1.site-title {
@@ -104,7 +102,6 @@ footer.site-footer {
     align-items: center;
     margin-top: 1em;
     padding-top: 0.5em;
-    border-top: 1px solid #555;
     background-color: black;
     color: white;
 }
@@ -126,8 +123,8 @@ div.content {
     margin-right: auto;
     background-color: white;
     padding: 1em;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
-    font-size: larger;
+    box-shadow: 0 0 10px #fff;
+    font-size: large;
 }
 
 div.content figure {
@@ -153,10 +150,6 @@ div.content pre {
     background-color: black;
     padding: 0.7em;
     border-radius: 3px;
-}
-
-div.content h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid black;
 }
 
 div.content table, th, td {
