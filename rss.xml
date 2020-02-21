@@ -1,4 +1,132 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Fri, 14 Feb 2020 16:35:28 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Work Less To Do More]]></title><description><![CDATA[<p>The prominence of #hustlelife posts on Instagram reflects the values of our
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Fri, 21 Feb 2020 22:32:51 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Beyond Logical Consistency]]></title><description><![CDATA[<p>We conventionally associate the term logic with bivalent logic. A system in
+which any proposition is assigned just one of two possible values: true or
+false. But, what if there was more to it?</p>
+<blockquote>
+<p>The most certain of all basic principles is that contradictory propositions
+are not true simultaneously.</p>
+</blockquote>
+<p>This principle laid out in Aristotle’s Metaphysics, called the law of
+noncontradiction, is a fundamental axiom of classical logic. Aligned with our
+intuitive understanding of semantics, this law also seems to have been
+accepted as indisputable canon in various schools of formal logic. Reflected
+in the Persian polymath Ibn Sina’s rather brutal condemnation of anyone who
+didn’t subscribe to this law.</p>
+<blockquote>
+<p>Anyone who denies the law of noncontradiction should be beaten and burned
+until he admits that to be beaten is not the same as not to be beaten, and to
+be burned is not the same as not to be burned.</p>
+</blockquote>
+<p>Apart from the intuitive rationale, the formal basis for the law of
+noncontradiction lies in the principle of explosion. This principle states
+that in a system where a statement and its negation are both true, we can
+prove the truth of any arbitrary statement. In other words, from
+contradiction, anything follows (<em>ex contradictione sequitur quodlibet</em>).</p>
+<p>Consider the case where proposition (A), “all apples are red” and its
+negation (¬A), “not all apples are red” are both true. We take an arbitrary
+proposition (B), “aliens exist”, and perform a logical or (A | B), “all
+apples are red OR aliens exist”. But since we know that “not apples are not
+red” (¬A), we can prove that “aliens exist” (B). We could use a similar
+structure to prove that “aliens don’t exist” (¬B).</p>
+<p>A system in which every statement and its negation can be proved true, is
+clearly not very useful for anything practical. But, what if a system with a
+contradiction didn’t collapse into absurdity? A system of logic that can
+accommodate contradictions without exploding into triviality is called a
+paraconsistent logic.</p>
+<p>For inspiration as to what such a logic would look like, we can examine the
+principles of the various schools of Indian logic that didn’t subscribe to
+the law of noncontradiction.</p>
+<p>In classical logic, any conclusion can be implied from any premise as long as
+their truth values match up — like a premise about apples implying a
+conclusion about aliens. But, many Hindu logicians emphasized the principle
+of pervasion (<em>vyāpti</em>), which required a strong universal correlation
+(<em>sahacāra</em>) between the reason (<em>hetu</em>) and conclusion (<em>sādhya</em>) when
+performing an implication.</p>
+<p>This restricts the range of inferences we can make from a proposition,
+limiting the “blast radius” of a contradiction. In the above example about
+apples and aliens, we would only be able to make the implication about the
+existence of aliens if we had prior knowledge of a commonality or relation
+between the color of apples and the existence of aliens.</p>
+<p>This type of logic is known in contemporary philosophy as a relevance logic.
+A relevance logic limits the application of the material implication
+connective (→) to cases where the premise and conclusion share some common
+characteristics.</p>
+<p>In other words, they force your inferences to “stay on topic”. Depending on
+the exact system of logic, this could mean requiring the same propositional
+variable be present in the premise and conclusion, or some other kind of
+ternary relation constraining the use of the implication.</p>
+<p>In addition to preventing a contradiction from exploding, relevance logics
+also solve the problem of vacuous truths. A vacuous truth is a conditional
+statement that is always true because the premise itself is false.</p>
+<p>For example, the conditional statement, “if the earth is flat then I’m a
+millionaire”, is always true regardless of my financial situation, because
+the earth simply isn’t flat. Requiring a strong connection between the
+premise and conclusion would prevent such pointless statements from being
+valid.</p>
+<p>For different kind of paraconsistent treatment, we can look to the Buddhist
+schools of logic. In their analyses of propositions, Buddhist logicians
+frequently employed a fourfold structure (<em>catuṣkoṭi</em>). For every proposition
+(P) they considered four possibilities.</p>
+<ol>
+<li>P </li>
+<li>not P </li>
+<li>P and (not P) </li>
+<li>neither P nor (not P)</li>
+</ol>
+<p>In addition to doing away with the exclusivity of truth values — allowing a
+proposition to be true and false — they also did away with the law of the
+excluded middle — allowing a proposition to be neither. Far from being some
+sort of mystical riddle, this is a
+<a href="https://scholarworks.sjsu.edu/comparativephilosophy/vol1/iss2/6/">valid</a>
+system of logic — known in modern terms as a many-valued logic.</p>
+<p>First Degree Entailment (FDE) is an example of one such system in modern
+logic which has four truth values: true, false, both and neither. In addition
+to the traditional true and false values, FDE also accounts for truth value
+gluts (both) and truth value gaps (neither).</p>
+<p>The truth tables of this logic also lay down the rules for operating on these
+values in a standard way. For example, the negation of a proposition that is
+both true and false is the same as the original proposition, which is
+verifiable by applying De Morgan’s law.</p>
+<p>So, anyways, what is the point of these logics?</p>
+<blockquote>
+<p>This statement is false.</p>
+</blockquote>
+<p>The liar’s paradox is an example of a true contradiction. Belonging to the
+broader class of self-reference paradoxes, these types of statements resist a
+rigid assignment to simple true or false values. Since if it were true, it
+would also be false, and vice versa. While it is hard to represent this in
+classical logic, in a many-valued logic, we have the ability to assign this
+statement the “both true and false” value.</p>
+<p>It is important to note that the goal of a paraconsistent logic is not to
+help resolve a paradox one way or another. It is to allow for them to exist
+in a structured way that doesn’t completely obliterate everything else that
+is useful about logical reasoning.</p>
+<p>If you’re still reading this, it means your brain didn’t immediately explode
+upon encountering a paradoxical sentence. If our minds can handle paradoxes
+without blowing up, why shouldn’t our systems of logic display a similar kind
+of resilience?</p>
+<p>These logics also have an application in automated reasoning. Real world
+datasets can be notoriously unreliable. Either due to human error,
+adversarial exploits, or just the messiness of the problem space. Using a
+paraconsistent system allows for much more robustness when reasoning with
+inconsistent or incomplete information.</p>
+<p>Another possible application is in the field of <a href="https://link.springer.com/article/10.1007/BF01889304">quantum
+logic</a>. In quantum
+computing, a qubit exists in a superposition of states that is a kind of
+probabilistic combination of true and false values — similar to the case in
+paraconsistent logic.</p>
+<p>A common criticism of paraconsistent logic is that there is no ontological basis
+for a contradictory statement in reality as we know it. That’s fair, but the
+same argument could be made for negative or complex numbers — I have never
+seen anyone eat exactly <em>-3i</em> apples. Nevertheless, such abstractions are
+still useful in modelling certain scenarios and do have real-world
+applications.</p>
+<p>Scientific progress is built on paradigm shifts that challenge our intuitive
+notions of how things should be. The discovery of infinitesimal calculus was
+crucial to subsequent models of classical physics. Just like the development
+of non-euclidean geometry was to understanding the theory of general
+relativity. Perhaps unlocking the next wave of progress requires us to shed
+the orthodoxy of strictly exclusivecategories of truth and falsity.</p>
+]]></description><link>posts/2020/02/21/paraconsistent-logic.html</link><guid isPermaLink="false">https://www.varav.in/posts/paraconsistent-logic.md</guid><pubDate>Fri, 21 Feb 2020 08:00:00 GMT</pubDate></item><item><title><![CDATA[Work Less To Do More]]></title><description><![CDATA[<p>The prominence of #hustlelife posts on Instagram reflects the values of our
 current times. The capitalistic society we live in glorifies overwork and
 vilifies rest. We are led to believe that any time not spent on so-called
 “productive” labor is a sinful waste that must be diverted to more useful
