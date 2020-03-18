@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Quicksand|Coda);
+@import url(https://fonts.googleapis.com/css?family=Coda);
 
 html {
     height: 100%;
@@ -8,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Quicksand', sans-serif;
+    font-family: sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -118,7 +118,7 @@ div.content {
     background-color: white;
     padding: 1em;
     box-shadow: 0 0 10px #fff;
-    font-size: large;
+    /* font-size: large; */
 }
 
 div.content figure {
