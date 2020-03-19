@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Mukta);
-
 html {
     height: 100%;
     background-color: black;
@@ -8,11 +6,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-family: Roboto, Tahoma, Verdana, Geneva, sans-serif;
 }
 
 a {
