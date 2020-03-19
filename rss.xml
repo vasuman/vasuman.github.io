@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Wed, 18 Mar 2020 22:32:42 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[The Art of Suspending Judgement]]></title><description><![CDATA[<p>The modern human is conditioned to think in terms of strict <strong>dichotomies</strong>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Thu, 19 Mar 2020 01:52:31 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[The Art of Suspending Judgement]]></title><description><![CDATA[<p>The modern human is conditioned to think in terms of strict <strong>dichotomies</strong>.</p>
 <p>News reports must be judged as real or fake. One’s political beliefs must
 belong exclusively to the left or the right. The existence of a higher power
 must either be constantly affirmed or vehemently denied.</p>
@@ -1362,65 +1362,7 @@ relevance of an ancient text to modern times.</p>
 interact with have not changed much. Keep a printout of this article in your
 back pocket for the next time you end up in an argument with someone and need
 some tips on how to proceed.</p>
-]]></description><link>posts/2019/06/14/nyayasutra.html</link><guid isPermaLink="false">https://www.varav.in/posts/nyayasutra.md</guid><pubDate>Fri, 14 Jun 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Mnemonics]]></title><description><![CDATA[<p>Breaking from my ususal pattern of posting about programming, I thought I’d
-write about (cue dramatic music) <strong>the hidden powers of the mind</strong>.</p>
-<p>A friend recently recommended this book called <a href="http://joshuafoer.com/moonwalking-with-einstein/">Moonwalking with Einstein</a> by
-Joshua Foer that dives into the world of competitive memorization. <a href="http://www.world-memory-statistics.com/disciplines.php">Records</a>
-set in such contests include remembering and recalling 520 digits in sequence
-in a 5-minute period and the order of 1626 playing cards in an hour. Certainly,
-the contestants must be freaks of nature blessed with a photographic memory.
-Sorry to burst your bubble, but contrary to what popular media would have you
-believe, <a href="http://www.slate.com/articles/health_and_science/science/2006/04/kaavya_syndrome.single.html">it’s higly unlikely</a> that anybody has such abilities.</p>
-<p>Then, what enables these people to perform such amazing feats of memory when I
-struggle to remember what I had for breakfast yesterday (it was Dosa, I think).
-Well, it turns out that you can accomplish pretty amazing things with just an
-average memory using the right techniques.</p>
-<p>While most memory competitions include a variety of tasks (names and faces,
-playing cards and even poerty), for the rest of this post I’m going to focus
-specifically on the task of remebering long strings of digits in sequence. But,
-the general idea that I wish to convey is that there are methods to make
-seemingly impossible memorization tasks into tractable problems.</p>
-<h2 id="chunking">Chunking</h2>
-<p><a href="https://en.wikipedia.org/wiki/Chunking_(psychology)">Chunking</a> is a psychological process that assists the human mind in storing
-and retrieving information. It works by grouping individual pieces of
-information into larger units that can be remembered and recalled together. This
-helps by effectively reducing the <em>unique items</em> that your mind need to
-remember. You may notice this happen subconciously when trying to memorize a
-telephone number, you generally split the number by grouping its component
-digits into semantically meaningful parts, like the country code, STD code, area
-code, etc. And then remebering these parts individually.</p>
-<h2 id="major-system">Major system</h2>
-<p>The Major system is a method that helps convert digits into consonant sounds in
-which each <strong>digit</strong> maps to one or more <strong>sounds</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Digit</th>
-<th align="right">Sound</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td align="right">2</td>
-</tr>
-</tbody></table>
-<p>I used <a href="http://www.memrise.com/course/43909/the-mnemonic-major-system/">this deck</a> from the Memrise app (which is pretty nicely gamified, by
-the way) to help me learn the sound to number associations and vice-versa. I
-skipped the word lists for reasons which I explain in the next section.</p>
-<h2 id="story-method">Story method</h2>
-<p>Also called the <a href="http://mt.artofmemory.com/wiki/Mnemonic_Link_System">mnemonic link system</a>, using the major system, we can
-convert a string of digits into a sequence of phonemes. To remember the digits
-simply make a story out of the sounds. Suppose, you have the number 1523776</p>
-<h2 id="person-object-action-system">Person-Object-Action system</h2>
-<p>The Person-Object-Action (POA) system associates each <code>n</code>-digit number with a
-<em>person</em> performing an <em>action</em> with an <em>object</em>. The <code>n</code> here is the chunk
-size (usually 2 or 3).</p>
-<h2 id="method-of-loci">Method of loci</h2>
-<p>Method of loci.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>My main takeaway from this exercise was how specific mental representations can
-help overcome cognitive limits.</p>
-]]></description><link>posts/2017/01/01/mnemonics.html</link><guid isPermaLink="false">https://www.varav.in/posts/mnemonics.md</guid><pubDate>Sun, 01 Jan 2017 08:00:00 GMT</pubDate></item><item><title><![CDATA[Procedural Dungeon Generation]]></title><description><![CDATA[<div class="notice">
+]]></description><link>posts/2019/06/14/nyayasutra.html</link><guid isPermaLink="false">https://www.varav.in/posts/nyayasutra.md</guid><pubDate>Fri, 14 Jun 2019 07:00:00 GMT</pubDate></item><item><title><![CDATA[Procedural Dungeon Generation]]></title><description><![CDATA[<div class="notice">
 **This is an interactive article, play with the settings. Click on the canvas to
 reanimate**.
 </div>
