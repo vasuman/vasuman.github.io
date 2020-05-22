@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Fri, 22 May 2020 16:49:35 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[The Anarchy in Science]]></title><description><![CDATA[<p>Reading an introductory science textbook gives you the impression that there
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vasuman]]></title><description><![CDATA[Personal website and blog of Vasuman Ravichandran]]></description><link>https://www.varav.in</link><generator>metalsmith-feed</generator><lastBuildDate>Fri, 22 May 2020 16:51:32 GMT</lastBuildDate><atom:link href="https://www.varav.in/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[The Anarchy in Science]]></title><description><![CDATA[<p>Reading an introductory science textbook gives you the impression that there
 is a clear, well-defined structure to the scientific process. You start with
 an observation, develop a hypothesis that is consistent with existing
 theories, run an experiment to test it, and collect the results. If the
@@ -10,7 +10,6 @@ question, does it accurately reflect reality?</p>
 word itself. And although they may disagree on the specifics, they share a
 common premise. Namely, that there is a concrete set of immutable principles
 that characterizes scientific activity.</p>
-<hr>
 <blockquote>
 <p>Anything goes</p>
 </blockquote>
@@ -184,6 +183,8 @@ definitions.</p>
 Feyerabend reveled in the irony of his position. In an interview, when
 pressed on what his actual position on something was, he is reported to have
 quipped, “I have no position!”</p>
+<p>This aversion to all positions and labels is also evident in his statements
+on the reception of his book.</p>
 <blockquote>
 <p>One of my motives for writing <em>Against Method</em> was to free people from the
 tyranny of philosophical obfuscators and abstract concepts such as “truth”,
