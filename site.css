@@ -1,18 +1,18 @@
 /* base */
 
 :root {
-    --primary-color: black;
-    --muted-color: #444;
-    --secondary-color: white;
-    --inversion-value: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-:root {
     --primary-color: white;
     --muted-color: #999;
     --secondary-color: black;
     --inversion-value: 1;
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+    --primary-color: black;
+    --muted-color: #444;
+    --secondary-color: white;
+    --inversion-value: 0;
 }
 }
 

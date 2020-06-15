@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Misc on Vasuman</title>
-    <link>https://varav.in/misc/</link>
+    <link>https://www.varav.in/misc/</link>
     <description>Recent content in Misc on Vasuman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>varav@varav.in (Vasuman Ravichandran)</managingEditor>
     <webMaster>varav@varav.in (Vasuman Ravichandran)</webMaster>
     
-	<atom:link href="https://varav.in/misc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.varav.in/misc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Crewl</title>
-      <link>https://varav.in/misc/crewl/</link>
+      <link>https://www.varav.in/misc/crewl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>varav@varav.in (Vasuman Ravichandran)</author>
-      <guid>https://varav.in/misc/crewl/</guid>
+      <guid>https://www.varav.in/misc/crewl/</guid>
       <description>  Creature World   </description>
     </item>
     
