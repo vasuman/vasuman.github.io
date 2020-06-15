@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<title> Glitchball - Vasuman</title>
+<link rel="stylesheet" href="/site.css" />
+<meta name="title" content="Glitchball" />
+<meta name="viewport" content="width=600" />
+
+<meta name="keywords" content=philosophy,meditation,technology />
+
+<meta name="description" content="A competitive local two-player game." />
+<meta name="author" content="Vasuman Ravichandran" />
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-72094155-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+</head>
+
+<body>
+    <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="/images/logo.png" /></a>
+    <ul class="nav-links">
+        
+        
+        <li><a class="top-link" href="/articles/">Articles</a></li>
+        
+        
+        
+        <li><a class="top-link" href="/games/">Games</a></li>
+        
+        
+        
+        <li><a class="top-link" href="/">About</a></li>
+        
+        
+    </ul>
+</nav>
+    <main class="content">
+         
+
+
+<header>
+    <h1>Glitchball</h1>
+    
+</header>
+
+
+<style>
+
+div.play-button-container {
+   text-align: center;
+   font-size: x-large;
+   margin: 1.5em;
+}
+
+span.play-button > a {
+    padding: 0.3em 1.5em;
+    border: 5px outset #666;
+    background-color: #333;
+    text-decoration: none;
+    color: white;
+}
+
+</style>
+<div class="play-button-container">
+<span class="play-button">
+<a href="/glitchball">Play</a>
+</span>
+</div>
+<h2 id="rules">Rules</h2>
+<ul>
+<li>
+<p>There are two players and the aim of this game is to get the ball (yellow thing)
+to the other players <em>goal</em>.</p>
+</li>
+<li>
+<p>Once you have the ball, if the other player touches you, you die and respawn
+next to your goal and the other player gets possesion of the ball.</p>
+</li>
+<li>
+<p>When the attacking player <em>glitches</em>, the defending player is frozen and the
+attacking player can move like they normally do.</p>
+</li>
+<li>
+<p>When the defending player <em>glitches</em>, the attacking player is frozen and the
+defending player can teleport to any point on the defensive matrix.</p>
+</li>
+</ul>
+<h2 id="controls">Controls</h2>
+<p>The green player moves with the <em>arrow keys</em> and glitches with the slash (<code>/</code>)
+key.</p>
+<p>The red player moves with the <code>WSAD</code> keys and glitches with the <code>V</code> key.</p>
+<h2 id="graphics">Graphics</h2>
+<p>The concept was that there is a fixed grid mesh and all entities (players, ball)
+are disturbances on this substrate. I used a tiny WebGL wrapper <a href="http://twgljs.org/">library</a> and
+wrote a couple of shaders in GLSL to achieve the desired effect.</p>
+<h2 id="screenshots">Screenshots</h2>
+<figure>
+    <img src="/images/glitchball/1.png"/> <figcaption>
+            <h4>Starting positions</h4>
+        </figcaption>
+</figure>
+
+<figure>
+    <img src="/images/glitchball/2.png"/> <figcaption>
+            <h4>Attacking glitch</h4>
+        </figcaption>
+</figure>
+
+<figure>
+    <img src="/images/glitchball/3.png"/> <figcaption>
+            <h4>Defending glitch</h4>
+        </figcaption>
+</figure>
+
+<figure>
+    <img src="/images/glitchball/4.png"/> <figcaption>
+            <h4>Scoring a goal</h4>
+        </figcaption>
+</figure>
+
+<p>Check out the source code <a href="https://github.com/vasuman/glitchball">here</a>.</p>
+ 
+
+
+    </main>
+    <footer>
+    <a class="top-link" href="mailto:varav@varav.in">Contact</a>
+</footer>
+
+</body>
+
+</html>

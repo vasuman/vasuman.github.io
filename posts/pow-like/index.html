@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<title> Proof-of-like - Vasuman</title>
+<link rel="stylesheet" href="/site.css" />
+<meta name="title" content="Proof-of-like" />
+<meta name="viewport" content="width=600" />
+
+<meta name="keywords" content=philosophy,meditation,technology />
+
+<meta name="description" content="Personal website of Vasuman Ravichandran" />
+<meta name="author" content="Vasuman Ravichandran" />
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-72094155-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+</head>
+
+<body>
+    <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="/images/logo.png" /></a>
+    <ul class="nav-links">
+        
+        
+        <li><a class="top-link" href="/articles/">Articles</a></li>
+        
+        
+        
+        <li><a class="top-link" href="/games/">Games</a></li>
+        
+        
+        
+        <li><a class="top-link" href="/">About</a></li>
+        
+        
+    </ul>
+</nav>
+    <main class="content">
+         
+
+
+<header>
+    <h1>Proof-of-like</h1>
+    
+    <div class="post-time">04 Apr 2015</div>
+    
+</header>
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<p>Not surprisingly, I spend most of my free time browsing the
+inter-webs. I come across a lot of things that I <em>like</em>. But as a
+random stranger it is hard to convey that sentiment in a convenient
+yet meaningful way.</p>
+<p>To be fair, most sites integrate the Facebook Like button or something
+in that vein. But my major qualm with these systems is that they
+require you to <strong>log in</strong>, tying your entire online identity to the
+act of liking. You basically broadcast your interests to the entire
+world. Also, these buttons are more about sharing content with your
+peers on social networks.</p>
+<p>This got me thinking as to whether there is a way for somebody to like
+something <strong>anonymously</strong> on the Internet. The biggest problem that
+came to mind was <em>spam</em> &ndash; what is to stop somebody from abusing the
+system? Now, of all the spam combating methods out there the one I
+found most innovative was <a href="http://www.hashcash.org/">Hashcash</a>. And so, I went about
+approaching the problem with that in mind. This brings me to
+<a href="http://en.wikipedia.org/wiki/Proof-of-work_system">proof-of-work systems</a>.</p>
+<h2 id="proof-of-work-">Proof-of-work</h2>
+<p>Proof-of-work systems have been around for a while now. The basic
+principle is that, there is a class of problems for which it is hard
+to find a solution. Though, once a solution is found, verifying that
+it is valid is relatively easy. There is a fundamental <strong>asymmetry</strong> in
+the computational power required between finding and verifying a
+solution to such problems. This characteristic is exploited to build
+systems in which one party can trivially ensure the another party has
+&ndash; within limits; expended some amount of computational resource (CPU
+or memory).</p>
+<p>Consider the problem of finding a suitable nonce value (\(n\)) such
+that when appended to some challenge string (\(C\)) and hashed the
+resulting hash value meets some constraint &ndash; like being lesser than a
+given target value (\(T_V\)).</p>
+<p>$$ H( C||n ) &lt; T_V $$</p>
+<p>Since hashing is a one-way function, it is practically impossible &ndash;
+infeasible is a better word; to deduce the value of \(n\) from
+\(C\), therefore the only way to find a value for \(n\) is to
+<a href="http://en.wikipedia.org/wiki/Brute-force_search">brute force</a> the search space, performing a large number of
+computations &ndash; depending on the difficulty of satisfying the
+constraint. Once a suitable value of \(n\) is found, a verifier
+needs to perform the hash function <em>exactly once</em> to check that the
+resulting hash matches the presented constraint.</p>
+<p>Hashcash &ndash; one of the first widely implemented proof-of-work systems;
+was used to combat email spam and prevent denial-of-service
+attacks. Nowadays though, thanks to <a href="https://bitcoin.org/">Bitcoin</a>, proof-of-work
+systems have a much larger audience.</p>
+<hr>
+<p>Outlining how a system for liking using proof-of-work functions,</p>
+<h2 id="steps-involved-">Steps Involved</h2>
+<p>We have a <em>client</em> and <em>server</em>. Simply put, there are 5 basic steps,</p>
+<p><strong>Client sends requests</strong>, indicating that it wishes to like. This
+step is probably initiated by some form of user interaction. This
+interaction should also allow the user to modify a parameter
+indicating <em>how much</em> he likes the thing.</p>
+<p><strong>Server generates a challenge</strong> and sends it to the client. The
+<code>challenge</code> generated is probably a function of the user&rsquo;s IP, a
+timestamp and of course, the URL of the page he likes. The generated
+<code>challenge</code> is stored in a cache and marked with an <code>expiry</code> timestamp
+after which, it gets flushed &ndash; a client must submit solution before
+this.</p>
+<p><strong>Client begins work</strong>. It performs an exhaustive brute-force search
+on the entire search space. The user probably has to stay on the page
+for the duration of this search &ndash; switching causes a demotion of
+priority and makes the search extremely slow.</p>
+<p>Once, <strong>the client finds a suitable nonce</strong>, that satisfies the
+supplied constraint, it sends the value to the server tagged with the
+<code>challenge</code> that it solved.</p>
+<p><strong>Server verifies the nonce</strong> and assigns a <code>reward</code> value depending
+on the <code>difficulty</code> of a solution.</p>
+<h2 id="issues-">Issues</h2>
+<h3 id="environment-">Environment</h3>
+<p>All of the client side code has to <strong>run in the browser</strong>. An
+important here consideration is that, while the client is working, it
+shouldn&rsquo;t hinder the user&rsquo;s interaction with the rest of the page. The
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">Web Worker API</a> is ideally suited for this, since it
+allows for a script to run without blocking the main UI thread on the
+page.</p>
+<h3 id="speed-">Speed</h3>
+<p>Running in the browser limits our ability to exploit the full CPU
+potential. And accessing the GPU from the browser requires the use of
+WebGL. The problem is that the WebGL context can only be accessed from
+the main UI thread.</p>
+<p><a href="https://github.com/kripken/emscripten">Emscripten</a> shows some impressive performance
+benchmarks. Hell, they&rsquo;ve even gotten
+<a href="https://blog.mozilla.org/blog/2014/03/12/mozilla-and-epic-preview-unreal-engine-4-running-in-firefox/">Unreal Engine to run in the browser!</a></p>
+<h3 id="content-vs-url-">Content vs. URL</h3>
+<p>At first, I thought that it would be better to base the challenge on
+the <strong>content</strong> of the page. The advantage of this is that it provides
+some kind of authentication &ndash; if the content of the page is changed
+in any way, all previous likes become invalid. The problem with that
+approach is that even minor edits can change the generated <code>challenge</code>
+&ndash; something to avoid.</p>
+<h2 id="pluses-">Pluses</h2>
+<h3 id="parametric-liking-">Parametric liking</h3>
+<p>Say I&rsquo;ve got two <em>articles</em> of in front of me.</p>
+<p>Now, I definitely like one but I think the other is <em>way</em> better.
+Earlier, my likes in both cases were worth the same! But now, I can
+actually like one more than the other.</p>
+<p><strong>How?</strong>, you may ask. Well, most proof-of-work functions have an
+adjustable <code>difficulty</code> parameter. The <em>higher</em> the value of this
+parameter, the <em>longer</em> it takes to find a nonce value that satisfies
+the solution, but it generates a higher <code>reward</code> value.</p>
+<p>So, for something that I casually like, I can set a lower <code>difficulty</code>
+value. But, for something that I think is <em>really great</em> I can set a
+higher <code>difficulty</code> value.</p>
+<h3 id="actual-resource-">Actual resource</h3>
+<p>This is really more of a symbolic benefit. Since liking is backed by a
+solution to a proof-of-work function, it can be safely assumed that
+the <em>liker</em> has expended some <em>real</em> amount of computational power in
+generating the nonce.</p>
+<h2 id="not-so-pluses-">Not so pluses</h2>
+<h3 id="mobile-">Mobile</h3>
+<p>This idea doesn&rsquo;t really play well with mobile devices for two main
+reasons.</p>
+<ol>
+<li><strong>CPU</strong> - It will take quite a while longer to like something.</li>
+<li><strong>Power</strong> - Liking frequently significantly drains the battery.</li>
+</ol>
+<h3 id="undemocratic-">Undemocratic</h3>
+<p>In this system, not everybody is equally represented. A higher
+weightage is given to people that have more compute power. People who
+can afford more powerful systems end up having more <em>liking power</em>
+than the others.</p>
+<h3 id="page-focus-">Page focus</h3>
+<p>To perform the like, the <em>liker</em> must keep the page in
+focus. Otherwise, the brute-force job gets demoted to a background
+task and eventually it times out.</p>
+<h2 id="links-">Links</h2>
+<p>I&rsquo;ve started working on a server very <em>creatively</em> called <strong>HashLike</strong> &ndash;
+written in Golang. Check out the <a href="https://github.com/vasuman/HashLike">repo</a> for more.</p>
+ 
+
+
+    </main>
+    <footer>
+    <a class="top-link" href="mailto:varav@varav.in">Contact</a>
+</footer>
+
+</body>
+
+</html>
