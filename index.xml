@@ -8,10 +8,19 @@
     <language>en-us</language>
     <managingEditor>varav@varav.in (Vasuman Ravichandran)</managingEditor>
     <webMaster>varav@varav.in (Vasuman Ravichandran)</webMaster>
-    <lastBuildDate>Fri, 22 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.varav.in/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Indrajala</title>
+      <link>https://www.varav.in/articles/indrajala/</link>
+      <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
+      <author>varav@varav.in (Vasuman Ravichandran)</author>
+      <guid>https://www.varav.in/articles/indrajala/</guid>
+      <description>In 17th century London, John Donne fell deathly ill. The field of pathophysiology wasn&amp;rsquo;t much of a thing back then and sickness was considered a manifestation of sin that warranted a visit from God. Rather than rest through the anguish, Donne decided to chronicle his reflections during this period. Fortunately, he survived and eventually published these reflections in a volume, Devotions Upon Emergent Occasions. The most famous of these meditations is perhaps familiar to many.</description>
+    </item>
     
     <item>
       <title>The Anarchy in Science</title>
@@ -103,17 +112,6 @@ Humans have probably been trying to quantify work ever since we started hunting 
       <author>varav@varav.in (Vasuman Ravichandran)</author>
       <guid>https://www.varav.in/articles/consumption-cycle/</guid>
       <description>Unless you’ve been living under a rock, you’re probably aware of the recent decluttering frenzy, fueled by the popularity of Marie Kondo’s new Netflix show. As a slightly compulsive neat freak, I wholeheartedly bought into the premise that you should only hold on to things that trigger happiness. And while the “if it doesn’t spark joy, get rid of it” mantra seems like sound advice at face value, it also has the potential to trigger a vicious circle of overconsumption.</description>
-    </item>
-    
-    <item>
-      <title>Metaphysical Idealism</title>
-      <link>https://www.varav.in/articles/metaphysical-idealism/</link>
-      <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
-      <author>varav@varav.in (Vasuman Ravichandran)</author>
-      <guid>https://www.varav.in/articles/metaphysical-idealism/</guid>
-      <description>In his 1995 paper, Australian philosopher David Chalmers formulated what he called the &amp;ldquo;Hard Problem of Consciousness&amp;rdquo;.
- The really hard problem of consciousness is the problem of experience. When we think and perceive, there is a whir of information-processing, but there is also a subjective aspect. As Nagel has put it, there is something it is like to be a conscious organism. This subjective aspect is experience.
- According to Chalmers, the &amp;ldquo;easier&amp;rdquo; problems such as the ability to categorize objects, observation of internal states, the direction of attention, etc.</description>
     </item>
     
   </channel>
