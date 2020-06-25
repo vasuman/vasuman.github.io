@@ -1,35 +1,43 @@
 /* base */
 
-:root {
-    --primary-color: white;
-    --muted-color: #999;
-    --secondary-color: black;
+/*
+themes:
+  dull:
+    --primary-color: #ddd;
+    --muted-color: #666;
+    --secondary-color: #111;
+    --link-color: #077;
     --inversion-value: 1;
-}
+  royal: 
+    --primary-color: #f2ffe0;
+    --muted-color: #83929b;
+    --secondary-color: #301d31;
+    --link-color: #ee9090;
+    --inversion-value: 1;
+*/
 
-@media (prefers-color-scheme: light) {
 :root {
-    --primary-color: black;
-    --muted-color: #444;
-    --secondary-color: white;
-    --inversion-value: 0;
-}
+    --primary-color: #ddd;
+    --muted-color: #888;
+    --secondary-color: #111;
+    --link-color: #077;
+    --inversion-value: 1;
 }
 
 html {
     height: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--muted-color);
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Helvetica, sans-serif;
+    font-size: larger;
 }
 
 a {
-    color: darkcyan;
+    color: var(--link-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,6 +73,7 @@ ul.nav-links > li {
 }
 
 a.top-link {
+    font-size: larger;
     text-decoration: none;
     padding: 0.5em;
     color: var(--secondary-color);
@@ -174,7 +183,8 @@ figure > img {
 }
 
 figcaption > h4 {
-    margin: 0.5em 0 2em 0;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
 }
 
 blockquote {
@@ -182,6 +192,15 @@ blockquote {
     padding-left: 1em;
     color: var(--muted-color);
     overflow: auto;
+}
+
+a.button {
+    text-decoration: none;
+    padding: 0.3em 1.5em;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    box-shadow: 0 0 10px var(--primary-color);
 }
 
 /* footer */
