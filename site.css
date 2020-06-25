@@ -8,6 +8,7 @@ themes:
     --secondary-color: #111;
     --link-color: #077;
     --inversion-value: 1;
+
   royal: 
     --primary-color: #f2ffe0;
     --muted-color: #83929b;
@@ -73,7 +74,6 @@ ul.nav-links > li {
 }
 
 a.top-link {
-    font-size: larger;
     text-decoration: none;
     padding: 0.5em;
     color: var(--secondary-color);
