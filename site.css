@@ -90,7 +90,7 @@ a.top-link:hover {
 
 main.content {
     padding: 1em;
-    margin: 1em auto;
+    margin: 0.5em auto;
     max-width: 800px;
     color: var(--primary-color);
     background-color: var(--secondary-color);
