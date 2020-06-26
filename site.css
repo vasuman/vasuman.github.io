@@ -19,15 +19,16 @@ themes:
 
 :root {
     --primary-color: #ddd;
-    --muted-color: #888;
     --secondary-color: #111;
+    --muted-color: #888;
     --link-color: #299;
+    --background-color: #779;
     --inversion-value: 1;
 }
 
 html {
     height: 100%;
-    background-color: var(--muted-color);
+    background-color: var(--background-color);
 }
 
 body {
