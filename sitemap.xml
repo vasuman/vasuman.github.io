@@ -115,7 +115,7 @@
   </url>
   
   <url>
-    <loc>https://www.varav.in/projects/fish/</loc>
+    <loc>https://www.varav.in/demos/</loc>
   </url>
   
   <url>
@@ -127,15 +127,11 @@
   </url>
   
   <url>
-    <loc>https://www.varav.in/projects/lsystem/</loc>
+    <loc>https://www.varav.in/demos/lsystem/</loc>
   </url>
   
   <url>
     <loc>https://www.varav.in/misc/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.varav.in/projects/</loc>
   </url>
   
 </urlset>

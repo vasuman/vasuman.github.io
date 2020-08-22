@@ -6,8 +6,6 @@
     <description>Recent content in Posts on Vasuman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>varav@varav.in (Vasuman Ravichandran)</managingEditor>
-    <webMaster>varav@varav.in (Vasuman Ravichandran)</webMaster>
     <lastBuildDate>Wed, 25 May 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.varav.in/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +15,7 @@
       <title>Procedural Dungeon Generation</title>
       <link>https://www.varav.in/posts/dungeon/</link>
       <pubDate>Wed, 25 May 2016 00:00:00 +0000</pubDate>
-      <author>varav@varav.in (Vasuman Ravichandran)</author>
+      
       <guid>https://www.varav.in/posts/dungeon/</guid>
       <description>&lt;div class=&#34;notice&#34;&gt;
 &lt;b&gt;This is an interactive article, play with the settings. Click on the canvas to
@@ -29,7 +27,7 @@ reanimate.&lt;/b&gt;
       <title>DSL in Python</title>
       <link>https://www.varav.in/posts/python-dsl/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <author>varav@varav.in (Vasuman Ravichandran)</author>
+      
       <guid>https://www.varav.in/posts/python-dsl/</guid>
       <description>This post was in my drafts folder for quite a while and I suddenly felt the urge to publish it. A while back wrote a DSL built on Python for some college-related work. The goals for this exercise included syntax similarity and a runtime that is based in Python. So, here are a few notes on the experience.
 Tokenizer Arguably, one of the most prominent yet contentious points about the Python syntax is it&amp;rsquo;s whitespace sensitivity.</description>
@@ -39,17 +37,17 @@ Tokenizer Arguably, one of the most prominent yet contentious points about the P
       <title>Proof-of-like</title>
       <link>https://www.varav.in/posts/pow-like/</link>
       <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
-      <author>varav@varav.in (Vasuman Ravichandran)</author>
+      
       <guid>https://www.varav.in/posts/pow-like/</guid>
       <description>Not surprisingly, I spend most of my free time browsing the inter-webs. I come across a lot of things that I like. But as a random stranger it is hard to convey that sentiment in a convenient yet meaningful way.
 To be fair, most sites integrate the Facebook Like button or something in that vein. But my major qualm with these systems is that they require you to log in, tying your entire online identity to the act of liking.</description>
     </item>
     
     <item>
-      <title>L-systems</title>
+      <title>Lindenmayer Systems</title>
       <link>https://www.varav.in/posts/lsystem/</link>
       <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
-      <author>varav@varav.in (Vasuman Ravichandran)</author>
+      
       <guid>https://www.varav.in/posts/lsystem/</guid>
       <description>&lt;h2 id=&#34;charnia-&#34;&gt;Charnia&lt;/h2&gt;
 &lt;p&gt;I was watching the &lt;a href=&#34;http://firstlifeseries.com/&#34;&gt;First Life&lt;/a&gt; documentary which
@@ -65,7 +63,7 @@ of such beings.&lt;/p&gt;</description>
       <title>Fun with Pipes</title>
       <link>https://www.varav.in/posts/named-pipes/</link>
       <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
-      <author>varav@varav.in (Vasuman Ravichandran)</author>
+      
       <guid>https://www.varav.in/posts/named-pipes/</guid>
       <description>&lt;p&gt;Quite a while back I came across some interesting applications of
 &lt;strong&gt;named pipes&lt;/strong&gt; that I thought I should share with everybody.&lt;/p&gt;</description>
