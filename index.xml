@@ -6,10 +6,20 @@
     <description>Recent content on Vasuman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.varav.in/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apoha: Meaning Via Exclusion</title>
+      <link>https://www.varav.in/articles/apoha/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.varav.in/articles/apoha/</guid>
+      <description>At its core, the raw content of our experience consists of a distinct set of sense perceptions that we&amp;rsquo;ve perhaps never encountered before. And yet, we somehow manage to make sense of them, by mapping these unique concrete particulars to more familiar abstract universals.
+When browsing in a store, you come across plenty of objects that you&amp;rsquo;ve never seen before. But associating them with a more general class of things that you&amp;rsquo;re familiar with (shirts, pants, shoes, etc.</description>
+    </item>
     
     <item>
       <title>Indrajala: The Infinite Web</title>
@@ -101,15 +111,6 @@ In his book The History of Western Philosophy, Bertrand Russell criticizes this
       <guid>https://www.varav.in/articles/issue-tracking/</guid>
       <description>Bugs, issues, tickets: They go by many names but serve the same purpose&amp;mdash;tracking a task that needs to get done. It&amp;rsquo;s the lifeblood of project management in the tech industry, where nothing gets done that isn&amp;rsquo;t tracked somehow. And, like most invented concepts, it&amp;rsquo;s simply a formalization of our innate ways of thinking about tasks.
 Humans have probably been trying to quantify work ever since we started hunting together. But modern-day project management traces its lineage back to 1911 when Frederick Taylor published The Principles of Scientific Management, which aimed at systemizing the job of an individual worker to maximize output for the enterprise.</description>
-    </item>
-    
-    <item>
-      <title>The Consumption Cycle</title>
-      <link>https://www.varav.in/articles/consumption-cycle/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/articles/consumption-cycle/</guid>
-      <description>Unless you’ve been living under a rock, you’re probably aware of the recent decluttering frenzy, fueled by the popularity of Marie Kondo’s new Netflix show. As a slightly compulsive neat freak, I wholeheartedly bought into the premise that you should only hold on to things that trigger happiness. And while the “if it doesn’t spark joy, get rid of it” mantra seems like sound advice at face value, it also has the potential to trigger a vicious circle of overconsumption.</description>
     </item>
     
   </channel>
