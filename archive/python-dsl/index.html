@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<title> DSL in Python - Vasuman</title>
+<link rel="stylesheet" href="/site.css" />
+<meta name="title" content="DSL in Python" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content=philosophy,meditation,technology,programming,gamedev />
+
+<meta name="description" content="Personal website of Vasuman Ravichandran" />
+<meta name="author" content="Vasuman Ravichandran" />
+
+</head>
+
+<body>
+    <nav>
+    <a href="/"><img class="nav-logo" src=/images/logo.png /></a>
+    <div class="nav-links">
+        
+        
+        <a href="/articles/">Articles</a>
+        
+        
+        
+        <a href="/games/">Games</a>
+        
+        
+    </div>
+</nav>
+    <main class="content">
+         
+
+<article>
+
+<header>
+    <h1>DSL in Python</h1>
+    
+    <div class="post-time"><time datetime=2016-01-01>01 Jan 2016</time></div>
+    
+</header>
+
+
+<p>This post was in my drafts folder for quite a while and I suddenly felt the urge
+to publish it. A while back <a href="https://github.com/vasuman/snek-lang">wrote a DSL</a> built on Python for some
+college-related work. The goals for this exercise included syntax similarity
+and a runtime that is based in Python. So, here are a few notes on the experience.</p>
+<h2 id="tokenizer-">Tokenizer</h2>
+<p>Arguably, one of the most prominent yet contentious points about the Python
+syntax is it&rsquo;s whitespace sensitivity. What do you use? 1 tab, 2
+spaces, 4 spaces, 2^16 spaces!! A sensible editor configuration usually shields
+you from the quirks of this, but the point is that, indentation styles are not
+standard, some prefer tabs others spaces.</p>
+<p>Python&rsquo;s <code>tokenizer</code> module is pretty handy to help handle the indentation
+problem. It does this by converting your source file to stream of tokens with
+two special tokens &ndash; namely <code>INDENT</code> and <code>DEDENT</code> marking the starts and ends
+of indented blocks respectively. In my experience, these markers are equivalent
+to the block delimiters in other languages &ndash; usually braces (<code>{</code>, <code>}</code>).</p>
+<h3 id="example-">Example</h3>
+<p>Let&rsquo;s say we want to introduce a special language construct to swap the values
+held in two variables with a <code>x &lt;=&gt; y</code> infix operator.</p>
+<p>Here is an example. Consider the following segment of
+code,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">swap</span>(a, b):
+    a <span style="color:#f92672">&lt;=&gt;</span> b
+</code></pre></div><p>On tokenizing this piece of code &ndash; <em>as a string</em> stored in <code>s</code>,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> tokenize
+<span style="color:#f92672">import</span> io
+b <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>BytesIO(s)
+tokenize<span style="color:#f92672">.</span>tokenize(b<span style="color:#f92672">.</span>readline)
+</code></pre></div><p>We get,</p>
+<pre><code>2,0-2,2:    NAME    'def'
+2,3-2,7:    NAME    'swap'
+2,7-2,8:    OP  '('
+2,8-2,9:    NAME    'a'
+2,9-2,10:   OP  ','
+2,11-2,12:  NAME    'b'
+2,12-2,13:  OP  ')'
+2,13-2,14:  OP  ':'
+2,14-2,15:  NEWLINE '\n'
+3,0-3,1:    INDENT  '\t'
+3,1-3,2:    NAME    'a'
+3,3-3,4:    OP  '&lt;'
+3,4-3,5:    OP  '='
+3,5-3,6:    OP  '&gt;'
+3,7-3,8:    NAME    'b'
+3,8-3,9:    NEWLINE '\n'
+4,0-4,0:    DEDENT  ''
+4,0-4,0:    ENDMARKER   ''
+</code></pre><p>As you can see, the module takes care of the whitespace problem,
+delimiting blocks clearly. An additional benefit of using this module
+is that it,</p>
+<ul>
+<li>Extracts <strong>string literals</strong></li>
+<li>Handles code <strong>comments</strong></li>
+</ul>
+<h2 id="parsing-">Parsing</h2>
+<p>The parser would simply generate equivalent Python Abstract Syntax Tree for
+constructs in my language. Though, <a href="#">PEG</a>s are powerful, I found writing a
+custom recursive descent parser was way more convenient, understandable and
+helped in printing sensible error messages.</p>
+<p>The <code>ast</code> module is a handy tool for handling ASTs.</p>
+<p>While it is ideal to build an AST from ground up, my strategy for generating
+was a bit hack-ish. I used string interpolation to generate Python source code
+that was then <code>ast.parse</code>d.</p>
+<p>For example, to generate code that swaps the values in two variables <code>a</code> and
+<code>b</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">src<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">{0}, {1} = {1}, {0}
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+
+<span style="color:#f92672">import</span> ast
+module <span style="color:#f92672">=</span> ast<span style="color:#f92672">.</span>parse(src<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>))
+</code></pre></div><h2 id="span-classmonoevalspan-is-your-friend-"><span class="mono">eval</span> is your friend</h2>
+<p>Now that you have your Python AST what do you do with it? Well, you <code>compile</code>
+it to generate a <code>code</code> object that can be evaluated.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">code <span style="color:#f92672">=</span> compile(module, <span style="color:#e6db74">&#39;&lt;generated-src&gt;&#39;</span>, <span style="color:#e6db74">&#39;exec&#39;</span>)
+</code></pre></div><h3 id="namespaces-">Namespaces</h3>
+<p>By manipulating the appropriate namespace dictionaries, you can change the
+<code>globals</code> and the <code>locals</code> of the executed code. This is useful for injection
+of required values and extraction of execution results.</p>
+<h3 id="example--1">Example</h3>
+<p>Setup the dictionaries,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">env_globals <span style="color:#f92672">=</span> {}
+env_locals <span style="color:#f92672">=</span> {}
+</code></pre></div><p>Inject parameters,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">env_locals[<span style="color:#e6db74">&#39;a&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+env_locals[<span style="color:#e6db74">&#39;b&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>And execute.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">eval(code, env_globals, env_locals)
+<span style="color:#66d9ef">print</span> env_locals
+</code></pre></div> 
+</article>
+
+
+    </main>
+</body>
+
+</html>

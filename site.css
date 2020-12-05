@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+/* https://ektype.in/font-family/gotu-font/gotu-3230.html */
+@font-face {
+  font-family: "Gotu";
+  src: url("./fonts/Gotu.woff2") format("woff2"),
+       url("./fonts/Gotu.woff") format("woff");
+}
 
 /* base */
 
@@ -7,7 +12,8 @@ themes:
   dark:
     --primary-color: #ddd;
     --secondary-color: #1a1a1a;
-    --muted-color: #999;
+    --muted-color: #aaa;
+    --strong-color: #fff;
     --link-color: #5aa;
     --logo-invert: 0.15;
   light:
@@ -38,14 +44,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Gotu, sans-serif;
-    font-size: larger;
 }
 
 /* nav */
 
 nav {
     display: flex;
-    margin: 0.5em;
+    margin: 1em;
     justify-content: space-between;
     align-items: center;
 }
@@ -66,7 +71,7 @@ div.nav-links > a {
 
 main.content {
     padding: 1em;
-    margin: 0.5em auto;
+    margin: auto;
     max-width: 850px;
 }
 
@@ -83,7 +88,7 @@ header > h1 {
     text-align: center;
 }
 
-.post-time {
+div.post-time {
     color: var(--muted-color);
 }
 
@@ -92,23 +97,18 @@ header > div.post-time {
     text-align: right;
 }
 
-/* list page */
+/* page list */
+
+div.page-list {
+    text-align: center;
+}
 
 div.page-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 1em 0;
+    margin: 2.5em 0;
 }
 
-div.page-item a {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-div.page-item span.post-time {
-    white-space: nowrap;
-    padding-left: 0.5em;
+div.page-item > h2 {
+    margin: 0;
 }
 
 /* showcase */
@@ -199,19 +199,4 @@ div.button-container {
 
 footer {
     text-align: center;
-}
-
-/* print layout */
-
-@media print {
-    :root {
-        --primary-color: black;
-        --secondary-color: white;
-        --muted-color: #333;
-        --link-color: blue;
-        --logo-invert: 1;
-    }
-    main.content {
-        max-width: none;
-    }
 }
