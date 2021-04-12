@@ -1,73 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Archives on Vasuman</title>
-    <link>https://www.varav.in/archive/</link>
-    <description>Recent content in Archives on Vasuman</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 25 May 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.varav.in/archive/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Procedural Dungeon Generation</title>
-      <link>https://www.varav.in/archive/dungeon/</link>
-      <pubDate>Wed, 25 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/archive/dungeon/</guid>
-      <description>&lt;div class=&#34;notice&#34;&gt;
-&lt;b&gt;This is an interactive article, play with the settings. Click on the canvas to
-reanimate.&lt;/b&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>DSL in Python</title>
-      <link>https://www.varav.in/archive/python-dsl/</link>
-      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/archive/python-dsl/</guid>
-      <description>This post was in my drafts folder for quite a while and I suddenly felt the urge to publish it. A while back wrote a DSL built on Python for some college-related work. The goals for this exercise included syntax similarity and a runtime that is based in Python. So, here are a few notes on the experience.
-Tokenizer Arguably, one of the most prominent yet contentious points about the Python syntax is it&amp;rsquo;s whitespace sensitivity.</description>
-    </item>
-    
-    <item>
-      <title>Proof-of-like</title>
-      <link>https://www.varav.in/archive/pow-like/</link>
-      <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/archive/pow-like/</guid>
-      <description>Not surprisingly, I spend most of my free time browsing the inter-webs. I come across a lot of things that I like. But as a random stranger it is hard to convey that sentiment in a convenient yet meaningful way.
-To be fair, most sites integrate the Facebook Like button or something in that vein. But my major qualm with these systems is that they require you to log in, tying your entire online identity to the act of liking.</description>
-    </item>
-    
-    <item>
-      <title>Lindenmayer Systems</title>
-      <link>https://www.varav.in/archive/lsystem/</link>
-      <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/archive/lsystem/</guid>
-      <description>&lt;h2 id=&#34;charnia-&#34;&gt;Charnia&lt;/h2&gt;
-&lt;p&gt;I was watching the &lt;a href=&#34;http://firstlifeseries.com/&#34;&gt;First Life&lt;/a&gt; documentary which
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Archives on Vasuman</title><link>https://www.varav.in/archive/</link><description>Recent content in Archives on Vasuman</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 25 May 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://www.varav.in/archive/index.xml" rel="self" type="application/rss+xml"/><item><title>Procedural Dungeon Generation</title><link>https://www.varav.in/archive/dungeon/</link><pubDate>Wed, 25 May 2016 00:00:00 +0000</pubDate><guid>https://www.varav.in/archive/dungeon/</guid><description>&lt;div class="notice">
+&lt;b>This is an interactive article, play with the settings. Click on the canvas to
+reanimate.&lt;/b>
+&lt;/div></description></item><item><title>DSL in Python</title><link>https://www.varav.in/archive/python-dsl/</link><pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate><guid>https://www.varav.in/archive/python-dsl/</guid><description>This post was in my drafts folder for quite a while and I suddenly felt the urge to publish it. A while back wrote a DSL built on Python for some college-related work. The goals for this exercise included syntax similarity and a runtime that is based in Python. So, here are a few notes on the experience.
+Tokenizer Arguably, one of the most prominent yet contentious points about the Python syntax is it&amp;rsquo;s whitespace sensitivity.</description></item><item><title>Proof-of-like</title><link>https://www.varav.in/archive/pow-like/</link><pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate><guid>https://www.varav.in/archive/pow-like/</guid><description>Not surprisingly, I spend most of my free time browsing the inter-webs. I come across a lot of things that I like. But as a random stranger it is hard to convey that sentiment in a convenient yet meaningful way.
+To be fair, most sites integrate the Facebook Like button or something in that vein. But my major qualm with these systems is that they require you to log in, tying your entire online identity to the act of liking.</description></item><item><title>Lindenmayer Systems</title><link>https://www.varav.in/archive/lsystem/</link><pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate><guid>https://www.varav.in/archive/lsystem/</guid><description>&lt;h2 id="charnia">Charnia&lt;/h2>
+&lt;p>I was watching the &lt;a href="http://firstlifeseries.com/">First Life&lt;/a> documentary which
 chronicles the origins and evolution of life. In the documentary, they make a
-mention of &lt;a href=&#34;http://en.wikipedia.org/wiki/Charnia&#34;&gt;Charnia&lt;/a&gt; a frond-like
+mention of &lt;a href="http://en.wikipedia.org/wiki/Charnia">Charnia&lt;/a> a frond-like
 primitive organism. It lived deep underwater and fed of nutrients in the water.
 Sadly, it went extinct and has no extant descendants. Since it is one of the
 oldest known multicellular organisms it provides great insights into the origins
-of such beings.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fun with Pipes</title>
-      <link>https://www.varav.in/archive/named-pipes/</link>
-      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/archive/named-pipes/</guid>
-      <description>&lt;p&gt;Quite a while back I came across some interesting applications of
-&lt;strong&gt;named pipes&lt;/strong&gt; that I thought I should share with everybody.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+of such beings.&lt;/p></description></item><item><title>Fun with Pipes</title><link>https://www.varav.in/archive/named-pipes/</link><pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate><guid>https://www.varav.in/archive/named-pipes/</guid><description>&lt;p>Quite a while back I came across some interesting applications of
+&lt;strong>named pipes&lt;/strong> that I thought I should share with everybody.&lt;/p></description></item></channel></rss>

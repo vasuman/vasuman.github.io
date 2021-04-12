@@ -1,259 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-<title> Perspectives on Issue Tracking - Vasuman</title>
-<link rel="stylesheet" href="/site.css" />
-<meta name="title" content="Perspectives on Issue Tracking" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="keywords" content=philosophy,meditation,technology,programming,gamedev />
-
-<meta name="description" content="Personal website of Vasuman Ravichandran" />
-<meta name="author" content="Vasuman Ravichandran" />
-
-</head>
-
-<body>
-    <nav>
-    <a href="/"><img class="nav-logo" src=/images/logo.png /></a>
-    <div class="nav-links">
-        
-        
-        <a href="/articles/">Articles</a>
-        
-        
-        
-        <a href="/games/">Games</a>
-        
-        
-    </div>
-</nav>
-    <main class="content">
-         
-
-<article>
-
-<header>
-    <h1>Perspectives on Issue Tracking</h1>
-    
-    <div class="post-time"><time datetime=2019-09-09>09 Sep 2019</time></div>
-    
-</header>
-
-
-<p>Bugs, issues, tickets: They go by many names but serve the same
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Perspectives on Issue Tracking - Vasuman</title><link rel=stylesheet href=/site.css><meta name=title content="Perspectives on Issue Tracking"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="philosophy,meditation,technology,programming,gamedev"><meta name=description content="Personal website of Vasuman Ravichandran"><meta name=author content="Vasuman Ravichandran"></head><body><nav><a href=/><img class=nav-logo src=/images/logo.png></a><div class=nav-links><a href=/articles/>Articles</a>
+<a href=/games/>Games</a></div></nav><main class=content><article><header><h1>Perspectives on Issue Tracking</h1><div class=post-time><time datetime=2019-09-09>09 Sep 2019</time></div></header><p>Bugs, issues, tickets: They go by many names but serve the same
 purpose&mdash;tracking a task that needs to get done. It&rsquo;s the
 lifeblood of project management in the tech industry, where
 nothing gets done that isn&rsquo;t tracked somehow. And, like most
 invented concepts, it&rsquo;s simply a formalization of our innate ways
-of thinking about tasks.</p>
-<p>Humans have probably been trying to quantify work ever since we
+of thinking about tasks.</p><p>Humans have probably been trying to quantify work ever since we
 started hunting together. But modern-day project management traces
-its lineage back to 1911 when Frederick Taylor published <a href="https://www.marxists.org/reference/subject/economics/taylor/principles/">The
+its lineage back to 1911 when Frederick Taylor published <a href=https://www.marxists.org/reference/subject/economics/taylor/principles/>The
 Principles of Scientific
 Management</a>,
 which aimed at systemizing the job of an individual worker to
-maximize output for the enterprise.</p>
-<p>Taylor targeted workers in the American steel industry, grounded
+maximize output for the enterprise.</p><p>Taylor targeted workers in the American steel industry, grounded
 in the belief that they weren&rsquo;t working at full capacity. He
 promoted the use of <em>time studies</em> on different ways of performing
 <em>atomic units of work</em>, like striking hot iron. If there is a
 particular way of striking that&rsquo;s quicker than the others, every
 worker will be instructed to do it that way. He claimed that this
 improved the overall productivity of the firm, leading to an
-increase in the workers&rsquo; wages.</p>
-<p>In a similar vein, today&rsquo;s issue trackers attempt to turn the
+increase in the workers' wages.</p><p>In a similar vein, today&rsquo;s issue trackers attempt to turn the
 organic process of creating software into a structured, manageable
 science by atomizing work into trackable issues. There is a
 plethora of tools to help you track these issues: JIRA, Github
 Issues, Bugzilla, and Asana, to name a few. You can even use plain
-old sticky notes if you like.</p>
-<p>In the quest to carve out a market share, there&rsquo;s been an
+old sticky notes if you like.</p><p>In the quest to carve out a market share, there&rsquo;s been an
 explosion of diversity in these tools. The underlying structures,
-however, remain fundamentally the same.</p>
-<h3 id="fundamentals-of-anissue">Fundamentals of an Issue</h3>
-<p>To understand what characterizes this issue, let&rsquo;s look at how
-issue trackers model them.</p>
-<ul>
-<li>Issues track <strong>unique</strong> items of work, with many trackers supporting an
+however, remain fundamentally the same.</p><h3 id=fundamentals-of-anissue>Fundamentals of an Issue</h3><p>To understand what characterizes this issue, let&rsquo;s look at how
+issue trackers model them.</p><ul><li>Issues track <strong>unique</strong> items of work, with many trackers supporting an
 explicit deduplication
-<a href="https://help.github.com/en/articles/about-duplicate-issues-and-pull-requests">action</a>.</li>
-<li>Issues often have clear <strong>ownership</strong> responsibilities; trackers sometimes
+<a href=https://help.github.com/en/articles/about-duplicate-issues-and-pull-requests>action</a>.</li><li>Issues often have clear <strong>ownership</strong> responsibilities; trackers sometimes
 support multiple
-<a href="https://confluence.atlassian.com/adminjiracloud/managing-project-roles-776636382.html">roles</a>.</li>
-<li>Trackers allow you to <strong>organize</strong> issues by grouping them into components,
-hotlists, sprints, releases, backlogs, etc.</li>
-<li>Issues can also be <strong>related</strong> to each other, like a blocking relationship to
+<a href=https://confluence.atlassian.com/adminjiracloud/managing-project-roles-776636382.html>roles</a>.</li><li>Trackers allow you to <strong>organize</strong> issues by grouping them into components,
+hotlists, sprints, releases, backlogs, etc.</li><li>Issues can also be <strong>related</strong> to each other, like a blocking relationship to
 show dependency. Or parent-child relationships, which can be used to create a
-<a href="https://www.atlassian.com/agile/project-management/epics-stories-themes">hierarchy</a>
-of work items.</li>
-<li>Issues go through a series of <strong>state transitions</strong>, from being <em>opened</em> when
+<a href=https://www.atlassian.com/agile/project-management/epics-stories-themes>hierarchy</a>
+of work items.</li><li>Issues go through a series of <strong>state transitions</strong>, from being <em>opened</em> when
 initially created to <em>closed</em> when completed or no longer relevant. Some
 trackers even allow you to define custom
-<a href="https://confluence.atlassian.com/adminjiracloud/issue-workflows-844500760.html">workflows</a>
-that manage this lifecycle.</li>
-</ul>
-<p>The process governing this lifecycle is largely determined by the
+<a href=https://confluence.atlassian.com/adminjiracloud/issue-workflows-844500760.html>workflows</a>
+that manage this lifecycle.</li></ul><p>The process governing this lifecycle is largely determined by the
 software development methodology that a team follows. If you&rsquo;re
 reading this in 2019, chances are that your team follows some
-variation of the <a href="http://agilemanifesto.org/">Agile</a> method.
+variation of the <a href=http://agilemanifesto.org/>Agile</a> method.
 Browsing through top LinkedIn titles should show you that it&rsquo;s a
 pretty good time to get into the business of
-<a href="https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster">certifying</a>
-scrum masters.</p>
-<p>Although trackers base their data model on this simple construct,
+<a href=https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster>certifying</a>
+scrum masters.</p><p>Although trackers base their data model on this simple construct,
 they vary how it&rsquo;s presented to the user based on the intent.
 Driven by growing user needs and basic market forces, issue
 trackers have evolved into complex tools that often serve multiple
-purposes.</p>
-<h3 id="issues-as-a-planningtool">Issues as a Planning Tool</h3>
-<p>From building extravagant monuments to daily commuting, planning
+purposes.</p><h3 id=issues-as-a-planningtool>Issues as a Planning Tool</h3><p>From building extravagant monuments to daily commuting, planning
 is ubiquitous in human activity. When set on achieving a goal, we
 instinctively anticipate the future and prepare a plan of action.
 Along these lines, issues that track expected work can be viewed
 as tools that help map out the territory of the problem space
-before breaking ground on execution.</p>
-<p>The choice of methodology largely dictates the approach to
+before breaking ground on execution.</p><p>The choice of methodology largely dictates the approach to
 planning. Since Agile encourages an iterative approach to software
 development, issues are created more on demand and have relatively
 short lifespans. Teams are advised to stay flexible and respond
 quickly to feedback. Since plans are liable to change, it&rsquo;s less
-useful to flesh out the details of a task further out.</p>
-<p>Issues often have a dedicated field to store an estimate of task
-effort, like <a href="https://www.mountaingoatsoftware.com/blog/what-are-story-points">story
+useful to flesh out the details of a task further out.</p><p>Issues often have a dedicated field to store an estimate of task
+effort, like <a href=https://www.mountaingoatsoftware.com/blog/what-are-story-points>story
 points</a>.
 The value in this field represents the approximate period of
 uninterrupted work needed by an <strong>ideal</strong> engineer to complete the
 task. The issues and estimates provide an overview that assists in
 resource allocation and tracking project progress. There&rsquo;s nothing
-like a burndown chart to spice up a bland executive status report.</p>
-<p>However, exact estimation is a tricky exercise. Behavioral science has long
-known about the <a href="https://qz.com/work/1533324/daniel-kahnemans-planning-fallacy-explains-why-were-bad-at-time-management/">Planning
+like a burndown chart to spice up a bland executive status report.</p><p>However, exact estimation is a tricky exercise. Behavioral science has long
+known about the <a href=https://qz.com/work/1533324/daniel-kahnemans-planning-fallacy-explains-why-were-bad-at-time-management/>Planning
 Fallacy</a>,
-that we tend to greatly underestimate our task completion times.  Perhaps
+that we tend to greatly underestimate our task completion times. Perhaps
 unsurprisingly, social scientists have
-<a href="http://web.mit.edu/curhan/www/docs/Articles/biases/67_J_Personality_and_Social_Psychology_366,_1994.pdf">found</a>
+<a href=http://web.mit.edu/curhan/www/docs/Articles/biases/67_J_Personality_and_Social_Psychology_366,_1994.pdf>found</a>
 an actor-observer difference in our predictions. We tend to be much more
-conservative when estimating others&rsquo; completion times.  It may be a good idea to
-ask a teammate to keep you honest the next time you&rsquo;re making estimates.</p>
-<p>It&rsquo;s also easy to fall into the trap of obsessing over the
+conservative when estimating others' completion times. It may be a good idea to
+ask a teammate to keep you honest the next time you&rsquo;re making estimates.</p><p>It&rsquo;s also easy to fall into the trap of obsessing over the
 accuracy of estimates while missing the bigger picture on the
-purpose they ultimately serve.</p>
-<h3 id="issues-as-tasklists">Issues as Task Lists</h3>
-<p>When it comes time to execute, it&rsquo;s convenient to have neat lists
+purpose they ultimately serve.</p><h3 id=issues-as-tasklists>Issues as Task Lists</h3><p>When it comes time to execute, it&rsquo;s convenient to have neat lists
 of tasks for people to start work on. Assigning an issue to
 someone holds them accountable for progress. However, a person
 will usually have multiple issues assigned to them, and picking
-the right one to work on is a dilemma.</p>
-<p>Not all work is created equal, and some tasks are bound to be more
+the right one to work on is a dilemma.</p><p>Not all work is created equal, and some tasks are bound to be more
 critical than others. To indicate this, trackers allow you to
 specify priorities on issues and display issues in sorted order.
 Most people in the tech industry will be familiar with the process
 of triaging: ranking bugs by importance. It borrowed heavily from
 the process of medical triage, which can be
-<a href="https://www.ncbi.nlm.nih.gov/pubmed/29123897">traced</a> back to
-Napoleon&rsquo;s failed campaign in Egypt and Syria.</p>
-<p>Before this, the seniority of an officer usually decided how they
+<a href=https://www.ncbi.nlm.nih.gov/pubmed/29123897>traced</a> back to
+Napoleon&rsquo;s failed campaign in Egypt and Syria.</p><p>Before this, the seniority of an officer usually decided how they
 were treated by medical staff. Faced with a dire strain on
 resources, &ldquo;Napoleonic triage&rdquo; prioritized the treatment of
 soldiers who could be sent back to fight in the battlefield. This
 later evolved into a system that allocated medical resources based
 on the severity of the condition as opposed to the rank of the
-patient.</p>
-<p>While the consequences of bug triage aren&rsquo;t as severe, the same
+patient.</p><p>While the consequences of bug triage aren&rsquo;t as severe, the same
 principles apply. Issues should be prioritized by objective
-severity metrics as opposed to subjective value judgments.</p>
-<h3 id="issues-as-a-medium-of-communication">Issues as a Medium of Communication</h3>
-<p>Despite the prevalent meme that all tech people are misanthropes,
+severity metrics as opposed to subjective value judgments.</p><h3 id=issues-as-a-medium-of-communication>Issues as a Medium of Communication</h3><p>Despite the prevalent meme that all tech people are misanthropes,
 day to day software engineering is very social. Sharing
 information is crucial to performing our jobs in the
 hyper-specialized world that we inhabit. Over time there has been
 a steady increase in the number of communication tools available
-to the average employee.</p>
-<p>When it comes to sharing findings or progress updates on a task,
+to the average employee.</p><p>When it comes to sharing findings or progress updates on a task,
 picking the right channel and determining the appropriate target
 audience can be a challenge. There&rsquo;s also the problem of
 fragmentation, which makes it harder to aggregate discussions
 about a particular task. To help solve this, trackers support
-commenting on an issue.</p>
-<p>On the surface, it seems like this just exacerbates the problem by
+commenting on an issue.</p><p>On the surface, it seems like this just exacerbates the problem by
 adding to the list of possible choices, but there&rsquo;s something
 deeper at play. Game theorists study coordination games in which
 players maximize their payoff by picking the same action. They
 have observed that players with no prior history tend to cluster
-their choices around <a href="https://mindyourdecisions.com/blog/2008/04/01/focal-points-or-schelling-points-how-we-naturally-organize-in-games-of-coordination/">Schelling
+their choices around <a href=https://mindyourdecisions.com/blog/2008/04/01/focal-points-or-schelling-points-how-we-naturally-organize-in-games-of-coordination/>Schelling
 points</a>,
 which are semantically salient options. An issue provides a focal
 point to which uncoordinated actors can anchor their discussion
-about an ongoing task.</p>
-<h3 id="issues-as-a-knowledge-repository">Issues as a Knowledge Repository</h3>
-<p>Having a centralized coordination place for things related to a
+about an ongoing task.</p><h3 id=issues-as-a-knowledge-repository>Issues as a Knowledge Repository</h3><p>Having a centralized coordination place for things related to a
 task also simplifies the process of searching for information.
 Other tools, like version control systems, are usually integrated
 with issue trackers and link their transactional objects, like
 code changes, to issues. The consolidated log of comments and
 other items related to an issue forms an integral part of an
-organization&rsquo;s memory.</p>
-<p>A chronology of actions on an issue also provides the basis for a
+organization&rsquo;s memory.</p><p>A chronology of actions on an issue also provides the basis for a
 coherent
-<a href="https://www.communicationtheory.org/the-narrative-paradigm/">narrative</a>,
+<a href=https://www.communicationtheory.org/the-narrative-paradigm/>narrative</a>,
 weaving a story around a task. These stories allow us to play
 through events and contextualize decisions. This is particularly
 useful during post mortems. During such investigations, issue
 histories are invaluable in tracking down culprits and figuring
-out exactly why things went wrong.</p>
-<h3 id="issues-as-outstanding-debt">Issues as Outstanding Debt</h3>
-<p>When an issue is created, there is an implicit expectation that
+out exactly why things went wrong.</p><h3 id=issues-as-outstanding-debt>Issues as Outstanding Debt</h3><p>When an issue is created, there is an implicit expectation that
 the underlying task will be completed in the future. So another
 way to think of issues is as a promise to deliver something at
 some point. This sounds very similar to a concept anybody with a
-credit card must be familiar with&mdash;debt.</p>
-<p>Like interest on the principal amount, the longer an issue stays
+credit card must be familiar with&mdash;debt.</p><p>Like interest on the principal amount, the longer an issue stays
 open, the more the costs accumulate. For example, if the issue
 tracks a code health improvement, developers working with the
 codebase pay the running cost of having to deal with the bad code
-while making changes.</p>
-<p>One must be careful about stretching this analogy too far though.
+while making changes.</p><p>One must be careful about stretching this analogy too far though.
 Someone once told me about a team that had too many open bugs and
 decided to declare *bug bankruptcy&mdash;*closing all unassigned bugs.
 It initially seemed like a great idea, but within a few weeks,
 they had almost the same number of bugs as before. Simply
-addressing the symptoms doesn&rsquo;t cure the actual disease!</p>
-<p>The problem was never with the bugs themselves; they simply
+addressing the symptoms doesn&rsquo;t cure the actual disease!</p><p>The problem was never with the bugs themselves; they simply
 represented the state of the software when contrasted with the
 ideal. Closing the bugs without revising the ideal state didn&rsquo;t
 change the amount of work needed; it just temporarily erased the
-effort people put into mapping out the steps to the ideal.</p>
-<h3 id="all-things-in-moderation">All Things in Moderation</h3>
-<p>Issue tracking is a handy tool but also tends to be overused. We
+effort people put into mapping out the steps to the ideal.</p><h3 id=all-things-in-moderation>All Things in Moderation</h3><p>Issue tracking is a handy tool but also tends to be overused. We
 must keep in mind that most attempts to direct human effort
 endorse a slightly adversarial view of human nature. There&rsquo;s a
 latent assumption that people won&rsquo;t do the right thing until they
-are explicitly instructed to, which isn&rsquo;t necessarily true.</p>
-<blockquote>
-<p>Individuals and interactions over processes and tools.
- &mdash; <strong>Agile Manifesto</strong></p>
-</blockquote>
-<p>Scientific management also carries a strong undercurrent of high
+are explicitly instructed to, which isn&rsquo;t necessarily true.</p><blockquote><p>Individuals and interactions over processes and tools.
+ &mdash; <strong>Agile Manifesto</strong></p></blockquote><p>Scientific management also carries a strong undercurrent of high
 modernist thinking, the belief that all natural processes can be
 optimized by technology. As James Scott lays out in his book
-<a href="https://yalebooks.yale.edu/book/9780300078152/seeing-state">Seeing Like a
+<a href=https://yalebooks.yale.edu/book/9780300078152/seeing-state>Seeing Like a
 State</a>,
 the subtleties of our organic ways of doing things are not always
-apparent to the planner focused on optimizing.</p>
-<p>It&rsquo;s especially important to remember this when working in an
+apparent to the planner focused on optimizing.</p><p>It&rsquo;s especially important to remember this when working in an
 industry that pays the bills by selling technology to solve
 problems. Overly dictating how a worker should spend their time
 deprives them of autonomy and amplifies feelings of monotony.
 Sometimes, trusting people to do their jobs without excessive
-supervision isn&rsquo;t a terrible idea.</p>
- 
-</article>
-
-
-    </main>
-</body>
-
-</html>
+supervision isn&rsquo;t a terrible idea.</p></article></main></body></html>

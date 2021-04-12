@@ -1,45 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Games on Vasuman</title>
-    <link>https://www.varav.in/games/</link>
-    <description>Recent content in Games on Vasuman</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://www.varav.in/games/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Ator</title>
-      <link>https://www.varav.in/games/ator/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/games/ator/</guid>
-      <description>Ator is a game in which the player controls the motion of the character by tilting the device. As the device tilts, the perspective of the camera also tilts giving the illusion of a fixed surface. The player taps on the screen to fire in that direction.
-The ground texture is supposed to give you a techno-feel. Most 3D models in this game are platonic solids or shapes that can be rigged in less than 3 steps in Blender.</description>
-    </item>
-    
-    <item>
-      <title>Box, Hop! Box</title>
-      <link>https://www.varav.in/games/bhb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/games/bhb/</guid>
-      <description>Play&amp;ldquo;Box, Hop! Box&amp;rdquo; is a game where the objective is to keep climbing while avoiding the edges of the screen and falling boxes.
-I originally made this for js13k for which the theme was reversal. Hence, the flipping controller. I messed up the final submission and the result is that it only works in browsers that support a few ES6 features. The version on this site works fine though.</description>
-    </item>
-    
-    <item>
-      <title>Glitchball</title>
-      <link>https://www.varav.in/games/glitchball/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.varav.in/games/glitchball/</guid>
-      <description>Play  Rules   There are two players and the aim of this game is to get the ball (yellow thing) to the other players goal.
-  Once you have the ball, if the other player touches you, you die and respawn next to your goal and the other player gets possesion of the ball.
-  When the attacking player glitches, the defending player is frozen and the attacking player can move like they normally do.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Games on Vasuman</title><link>https://www.varav.in/games/</link><description>Recent content in Games on Vasuman</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://www.varav.in/games/index.xml" rel="self" type="application/rss+xml"/><item><title>Ator</title><link>https://www.varav.in/games/ator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.varav.in/games/ator/</guid><description>Ator is a game in which the player controls the motion of the character by tilting the device. As the device tilts, the perspective of the camera also tilts giving the illusion of a fixed surface. The player taps on the screen to fire in that direction.
+The ground texture is supposed to give you a techno-feel. Most 3D models in this game are platonic solids or shapes that can be rigged in less than 3 steps in Blender.</description></item><item><title>Box, Hop! Box</title><link>https://www.varav.in/games/bhb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.varav.in/games/bhb/</guid><description>Play
+&amp;ldquo;Box, Hop! Box&amp;rdquo; is a game where the objective is to keep climbing while avoiding the edges of the screen and falling boxes.
+I originally made this for js13k for which the theme was reversal. Hence, the flipping controller. I messed up the final submission and the result is that it only works in browsers that support a few ES6 features. The version on this site works fine though.</description></item><item><title>Glitchball</title><link>https://www.varav.in/games/glitchball/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.varav.in/games/glitchball/</guid><description>Play Rules There are two players and the aim of this game is to get the ball (yellow thing) to the other players goal.
+Once you have the ball, if the other player touches you, you die and respawn next to your goal and the other player gets possesion of the ball.
+When the attacking player glitches, the defending player is frozen and the attacking player can move like they normally do.</description></item></channel></rss>
