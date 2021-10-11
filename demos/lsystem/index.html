@@ -1,5 +1,60 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><title>Lindenmayer Systems - Vasuman</title><link rel=stylesheet href=/site.css><meta name=title content="Lindenmayer Systems"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="philosophy,meditation,technology,programming,gamedev"><meta name=description content="A demo of an L-system engine."><meta name=author content="Vasuman Ravichandran"></head><body><nav><a href=/><img class=nav-logo src=/images/logo.png></a><div class=nav-links><a href=/articles/>Articles</a>
-<a href=/games/>Games</a></div></nav><main class=content><article><header><h1>Lindenmayer Systems</h1></header><p>A demo of the system described in <a href=/posts/lsystem>this post</a>. Refer to the <a href=https://github.com/vasuman/lsystem>source code</a> for help.</p><p>Simply enter the L-system grammar production rules, starting string and give the draw commands for each of the symbols in the grammar in a simple Logo-like language to generate beautiful patterns. Or, check out some of the presets.</p><script src=/js/logo.js></script><script src=/js/lsys.js></script><script src=/js/ls-demo.js></script><style>canvas#main-canvas{background-color:#fff;border:1px solid #000;max-width:100%;height:auto;margin-left:auto;margin-right:auto;padding:.5em}div#log-area.error{color:red}div.lsys-demo{text-align:center}</style><div class=lsys-demo><canvas id=main-canvas></canvas><div class=ctrl><h3>Controls</h3><button id=parse-button>Parse</button>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<title> Lindenmayer Systems - Vasuman</title>
+<link rel=stylesheet href=/site.css>
+<meta name=title content="Lindenmayer Systems">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=keywords content="philosophy,meditation,technology,programming,gamedev">
+<meta name=description content="A demo of an L-system engine.">
+<meta name=author content="Vasuman Ravichandran">
+</head>
+<body>
+<nav>
+<a href=/><img class=nav-logo src=/images/logo.png></a>
+<div class=nav-links>
+<a href=/articles/>Articles</a>
+<a href=/games/>Games</a>
+</div>
+</nav>
+<main class=content>
+<article>
+<header>
+<h1>Lindenmayer Systems</h1>
+</header>
+<p>A demo of the system described in <a href=/posts/lsystem>this post</a>. Refer to the <a href=https://github.com/vasuman/lsystem>source code</a> for help.</p>
+<p>Simply enter the L-system grammar production rules, starting string and give the draw commands for each of the symbols in the grammar in a simple Logo-like language to generate beautiful patterns. Or, check out some of the presets.</p>
+<script src=/js/logo.js></script>
+<script src=/js/lsys.js></script>
+<script src=/js/ls-demo.js></script>
+<style>canvas#main-canvas{background-color:#fff;border:1px solid #000;max-width:100%;height:auto;margin-left:auto;margin-right:auto;padding:.5em}div#log-area.error{color:red}div.lsys-demo{text-align:center}</style>
+<div class=lsys-demo>
+<canvas id=main-canvas></canvas>
+<div class=ctrl>
+<h3> Controls </h3>
+<button id=parse-button>Parse</button>
 <button id=iterate-button>Iterate</button>
 <select id=preset-select></select>
-<button id=load-preset-btn>Load preset</button></div><div id=log-cntr class=ctrl><h3>Status</h3><div id=log-area>Select and load a preset if you want. "Parse" then "Iterate".</div></div><div class=ctrl><h3>Grammar</h3><textarea id=grammar-txt rows=8 cols=50></textarea></div><div class=ctrl><h3>Draw rules</h3><textarea id=draw-txt rows=8 cols=50></textarea></div><div class=ctrl><h3>Axiom</h3><input id=axiom-txt size=50></div></div></article></main></body></html>
+<button id=load-preset-btn>Load preset</button>
+</div>
+<div id=log-cntr class=ctrl>
+<h3> Status </h3>
+<div id=log-area> Select and load a preset if you want. "Parse" then "Iterate". </div>
+</div>
+<div class=ctrl>
+<h3> Grammar </h3>
+<textarea id=grammar-txt rows=8 cols=50></textarea>
+</div>
+<div class=ctrl>
+<h3> Draw rules </h3>
+<textarea id=draw-txt rows=8 cols=50></textarea>
+</div>
+<div class=ctrl>
+<h3> Axiom </h3>
+<input id=axiom-txt size=50>
+</div>
+</div>
+</article>
+</main>
+</body>
+</html>
