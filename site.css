@@ -41,8 +41,9 @@ html {
 }
 
 body {
-    margin: 0;
     padding: 0;
+    margin: auto;
+    max-width: 850px;
     font-family: Gotu, sans-serif;
 }
 
@@ -71,8 +72,6 @@ div.nav-links > a {
 
 main.content {
     padding: 1em;
-    margin: auto;
-    max-width: 850px;
 }
 
 /* header */
