@@ -7,23 +7,16 @@
 
 /* base */
 
-/*
-themes:
-  dark:
-    --primary-color: #ddd;
-    --secondary-color: #1a1a1a;
-    --muted-color: #aaa;
-    --strong-color: #fff;
-    --link-color: #5aa;
-    --logo-invert: 0.15;
-  light:
+@media (prefers-color-scheme: light) {
+:root {
     --primary-color: #112;
     --secondary-color: #ddc;
     --muted-color: #555;
     --strong-color: #000;
     --link-color: #944;
     --logo-invert: 0.85;
-*/
+}
+}
 
 :root {
     --primary-color: #ddd;
