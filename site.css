@@ -7,17 +7,16 @@
 
 /* base */
 
-@media (prefers-color-scheme: light) {
 :root {
     --primary-color: #112;
-    --secondary-color: #ddc;
+    --secondary-color: #ddd;
     --muted-color: #555;
     --strong-color: #000;
     --link-color: #944;
     --logo-invert: 0.85;
 }
-}
 
+@media (prefers-color-scheme: dark) {
 :root {
     --primary-color: #ddd;
     --secondary-color: #1a1a1a;
@@ -25,6 +24,7 @@
     --strong-color: #fff;
     --link-color: #5aa;
     --logo-invert: 0.15;
+}
 }
 
 html {
