@@ -1,6 +1,7 @@
 /* https://ektype.in/font-family/gotu-font/gotu-3230.html */
 @font-face {
   font-family: "Gotu";
+  font-display: swap;
   src: url("./fonts/Gotu.woff2") format("woff2"),
        url("./fonts/Gotu.woff") format("woff");
 }
